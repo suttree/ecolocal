@@ -1,0 +1,67 @@
+Table places has a model called place.
+	Model place belongs_to county.
+		The controller for places is called place_controller
+
+Table counties has a model called county.
+	Model county has_many places.
+		The controller for counties is called county_controller
+		
+Table articles has a model called article
+	Model article acts_as_taggable.
+	Model article belongs_to user, place, county
+	Model article has_many comments
+		The controller for articles is called article_controller
+
+Table comments has a model called comment
+	Model comments has_one user
+	Model comments belongs_to article
+
+Table users has a model called user
+
+--
+Routing
+
+# Rules for eco-local in here
+
+# Search
+map.connect "uk/search",
+            :controller => 'search',
+            :action => 'index' 
+
+map.connect "uk/search/results",
+            :controller => 'search',
+            :action => 'results'
+
+# County home page
+map.connect "uk/:county",
+            :controller => 'location',
+            :action => 'county' 
+
+# Place home page
+map.connect "uk/:county/:place/",
+            :controller => 'location',
+            :action => 'place'
+			
+# County home/health/family page
+map.connect "uk/:county/:section",
+            :controller => 'section',
+			:action => 'county',
+            :requirements => { :section => /home|health|family/ }
+
+# Place home/health/family page
+map.connect "uk/:county/:place/:section",
+            :controller => 'section',
+			:action => 'place',
+            :requirements => { :section => /home|health|family/ }
+
+# Place + section c/r/u/d page (there is no place c/r/u/d page, push them all through sections first)
+map.connect "uk/:county/:place/:section/:action/:id",
+            :controller => 'section',
+            :requirements => { :section => /home|health|family/ }
+
+--
+Actions
+
+Generate models for place, county, article, tag, user and comments.
+Generate controllers for search, location and section
+Create a county layout and a place layout and give the relevant controllers the layout 'place' declaration

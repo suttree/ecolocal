@@ -1,0 +1,152 @@
+== Green Website ==
+
+GW is a local information website where the content is created by local
+people. For each location, we will be able to offer an overview plus a
+number of discussions via comments on each article about that location.
+
+All content can be commented upon and tagged according to a pre-degined
+set of tags, such as days out, classifieds, events, local history, local
+people, all of which will be grouped under three main headings - house,
+health and family.
+
+The website will be uk based initially, working on a strict county to
+town relationship, so that Sidcup and Dartford would both appear as
+children of Kent. The county pages will be dynamic but not user-editable.
+Users will only be able to edit the town pages whilst the county pages
+will aggregate the latest and most popular content to provide a good
+overview of what is happening in that area. This should work much like
+digg, with the most rated articles bubbling over on a weekly or daily
+basis.
+
+Businesses will be encouraged to list themselves on the town pages but
+will also have the ability to pay for targetted adverts within the town
+and country pages. We will probably use Google ads for 99% of the time
+though.
+
+To make tagging content on the website as seamless as possible, we will
+encourage users to tag articles using a set of pre-defined words, much
+like MOG does.
+
+These categories should include news, events, classifieds -
+etsy/craigslist, local history - famous residents, photo’s of the area,
+family history - genealogoy, special offers - targetted ads, for
+partners, out and about - parks, day trips, markets, home - green
+suppliers, how-to’s, health - gyms, shops, kids - nurseries, activies,
+nct, charity - charity shops, recycling depots
+
+The website should allow photo uploads too, not to compete with flickr
+but just to provide a simple gallery of local area photos.
+
+Once we have this framework in place, we can build a couple of
+interesting things on top of it.
+
+Primarily, we should focus on letting users create groups so that they
+are not tied to any location by the site. For example, upmystreet was
+very specific about location and resulted in data that was disjointed
+because of its location. If we let people create their own groups, they
+can manage their own micro or macro social groups, i.e., a group could
+be setup for Anne of Cleves road, or a group could be setup for The
+Collinsons. These groups would have access to all the news, comments and
+photo tools that towns use too.
+
+Secondly, we can start to build an event finder/listing service so that
+people with kids can search for events over the next couple of weeks in
+areas around them. Since the events would all be tagged with categories
+such as kids or health, you can search for all events with as many or as
+few categories as would be required. For example, if we want to take
+Ryan out to see some animals in and around Kent, we can use the events
+tool to find events articles tagged with kids and animals and end up
+taking him out to foal farm for their open day.
+
+( * aside, do we need to have heirarchical tags then? The top three are
+home, health and family, the next are events, classifieds, local info
+and the next are, for events, for example, are kids, adults, family, and
+for kids, for example, are days out, farms, animals, etc... ?)
+
+Users who sign up to GW will also be given their own home page where
+they can store some information about themselves (a picture, a list of
+their comments, etc). We can spin this off into a dating/social
+networking site if we need to, later on.
+
+The website will work like a blog in its ability to post news and
+comments, like a wiki in its creation of new pages for groups, like a
+folksonomy in it's support of tags and like a social network in its
+handling of users.
+
+
+
+
+
+
+
+
+
+
+
+  * Local information site with the content created by users.
+  * Content can be tagged according to a set of pre-defined main categories.
+  * All items can be commented upon.
+  * All items can be rated to give a digg-style roundup of popular local news and links.
+  * Businesses will be encouraged to advertise locally and given prominent placings on the relevant pages.
+  * Even ads can be commented upon.
+
+  * The site will feature a page for every county and place in the UK.
+  * The site will also feature a page for every county and place in the US, eventually.
+  * The county pages will feature content aggregated from all the relevant child places, to give digg style community news.
+
+
+  * Where category is something a pre-defined tag like home, health, family, news, classifieds, events, days_out, local_history, local_people, etc
+  * Other categories include classifieds - etsy/craigslist, local history - photo’s of the area, family history - genealogoy, special offers - for partners, out and about - parks, day trips, markets, home - green supplies, how-to’s, health - gyms, shops, kids - nurseries, activies, nct, charity - charity shops, recycling depots
+  * Allow photo uploads for each local area too.
+
+  * To combat the 'tied-to-a-location' problem of upmystreet, users will be able to create their own pages, wiki-style, to form groups around a common interest, e.g. the cloisters (place), dartford school (friends), eco-builders (personal politics), etc
+
+  * For each county and place, offer an overview, discussions via comments on news and articles, local info, etc
+
+  * Each member gets their own homepage, to spin off into social networking if needed
+
+The site is...
+blog like in it's support for comments and news/articles
+wiki like in it's creation of new pages for groups
+folksonomic in it's support of tags and the intersection of tags by user and location, e.g. /duncan/health and /kent/sidcup/health
+social networking like in it's support of member homepages
+
+Use eco friendly stuff as a way of introducing group support, since the eco friendly stuff is global. Groups all us to prevent groups disjointed by location from not meeting up.
+
+In all sections, articles are created by local people about their area. People using the site are able to:
+
+Browse to find information
+Comment – respond to information already on the site
+Add useful website links (tags) on the appropriate subject
+Add articles appropriate to the area
+Rate an article
+
+Businesses can advertise by adding an article, or if they want guaranteed space on the home page for the area, they can contact us and purchase the ad space for a fixed time frame
+
+== Database tables ==
+
+  * Users
+  * Articles
+  * Comments
+  * Places
+  * Counties
+  * Groups
+
+== RESTful URLS ==
+
+  * /uk/search/
+  * /uk/county/place/
+  * /uk/county/place/category
+  * /uk/county/place/category/category_id
+  * /uk/county/place/category/category_id/comments
+
+
+
+components to add once site is live
+
+events (search for stuff to do using the tags)
+groups (break out of location based service)
+swap-shop (find stuff to swap with people in your area)
+
+
+schedule - next etcon

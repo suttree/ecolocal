@@ -1,0 +1,91 @@
+<%
+
+@title = ''
+
+if @params[:place] && @params[:tag]
+	if params[:section] == 'events'
+		@title = 'ecolocal | ' + de_normalise(@params[:country].upcase) + ' | ' + de_normalise(@params[:county].capitalize) + ' | ' + de_normalise(@params[:place].capitalize) + ' | Events | ' + de_normalise(@params[:tag].capitalize)
+	else
+		@title = 'ecolocal | ' + de_normalise(@params[:country].upcase) + ' | ' + de_normalise(@params[:county].capitalize) + ' | ' + de_normalise(@params[:place].capitalize) + ' | Tag | ' + de_normalise(@params[:tag])
+	end
+elsif @params[:county] && @params[:tag]
+	if params[:section] == 'events'
+		@title = 'ecolocal | ' + de_normalise(@params[:country].upcase) + ' | ' + de_normalise(@params[:county].capitalize) + ' | Events | ' + de_normalise(@params[:tag].capitalize)
+	else
+		@title = 'ecolocal | ' + de_normalise(@params[:country].upcase) + ' | ' + de_normalise(@params[:county].capitalize) + ' | Tag | ' + de_normalise(@params[:tag])
+	end
+elsif @params[:country] && @params[:tag]
+	if params[:section] == 'events'
+		@title = 'ecolocal | ' + de_normalise(@params[:country].upcase) + ' | Events | ' + de_normalise(@params[:tag].capitalize)
+	else
+		@title = 'ecolocal | ' + de_normalise(@params[:country].upcase) + ' | Tag | ' + de_normalise(@params[:tag])
+	end
+elsif @params[:place]
+	@title = 'ecolocal | ' + de_normalise(@params[:country].upcase) + ' | ' + de_normalise(@params[:county].capitalize) + ' | ' + de_normalise(@params[:place].capitalize)
+elsif @params[:county]
+	@title = 'ecolocal | ' + de_normalise(@params[:country].upcase) + ' | ' + de_normalise(@params[:county].capitalize)
+elsif @params[:country]
+	@title = 'ecolocal | ' + de_normalise(@params[:country].upcase)
+elsif @params[:tag]
+  @title = 'ecolocal | Discussions tagged with ' + @params[:tag]
+else
+	@title = 'ecolocal'
+end
+
+if params[:section] && !params[:tag]
+	@title = @title + ' | ' + de_normalise(params[:section].capitalize)
+end
+
+if controller.action_name == "reply_to_comment"
+	if controller.controller_name == 'article'
+		@title = @title + ' | Replying to | ' + @article.title.capitalize
+	else
+		@title = @title + ' | Replying to | ' + @discussion.title.capitalize
+	end
+elsif controller.action_name == 'show'
+	if controller.controller_name == 'article'
+		@title = @title + ' | ' + @article.title.capitalize
+	else
+		@title = @title + ' | ' + @discussion.title.capitalize
+	end
+elsif controller.controller_name == 'members'
+	@title = @title + ' | Members'
+	@title = @title + ' | ' + @page_title if @page_title
+elsif controller.controller_name == 'profile'
+	@title = @title + ' | Members | Profile'
+elsif controller.controller_name == 'home'
+	@title = 'ecolocal | Find out about healthy living in your area'
+elsif params[:order] == 'date'
+	@title = @title + ' | ' + ' Latest'
+elsif controller.action_name == 'new'
+	if controller.controller_name == 'article'
+	    @title = @title + ' | ' + ' Submit a new article'
+	else
+	    @title = @title + ' | ' + ' Start a new discussion'
+	end
+elsif controller.action_name == 'whats_on'
+    @title = @title + ' | ' + ' Submit a new event'
+elsif controller.controller_name == 'search'
+    @title = @title + ' | ' + ' Search results for ' + params[:q]
+elsif controller.controller_name == 'help'
+    @title = @title + ' | ' + ' Help'
+    @title = @title + ' | ' + @page_title if @page_title != nil
+elsif controller.controller_name == 'register'
+    @title = @title + ' | ' + 'Register'
+    @title = @title + ' | ' + @page_title if @page_title != nil
+elsif controller.action_name == 'forgotten_password'
+    @title = @title + ' | ' + ' Forgotten password'
+elsif controller.action_name == 'forgotten_password_sent'
+    @title = @title + ' | ' + ' Forgotten password sent'
+elsif controller.controller_name == 'login'
+    @title = @title + ' | ' + ' Login to ecolocal for Green News and Upcoming Family Events in your area'
+elsif @page_title != nil
+    @title = @title + ' | ' + @page_title
+end
+
+@title = @title + ' | ' + 'Page ' + params[:page] if params[:page] != nil
+
+
+%>
+
+<title><%=h @title %></title>

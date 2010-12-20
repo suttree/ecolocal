@@ -1,0 +1,195 @@
+<%= javascript_include_tag :defaults -%>
+
+<% cache( :discuss => 'show_discussion', :title => params[:title], :notice => flash[:notice], :logged_in => session[:logged_in], :user_id => session[:user].id, :admin => session[:user].admin? ) do -%>
+	<div class='article_info'>
+		<%= render_partial "partial/logo" -%>
+
+		<h1><%= @discussion.title -%></h1>
+
+		<h2><small>Posted by <%= link_to @discussion.user.nickname, :controller => 'members', :action => 'index', :nickname => @discussion.user.nickname -%>, <%= time_ago_in_words( @discussion.created_on ) -%> ago</small></h2>
+
+		<% if @discussion.tag_names.size > 0  -%>
+
+		<div class='tags'>
+			<small>
+			Tags: 
+
+			<% for tag in @discussion.tag_names -%>
+
+				<%= link_to tag, { :controller => 'discussion', :section => 'discuss', :action => 'tag_list', :tag => tag }, :rel => "discussion tag" -%>
+
+			<% end -%>
+			</small>
+		</div>
+
+		<% end -%>
+
+		<% if @discussion.url != '' && @discussion.url != nil -%>
+
+			<div class='link'>
+				<small>
+					Link: <%= linkify( @discussion.url ) -%>&nbsp;<img src='/images/offsite.gif' title='External link' class='icons'>
+				</small>
+			</div>
+
+		<% end -%>
+
+		<div class='discussion_notification'>
+			<div id='discussion_notification_status_<%= @discussion.id -%>'>
+				<form>
+					<small>
+						<% if @discussion.user_id == session[:user].id -%>
+							<%= render_partial "partial/discussion_notification", @discussion -%>
+						<% end -%>
+					</small>
+				</form>
+			</div>
+		</div>
+
+		<span class='more'>
+			<p><i>If you want to learn about <a href='/discuss/organic_versus_local'>organic food</a>, <a href='/uk/family/show/nappies__the_dilemma'>nappies</a> or just <a href='/discuss/how_to_be_green'>how to be green</a> then why not <a href='/register'>join today</a>?</i></p>
+			<br/>
+		</span>
+	</div>
+
+	<div class='article_image'>
+		<a href='/' alt='Link to home' title='ecolocal Home'><img src='/images/relax.gif' width='270' height='164' alt'Logo image' title='ecolocal | Find out about healthy living' border='0'/></a>
+		<div class='browse_all'>
+			<small>Browse all - <a href='/uk' class='country'>UK</a>, <a href='/us' class='country'>US</a>, <a href='/au' class='country'>Aus</a></small>
+		</div>
+	</div>
+
+
+	<%= render_partial "partial/breadcrumb_discussion" -%>
+
+	<%= render_partial "partial/tabs_discussion" -%>
+
+	<%= render_partial "partial/contribute" -%>
+
+	<%= render_partial "partial/ad", @discussion -%>
+
+	<%= render_partial "partial/latest_comments" -%>
+
+	<div class='article_body'>
+
+		<%= render_partial "partial/whos_talking", @discussion -%>
+
+		<span class='misc_hi'>
+		    <big><b>Reading discussion "<%= @discussion.title -%>"</b></big> - <a href='#reply'>Join this discussion</a> / <a href='#comments'><%= @discussion.comments.size -%> comment(s)</a>
+		</span>
+
+		<br/>
+
+		<%= linkify( @discussion.body ) if @discussion.body -%>
+
+		<% if @discussion.url != '' && @discussion.url != nil -%>
+			<p><%= linkify( @discussion.url ) -%>&nbsp;<img src='/images/offsite.gif' title='External link' class='icons'></p>
+		<% end -%>
+
+    <span class='useful'>
+
+		<% if session[:user].id != nil -%>
+
+				<% if @discussion.user_id == session[:user].id -%>
+
+					<%= link_to 'Edit this discussion', :controller => 'discussion', :action => 'edit', :title => @discussion.normalised_title -%> / 
+
+				<% end -%>
+		
+    <% end -%>
+
+      <a href='#reply'>Reply to this</a>
+    </span>
+    <br/>
+
+    <%= render_partial "partial/affiliates" -%>
+
+    <a name="comments"></a>
+    <img src='/images/green/comment.gif' alt='Comments' title='Comments' class='icon' />
+    <h2 class='comments'>Comments</h2>
+
+		<% if @discussion.comments.size > 0 -%>
+
+			<ol id="comment-" class="comment-list">
+			    <%= render_collection_of_partials "commentset", @discussion.comments.sort_by {|c| c.id}.reject { |c| c.parent_id } -%>
+			</ol>
+
+		<% else -%>
+
+			<p>
+				<span>
+					No comments at this time
+				</span>
+			</p>
+
+
+		<% end -%>
+
+	</div>
+		
+	<%= render_partial "partial/latest_events" if @discussion.comments.size > 2 -%>
+
+	<div class='article_body'>
+	
+		<% if session[:user].id != nil -%>
+
+		    <br/>
+		    <a name="reply"></a>
+		    <img src='/images/green/comment.gif' alt='Comments' title='Comments' class='icon' />
+		    <h2 class='comments'>Enter your comment</h2>
+		    <br/>
+
+			<div class='yoga'>
+				<img src='/images/yoga.gif' width='204' height='250' alt='ecolocal: Yoga image' title='ecolocal: Yoga, health, green and local news'/>
+				<br/>
+				<a href='#top'>Back to top</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			</div>
+
+			<%
+				# Here's a nasty bug, the last comment from the list of comments above
+				# is ending up in the 'enter comment' box below. So, reset the @comment
+				# variable now and it should all be fine...
+				@comment = nil
+			-%>
+
+			<%= start_form_tag :controller => 'discussion', :action => 'new_comment', :title => @discussion.normalised_title  -%>
+
+			<p><label for="comment_title">*Title</label><br/>
+			<input id="comment_title" name="comment[title]" size="50" type="text" value="Re: <%= @discussion.title -%>" /></p>
+
+			<p><label for="comment_body">*Body</label><br/>
+			<%= text_area 'comment', 'body', :cols => 50, :rows => 10, :value => '' -%></p>
+
+			<p><i>
+				Please be respectful and keep your comments on-topic.
+				<br/>
+				If we think you're being offensive for no reason, we'll delete your comment. Some html is allowed.
+			</i></p>
+
+			<%= submit_tag "Submit comment" -%>
+		    <%= end_form_tag -%>
+
+		<% else -%>
+
+      <div class='yoga'>
+        <img src='/images/yoga.gif' width='204' height='250' alt='ecolocal: Yoga image' title='ecolocal: Yoga, health, green and local news'/>
+        <br/>   
+        <a href='#top'>Back to top</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>  
+
+      <br/>   
+      <br/>   
+
+      <h2>About ecolocal.co.uk</h2>
+
+      <b>Ecolocal</b> is free to join - why not <a href='/register'>register today</a>? Our members can start discussions and comment on all the threads
+      <br/>   
+      <br/>   
+      Help us build the best source for healthy living and <b>local news</b> by submitting your tips, events and links so that we can all learn how to learn how to live a more <b>eco-friendly</b> lifestyle.
+
+		<% end -%>
+
+		</div>
+
+	</div>
+<% end -%>

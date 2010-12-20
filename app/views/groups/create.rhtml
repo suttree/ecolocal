@@ -1,0 +1,35 @@
+<%= render_partial "partial/breadcrumb" %>
+
+<%= render_partial "partial/ad" %>
+
+<div class='left'>
+	<span class='title'>Create a new group</span>
+	<div class='content'>
+			<ul>
+				<li>Fields marked with an asterisk* are mandatory.</li>
+			</ul>
+
+			<%= start_form_tag :controller => 'groups', :action => 'save' %>
+
+		    <%= error_messages_for 'group' %>
+
+		    <p><label for="group_name">* Group name</label><br/>
+		    <%= text_field 'group', 'name'  %></p>
+
+		    <p><label for="group_description">* Group description</label><br/>
+		    <%= text_area 'group', 'description', :rows => 10, :cols => 60 %></p>
+
+		    <p><label for="group_counties">* Group counties</label><br/>
+			Choose multiple counties that the group is a part of.
+
+			<p><%= submit_tag "SAVE" %></p>
+
+		<%= end_form_tag %>
+	</div>
+</div>
+
+<%= render_partial "partial/about" %>
+
+<%= render_partial "partial/groups" %>
+
+<%= render_partial "partial/contribute" %>

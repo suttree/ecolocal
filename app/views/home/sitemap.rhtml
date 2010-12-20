@@ -1,0 +1,12 @@
+<% cache( :name => 'sitemap' ) do -%>
+	<div class='left'>
+	    <span class='title'>Sitemap</span>
+		<div class='content'>
+		<%= render_partial "partial/articles", @article_ratings -%>
+		</div>
+	</div>
+
+	<%= render_partial "partial/contribute" -%>
+
+	<%= render_partial "partial/latest_comments" -%>
+<% end -%>

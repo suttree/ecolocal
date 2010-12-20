@@ -1,0 +1,115 @@
+<html>
+<head>
+  <%
+	if @params[:place] && @params[:tag]
+		@title = 'ecolocal | ' + de_normalise(@params[:country].upcase) + ' | ' + de_normalise(@params[:county].capitalize) + ' | ' + de_normalise(@params[:place].capitalize) + ' | Tag | ' + de_normalise(@params[:tag])
+	elsif @params[:county] && @params[:tag]
+		@title = 'ecolocal | ' + de_normalise(@params[:country].upcase) + ' | ' + de_normalise(@params[:county].capitalize) + ' | Tag | ' + de_normalise(@params[:tag])
+	elsif @params[:country] && @params[:tag]
+		@title = 'ecolocal | ' + de_normalise(@params[:country].upcase) + ' | Tag | ' + de_normalise(@params[:tag])
+	elsif @params[:place]
+		@title = 'ecolocal | ' + de_normalise(@params[:country].upcase) + ' | ' + de_normalise(@params[:county].capitalize) + ' | ' + de_normalise(@params[:place].capitalize)
+	elsif @params[:county]
+		@title = 'ecolocal | ' + de_normalise(@params[:country].upcase) + ' | ' + de_normalise(@params[:county].capitalize)
+	elsif @params[:country]
+		@title = 'ecolocal | ' + de_normalise(@params[:country].upcase)
+	else
+		@title = 'ecolocal'
+	end
+  %>
+  <title><%=h @title %></title>
+  <%= stylesheet_link_tag 'ecolocal' %>
+</head>
+<body>
+
+<p style="color: green"><%= flash[:notice] %></p>
+
+<div>
+    <% if @params[:place] %>
+        <%= link_to 'ecolocal', :country => @params[:country], :controller => 'search', :action => 'index' %> |
+        <%= link_to de_normalise(@params[:country].capitalize), :controller => 'location', :action => 'country' if @params[:country] %> |
+        <%= link_to de_normalise(@params[:county].capitalize), :controller => 'location', :action => 'county' if @params[:county] %> |
+        <%= link_to de_normalise(@params[:place].capitalize), :controller => 'location', :action => 'place' if @params[:place] %>
+    <% elsif @params[:county] %>
+        <%= link_to 'ecolocal', :country => @params[:country], :controller => 'search', :action => 'index' %> |
+        <%= link_to de_normalise(@params[:country].capitalize), :controller => 'location', :action => 'country' if @params[:country] %> |
+        <%= link_to de_normalise(@params[:county].capitalize), :controller => 'location', :action => 'county' if @params[:county] %>
+    <% else %>
+        <%= link_to 'ecolocal', :country => @params[:country], :controller => 'search', :action => 'index' %> |
+        <%= link_to de_normalise(@params[:country].capitalize), :controller => 'location', :action => 'country' if @params[:country] %>
+    <% end %>
+
+    <span style='float:right'>
+    <%= link_to 'Search', :controller => 'search', :action => 'index', :country => @params[:country] %>
+    <% if @session[:user] %>
+        <%= link_to 'Members', :controller => 'members', :action => 'index' %>
+        <%= link_to 'Logout', :controller => 'members', :action => 'logout' %>
+    <% else %>
+        <%= link_to 'Register', :controller => 'register', :action => 'index' %>
+        <%= link_to 'Login', :controller => 'members', :action => 'login' %>
+    <% end %>
+    </span>
+    <hr/>
+</div>
+
+<%= @content_for_layout %>
+
+<hr/>
+
+<div align='center'>
+    <% if @params[:place] %>
+        <%= link_to @params[:place].capitalize + ' Overview', :controller => 'location', :action => 'place' %> |
+        <%= link_to @params[:place].capitalize + ' Home', :controller => 'section', :action => 'place', :section => 'home' %> |
+        <%= link_to @params[:place].capitalize + ' Health', :controller => 'section', :action => 'place', :section => 'health' %> |
+        <%= link_to @params[:place].capitalize + ' Family', :controller => 'section', :action => 'place', :section => 'family' %>
+    <% elsif @params[:county] %>
+        <%= link_to @params[:county].capitalize + ' Overview', :controller => 'location', :action => 'county' %> |
+        <%= link_to @params[:county].capitalize + ' Home', :controller => 'section', :action => 'county', :section => 'home' %> |
+        <%= link_to @params[:county].capitalize + ' Health', :controller => 'section', :action => 'county', :section => 'health' %> |
+        <%= link_to @params[:county].capitalize + ' Family', :controller => 'section', :action => 'county', :section => 'family' %>
+    <% else %>
+        <%= link_to 'UK Overview', :controller => 'location', :action => 'country' %> |
+        <%= link_to 'UK Home', :controller => 'section', :action => 'country', :section => 'home' %> |
+        <%= link_to 'UK Health', :controller => 'section', :action => 'country', :section => 'health' %> |
+        <%= link_to 'UK Family', :controller => 'section', :action => 'country', :section => 'family' %>
+    <% end %>
+</div>
+
+<br/>
+
+<div align='center'>
+    <% if @county %>
+        <b>Near here:</b>
+        <% for nearby_county in @county.children %>
+           <%= link_to nearby_county.name, :action => 'place', :place => normalise(nearby_county.name.downcase) %>
+        <% end %>
+    <% end %>
+</div>
+
+<% 
+# This prints out all of the places in the relevant county, 
+# but it's too big a list to be of any use
+#
+#elsif @place
+#   for nearby_places in @place.county.parent.children
+#       for nearby_place in nearby_places.places
+#           link_to nearby_place.name, :action => 'place', :place => normalise(nearby_place.name.downcase)
+#       end
+#   end
+#end
+%>
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  try {
+  var pageTracker = _gat._getTracker("UA-148111-6");
+  pageTracker._trackPageview();
+  } catch(err) {}</script>
+
+
+</body>
+</html>

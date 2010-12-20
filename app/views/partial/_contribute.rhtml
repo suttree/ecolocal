@@ -1,0 +1,40 @@
+<div class='buttons'>
+	<% if @session[:user].id != nil -%>
+		<div class="rbroundbox">
+			<div class="rbtop"><div></div></div>
+				<div class="rbcontent">
+					<%= link_to 'Create a new post', :country => params[ :country ], :county => params[ :county ], :place => params[ :place ], :controller => 'article', :section => params[:section], :action => 'new' %>
+				</div>
+			<div class="rbbot"><div></div></div>
+		</div>
+		<div class="rbroundbox">
+			<div class="rbtop"><div></div></div>
+				<div class="rbcontent">
+					<%= link_to 'Create a new event', :country => params[ :country ], :county => params[ :county ], :place => params[ :place ], :controller => 'article', :section => params[:section], :action => 'event' %>
+				</div>
+			<div class="rbbot"><div></div></div>
+		</div>
+		<div class="rbroundbox">
+			<div class="rbtop"><div></div></div>
+				<div class="rbcontent">
+					<%= link_to 'Start a discussion', :controller => 'discuss', :action => 'new' %>
+				</div>
+			<div class="rbbot"><div></div></div>
+		</div>
+	<% else -%>
+		<div class="rbroundbox">
+			<div class="rbtop"><div></div></div>
+				<div class="rbcontent">
+					<a href='/register'>Register now</a>
+				</div>
+			<div class="rbbot"><div></div></div>
+		</div>
+		<div class="rbroundbox">
+			<div class="rbtop"><div></div></div>
+				<div class="rbcontent">
+					<a href='/members/login'>Login</a>
+				</div>
+			<div class="rbbot"><div></div></div>
+		</div>
+	<% end -%>
+</div>

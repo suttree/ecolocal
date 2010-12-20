@@ -1,0 +1,134 @@
+<%= javascript_include_tag :defaults -%>
+
+<%= render_partial "partial/about" -%>
+
+<%= render_partial "partial/breadcrumb" -%>
+
+<%= render_partial "partial/tabs" -%>
+
+<%= render_partial "partial/members_actions" %>
+
+<div class='list'>
+
+	<h3>About <%=h @user.nickname %></h3>
+
+	<h4>Profile</h4>
+	<% if @user.description && @user.description != '' %>
+		<p><%= linkify( @user.description ) %></p>
+	<% else %>
+		<p><i><%= @user.nickname %> has not yet created a profile.</i></p>
+	<% end %>
+
+	<p>
+		<a href="" onclick="Element.toggle('articles'); return false;">Articles submitted by <%= @user.nickname -%></a> | 
+		<a href="" onclick="Element.toggle('discussions'); return false;">Discussions started by <%= @user.nickname -%></a> |
+		<a href="" onclick="Element.toggle('comments'); return false;">Comments submitted by <%= @user.nickname -%></a>
+	</p>
+
+	<div id="articles" style="display: none">
+	<% if @articles.size > 0 %>
+		<h4>Articles submitted by <%= @user.nickname %></h4>
+		<% for article in @articles %>
+			<p><li>
+				<span class='<%= cycle( 'no-stripe', 'stripe' ) -%>'>
+				<%
+					# Make sure that the article link points to a section, if one is applicable
+					if params[:section]
+						section = params[:section]
+					elsif article.tagged_with?('events')
+						section = 'events'
+					elsif article.tagged_with?('home_life')
+						section = 'home_life'
+					elsif article.tagged_with?('health')
+						section = 'health'
+					elsif article.tagged_with?('family')
+						section = 'family'
+					end
+				-%>
+
+				<% if article.counties[ 0 ] != nil %>
+					<%= link_to truncate(article.title.capitalize, 35), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :section => section, :action => 'show', :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize  %>
+				<% else %>
+					<%= link_to truncate(article.title.capitalize, 35), { :controller => 'article', :country => article.countries[0].url_name, :section => section, :action => 'show', :title => article.normalised_title  }, :title => article.title.capitalize, :alt => article.title.capitalize %>
+				<% end %>
+				</span>
+			</li></p>
+		<% end %>
+		<br/>
+	<% else %>
+		<p><li>
+			<span class='<%= cycle( 'no-stripe', 'stripe' ) -%>'>
+				<h4>Articles submitted by <%= @user.nickname %></h4>
+				<%= @user.nickname %> has not submitted any articles yet.
+			</span>
+		</li></p>
+	<% end %>
+	</div>
+	
+	<div id="discussions" style="display: none">
+	<% if @discussions.size > 0 %>
+		<h4>Discussions started by <%= @user.nickname %></h4>
+		<% for discussion in @discussions %>
+			<p><li>
+				<span class='<%= cycle( 'no-stripe', 'stripe' ) -%>'>
+					<%= link_to truncate(discussion.title.capitalize, 35), { :controller => 'discussion', :section => 'discuss', :action => 'show', :title => discussion.normalised_title  }, :title => discussion.title.capitalize, :alt => discussion.title.capitalize %>
+
+				</span>
+			</li></p>
+		<% end %>
+		<br/>
+	<% else %>
+		<p><li>
+			<span class='<%= cycle( 'no-stripe', 'stripe' ) -%>'>
+				<h4>Discussions started by <%= @user.nickname %></h4>
+				<%= @user.nickname %> has not started any discussions yet.
+			</span>
+		</li></p>
+	<% end %>
+	</div>
+
+	<div id="comments" style="display: none">
+	<h4>Comments by <%= @user.nickname %></h4>
+	<% if @comments.size > 0 %>
+		<% for comment in @comments %>
+			<p><li>
+				<span class='<%= cycle( 'no-stripe', 'stripe' ) -%>'>
+					<%
+						if comment.article != nil
+							# Make sure that the article link points to a section, if one is applicable
+							if params[:section]
+								section = params[:section]
+							elsif comment.article.tagged_with?('events')
+								section = 'events'
+							elsif comment.article.tagged_with?('home_life')
+								section = 'home_life'
+							elsif comment.article.tagged_with?('health')
+								section = 'health'
+							elsif comment.article.tagged_with?('family')
+								section = 'family'
+							end
+					-%>
+
+						'<%= comment.title -%>'
+						on
+						<% if comment.article.counties[ 0 ] != nil -%>
+							<%= link_to truncate(comment.article.title.capitalize, 35), { :controller => 'article', :country => comment.article.countries[0].url_name, :county => comment.article.counties[ 0 ].url_name, :section => section, :action => 'show', :title => comment.article.normalised_title }, :title => comment.article.title.capitalize, :alt => comment.article.title.capitalize  %>
+						<% else -%>
+							<%= link_to truncate(comment.article.title.capitalize, 35), { :controller => 'article', :country => comment.article.countries[0].url_name, :section => section, :action => 'show', :title => comment.article.normalised_title }, :title => comment.article.title.capitalize, :alt => comment.article.title.capitalize  %>
+						<% end -%>
+					<% elsif comment.title != '' -%>
+						'<%= comment.title -%>' on <%= link_to truncate(comment.discussion.title.capitalize, 35), { :controller => 'discussion', :section => 'discuss', :action => 'show', :title => comment.discussion.normalised_title }, :title => comment.discussion.title.capitalize, :alt => comment.discussion.title.capitalize -%>
+					<% end -%>
+				</span>
+			</li></p>
+		<% end %>
+	<% else %>
+		<p><li>
+			<span class='<%= cycle( 'no-stripe', 'stripe' ) -%>'>
+				<h4>Comments by <%= @user.nickname %></h4>
+				<%= @user.nickname %> has not commented on any articles or discussions yet.
+			</span>
+		</li></p>
+	<% end %>
+	</div>
+</div>

@@ -1,0 +1,38 @@
+<div class='latest-comments'>
+	<span class='misc'>
+			<img src='/images/green/comment.gif' width='10' height='10' alt='Latest comments'>&nbsp;<b>Latest comments</b>
+			<br/><br/>
+			<small>
+	        <% for comment in latest_comments() -%>
+
+				<% if comment.article_id > 0 -%>
+
+		            <% if comment.article.places[0] != nil -%>
+
+		                <%= link_to truncate(comment.title, 30), :country => comment.article.countries[0].url_name, :county => comment.article.counties[0].url_name, :place => comment.article.places[0].url_name, :controller => 'article', :action => 'show', :title => comment.article.normalised_title, :anchor => 'comment_' + comment.id.to_s -%>
+
+		            <% elsif comment.article.counties[0] != nil -%>
+
+		                <%= link_to truncate(comment.title, 30), :country => comment.article.countries[0].url_name, :county => comment.article.counties[0].url_name, :place => nil, :place => nil, :controller => 'article', :action => 'show', :title => comment.article.normalised_title, :anchor => 'comment_' + comment.id.to_s -%>
+
+		            <% else -%>
+
+		                <%= link_to truncate(comment.title, 30), :country => comment.article.countries[0].url_name, :county => nil, :place => nil, :controller => 'article', :action => 'show', :title => comment.article.normalised_title, :anchor => 'comment_' + comment.id.to_s -%>
+
+		            <% end -%>
+
+		            by <%= link_to comment.user.nickname, :county => nil, :place => nil, :controller => 'members', :action => 'index', :nickname => comment.user.nickname -%>
+
+				<% elsif comment.discussion_id > 0 -%>
+
+	                <%= link_to truncate(comment.title, 30), :controller => 'discussion', :action => 'show', :section => 'discuss', :title => comment.discussion.normalised_title, :anchor => 'comment_' + comment.id.to_s -%>
+		            by <%= link_to comment.user.nickname, :county => nil, :place => nil, :controller => 'members', :action => 'index', :nickname => comment.user.nickname -%>
+
+				<% end -%>
+
+				<br/><br/>
+
+	        <% end -%>
+		</small>
+	</span>
+</div>

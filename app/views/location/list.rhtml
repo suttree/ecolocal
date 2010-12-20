@@ -1,0 +1,40 @@
+<%= render_partial "partial/about" -%>
+
+<%= render_partial "partial/breadcrumb" -%>
+
+<%= render_partial "partial/tabs" -%>
+
+<%= render_partial "partial/contribute" -%>
+
+<div class='list'>
+
+	<% if params[:place] -%>
+
+		<% if params[:tag] -%>
+			<h3>Latest <%= de_normalise( params[:tag].capitalize ) -%> posts in <%= de_normalise( params[:place].capitalize ) -%><% if params[:page] -%>, Page <%= params[:page] -%><% end -%></h3>
+		<% else -%>
+			<h3>Latest posts in <%= de_normalise( params[:place].capitalize ) -%><% if params[:page] -%>, Page <%= params[:page] -%><% end -%></h3>
+		<% end -%>
+
+	<% elsif params[:county] -%>
+
+		<% if params[:tag] -%>
+			<h3>Latest <%= de_normalise( params[:tag].capitalize ) -%> posts in <%= params[:county].capitalize -%><% if params[:page] -%>, Page <%= params[:page] -%><% end -%></h3>
+		<% else -%>
+			<h3>Latest posts in <%= de_normalise( params[:county].capitalize ) -%><% if params[:page] -%>, Page <%= params[:page] -%><% end -%></h3>
+		<% end -%>
+
+	<% else -%>
+
+		<% if params[:tag] -%>
+			<h3>Latest <%= de_normalise( params[:tag].capitalize ) -%> posts in <%= session[:locale].upcase -%><% if params[:page] -%>, Page <%= params[:page] -%><% end -%></h3>
+		<% else -%>
+			<h3>Latest posts in <%= params[:country].upcase -%><% if params[:page] -%>, Page <%= params[:page] -%><% end -%></h3>
+		<% end -%>
+	<% end -%>
+
+	<% cache( :country => params[:country], :county => params[:county], :place => params[:place], :section => params[:section], :tag => params[:tag], :page => params[:page], :order => params[:order], :logged_in => session[:logged_in] ) do -%>
+		<%= render_partial "partial/articles" -%>
+	<% end -%>
+
+</div>

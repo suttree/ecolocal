@@ -1,0 +1,87 @@
+<fieldset class='sections'>
+	<p>
+	<legend><label for="local_events_type">* Event type</label></legend>
+	One off: <input type='radio' name='event_type' onclick="Element.hide('recurring'); Element.show('one_off');" value='one_off' checked='on' /> |
+	Recurring: <input type='radio' name='event_type' onclick="Element.hide('one_off'); Element.show('recurring');" value='recurring' /></p>
+
+	<div id='one_off'>
+		<p><label for="local_events_start_date">* Start date</label><br/>
+		<%= date_select 'local_events', 'start_date' %></p>
+
+		<p><label for="local_events_end_date">End date</label><br/>
+		<%= date_select 'local_events', 'end_date' %></p>
+	</div>
+
+	<div id='recurring' style="display: none;">
+		<br/>
+		<div id='recurring_week_month'>
+			<input type='radio' name='recurring_period' value='recurring_week_month' checked='checked' />
+			The <select id="local_event_week" name="local_event[week][]">
+				<option value="First">First</option>
+				<option value="Second">Second</option>
+				<option value="Third">Third</option>
+				<option value="Fourth">Fourth</option>
+				<option value="Last">Last</option>
+			</select>
+			<select id="local_event_day" name="local_event[day][]">
+				<option value="Sunday">Sunday</option>
+				<option value="Monday">Monday</option>
+				<option value="Tuesday">Tuesday</option>
+				<option value="Wednesday">Wednesday</option>
+				<option value="Thursday">Thursday</option>
+				<option value="Friday">Friday</option>
+				<option value="Saturday">Saturday</option>
+			</select> of the month.
+		</div>
+			<%= link_to_remote 'Add another recurrence...', :update => 'recurring_week_month', :position => :bottom, :url => { :country => params[:country], :county => params[:county], :place => params[:place], :controller => 'article', :action => 'add_recurring_week_month' } -%>
+
+		<p>
+			<input type='radio' name='recurring_period' value='recurring_month_day' />
+			Every
+			<input type='checkbox' name='local_event[month_day][]' value='Monday' /> Mon
+			<input type='checkbox' name='local_event[month_day][]' value='Tuesday' /> Tue
+			<input type='checkbox' name='local_event[month_day][]' value='Wednesday' /> Wed
+			<input type='checkbox' name='local_event[month_day][]' value='Thursday' /> Thu
+			<input type='checkbox' name='local_event[month_day][]' value='Friday' /> Fri
+			<input type='checkbox' name='local_event[month_day][]' value='Saturday' /> Sat
+			<input type='checkbox' name='local_event[month_day][]' value='Sunday' /> Sun.
+		</p>
+
+		<p>
+			<input type='radio' name='recurring_period' value='recurring_month_index' />
+			The <select id="_local_event_month_index" name="local_event[month_index][]">
+				<option value="1">1st</option>
+				<option value="2">2nd</option>
+				<option value="3">3rd</option>
+				<option value="4">4th</option>
+				<option value="5">5th</option>
+				<option value="6">6th</option>
+				<option value="7">7th</option>
+				<option value="8">8th</option>
+				<option value="9">9th</option>
+				<option value="10">10th</option>
+				<option value="11">11th</option>
+				<option value="12">12th</option>
+				<option value="13">13th</option>
+				<option value="14">14th</option>
+				<option value="15">15th</option>
+				<option value="16">16th</option>
+				<option value="17">17th</option>
+				<option value="18">18th</option>
+				<option value="19">19th</option>
+				<option value="20">20th</option>
+				<option value="21">21st</option>
+				<option value="22">22nd</option>
+				<option value="23">23rd</option>
+				<option value="24">24th</option>
+				<option value="25">25th</option>
+				<option value="26">26th</option>
+				<option value="27">27th</option>
+				<option value="28">28th</option>
+				<option value="29">29th</option>
+				<option value="30">30th</option>
+				<option value="31">31st</option>
+			</select> of every month.
+		</p>
+	</div>
+</fieldset>

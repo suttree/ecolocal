@@ -1,0 +1,56 @@
+<div class='strapline'>
+	<div class='breadcrumb'>
+
+    <% if params[:place] -%>
+
+        <%= link_to 'Home', :controller => 'home', :action => 'index' -%> &raquo;
+        <%= link_to de_normalise(@params[:country].upcase), :controller => 'location', :action => 'country', :page => nil if @params[:country] -%> &raquo;
+        <%= link_to de_normalise(@params[:county].titleize), :controller => 'location', :action => 'county', :page => nil if @params[:county] -%> &raquo;
+
+        <% if @params[:section] -%>
+            <%= link_to de_normalise(@params[:place].titleize), :controller => 'location', :action => 'place', :page => nil if @params[:place] -%>
+            &raquo; <%= de_normalise(@params[:section].titleize) -%>
+        <% else -%>
+            <%=h de_normalise(@params[:place].titleize) -%>
+        <% end -%>
+
+    <% elsif params[:county] -%>
+
+        <%= link_to 'Home', :controller => 'home', :action => 'index' -%> &raquo;
+        <%= link_to de_normalise(@params[:country].upcase), :controller => 'location', :action => 'country', :page => nil if @params[:country] -%> &raquo;
+        <%= link_to de_normalise(@params[:county].titleize), :controller => 'location', :action => 'county', :page => nil if @params[:county] -%>
+
+        <% if @params[:section] -%>
+            &raquo; <%= de_normalise(@params[:section].titleize) -%>
+        <% end -%>
+     
+    <% elsif controller.controller_name == 'members' && @page_title -%>
+
+        <%= link_to 'Home', :controller => 'home', :action => 'index', :page => nil -%> &raquo;
+        <%= link_to 'Members', :controller => 'members', :action => 'index' -%> &raquo; <%= @page_title -%>
+
+    <% elsif controller.controller_name == 'members' -%>
+
+        <%= link_to 'Home', :controller => 'home', :action => 'index', :page => nil -%> &raquo; Members
+
+    <% elsif @page_title -%>
+
+        <%= link_to 'Home', :controller => 'home', :action => 'index', :page => nil -%> &raquo; <%= @page_title -%>
+
+    <% else -%>
+
+        <%= link_to 'Home', :controller => 'home', :action => 'index', :page => nil -%> &raquo;
+        <%= link_to de_normalise(@params[:country].upcase), :controller => 'location', :action => 'country', :page => nil if @params[:country] -%>
+
+        <% if @params[:section] -%>
+		&raquo; <%= de_normalise(@params[:section].titleize) -%>
+        <% end -%>
+
+    <% end -%>
+
+    <% if flash[:notice] != nil -%>
+        &raquo; <span style="color: #fff;"><i><%= flash[:notice] -%></i></span>
+    <% end -%>
+
+	</div>
+</div>

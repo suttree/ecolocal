@@ -1,0 +1,176 @@
+<%= javascript_include_tag :defaults -%>
+
+<%= render_partial "partial/about" -%>
+
+<div class='discussions'>
+	<span class='icon'>
+		<img src='/images/green/comment.gif' width='20' height='20'/>
+	</span>
+	<h2>Discussions</h2>
+	<ul>
+	<% for discussion in @latest_discussions -%>
+		<%= link_to truncate( discussion.title, 35 ), { :controller => 'discussion', :section => 'discuss', :action => 'show', :title => discussion.normalised_title}, :title => discussion.title, :alt => discussion.title-%>
+	<% end -%>
+	<div class="rbroundbox-home">
+		<div class="rbtop-home"><div></div></div>
+			<div class="rbcontent-home">
+				<span class='more'>
+					<a href='/discuss/'>And many more &raquo;</a>
+				</span>
+			</div>
+		<div class="rbbot-home"><div></div></div>
+	</div>
+	</ul>
+</div>
+
+<div class='local_news'>
+	<span class='icon'>
+		<img src='/images/green/document.gif'width='20' height='20'/>
+	</span>
+	<h2>Local news</h2>
+	<div id='search_local_news' <% if params[:locale] != 'updated' -%>style="display: none"<% end -%>>
+		<div class='tell_us'>
+			Tell us where you live...
+			<form action='/search/'>
+				<input type='text' name='q'/>
+				<input type='submit' value='Search' />
+			</form>
+
+			<i><% if session[:locale] === 'au' -%>
+				<span class='eg'>E.g. Canberra, Balgowlah or 0800</span>
+			<% elsif session[:locale] === 'uk' -%>
+				<span class='eg'>E.g. Cornwall, Sidcup or WC1A 1UP</span>
+			<% elsif session[:locale] === 'us' -%>
+				<span class='eg'>E.g. California, Lowell or 90210</span>
+			<% end -%></i>
+
+			<br/>
+			<br/>
+
+			<span class="flags">
+				<% if session[:locale] === 'au' -%>
+					<a href='/locale/au'><img src='/images/flags_png/au_small.png' class='flag_icon_current' alt='flag icon' title='ecolocal - Australia' border='0' /></a>
+				<% else -%>
+					<a href='/locale/au'><img src='/images/flags_png/au_small.png' class='flag_icon' alt='flag icon' title='ecolocal - Australia' border='0' /></a>
+				<% end -%>
+
+				<% if session[:locale] === 'uk' -%>
+					<a href='/locale/gb'><img src='/images/flags_png/uk_small.png' class='flag_icon_current' alt='flag icon' title='ecolocal - United Kingdom' border='0' /></a>
+				<% else -%>
+					<a href='/locale/gb'><img src='/images/flags_png/uk_small.png' class='flag_icon' alt='flag icon' title='ecolocal - United Kingdom' border='0' /></a>
+				<% end -%>
+
+				<% if session[:locale] === 'us' -%>
+					<a href='/locale/us'><img src='/images/flags_png/us_small.png' class='flag_icon_current' alt='flag icon' title='ecolocal - United States' border='0' /></a>
+				<% else -%>
+					<a href='/locale/us'><img src='/images/flags_png/us_small.png' class='flag_icon' alt='flag icon' title='ecolocal - United States' border='0' /></a>
+				<% end -%>
+			</span>
+
+			<% if session[:locale] === 'au' -%>
+				<span class='more'><a href='/au/'>All news in Australia &raquo;</a></span>
+			<% elsif session[:locale] === 'uk' -%>
+				<span class='more'><a href='/uk/'>All news in the UK &raquo;</a></span>
+			<% elsif session[:locale] === 'us' -%>
+				<span class='more'><a href='/us/'>All news in the US &raquo;</a></span>
+			<% end -%>
+
+		</div>
+		<p>
+			<small>
+				<a href="" onclick="Element.toggle('latest_local_news'); Element.toggle('search_local_news'); return false;" class='toggle'>Browse&nbsp;all&nbsp;local&nbsp;news?</a>
+			</small>
+		</p>
+	</div>
+
+	<div id="latest_local_news" class="latest_local_news" <% if params[:locale] == 'updated' -%>style="display: none;"<% end -%>>
+		<ul>
+		<% for article in @latest_articles -%>
+
+			<%
+				# Make sure that the article link points to a section, if one is applicable
+				if article.tagged_with?('events')
+					section = 'events'
+				elsif params[:section]
+					section = params[:section]
+				elsif article.tagged_with?('home_life')
+					section = 'home_life'
+				elsif article.tagged_with?('health')
+					section = 'health'
+				elsif article.tagged_with?('family')
+					section = 'family'
+				end
+			-%>
+
+			<% if article.places && article.places.size > 0 -%>
+
+				<%= link_to truncate(article.title, 35), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :place => article.places[ 0 ].url_name, :section => section, :action => 'show', :title => article.normalised_title }, :title => article.title, :alt => article.title-%>
+
+			<% elsif article.counties.size > 0 -%>
+
+				<%= link_to truncate(article.title, 35), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :section => section, :action => 'show', :title => article.normalised_title }, :title => article.title, :alt => article.title-%>
+
+			<% else -%>
+
+				<%= link_to truncate(article.title, 35), { :controller => 'article', :country => article.countries[0].url_name, :section => section, :action => 'show', :title => article.normalised_title }, :title => article.title, :alt => article.title-%>
+
+			<% end -%>
+
+		<% end -%>
+
+		<div class="rbroundbox-home">
+			<div class="rbtop-home"><div></div></div>
+				<div class="rbcontent-home">
+					<span class='more'>
+						<a href='/<%= session[:locale] -%>/'>And many more &raquo;</a>
+					</span>
+				</div>
+			<div class="rbbot-home"><div></div></div>
+		</div>
+		</ul>
+
+		<p>
+			<small>
+				<a href="" onclick="Element.toggle('latest_local_news'); Element.toggle('search_local_news'); return false;" class='toggle'>Search for local news in your area?</a>
+			</small>
+		</p>
+
+	</div>
+
+</div>
+
+<div class='events'>
+	<span class='icon'>
+		<img src='/images/green/events.gif'width='20' height='20'/>
+	</span>
+	<h2>Events</h2>
+	<ul>
+	<% for article in @latest_events -%>
+
+		<% if article.places.size > 0 -%>
+
+			<%= link_to truncate(article.title, 35), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :place => article.places[ 0 ].url_name, :section => 'events', :action => 'show', :title => article.normalised_title }, :title => article.title, :alt => article.title-%>
+
+		<% elsif article.counties.size > 0 -%>
+
+			<%= link_to truncate(article.title, 35), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :section => 'events', :action => 'show', :title => article.normalised_title }, :title => article.title, :alt => article.title-%>
+
+		<% else -%>
+
+			<%= link_to truncate(article.title, 35), { :controller => 'article', :country => article.countries[0].url_name, :section => 'events', :action => 'show', :title => article.normalised_title }, :title => article.title, :alt => article.title-%>
+
+		<% end -%>
+
+	<% end -%>
+
+	<div class="rbroundbox-home">
+		<div class="rbtop-home"><div></div></div>
+			<div class="rbcontent-home">
+				<span class='more'>
+					<a href='/<%= session[:locale] -%>/events/'>And many more &raquo;</a>
+				</span>
+			</div>
+		<div class="rbbot-home"><div></div></div>
+	</div>
+	</ul>
+</div>

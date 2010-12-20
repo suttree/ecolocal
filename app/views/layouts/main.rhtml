@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<%= render_partial "partial/page_title" %>
+	<meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="robots" content="index, follow" />
+    <% if @article.is_a?(Article) -%>
+    <meta name="description" content="<%= @article.title -%> - <%= truncate(strip_links(@article.body),100) if @article.body != nil -%>." />
+    <% elsif @discussion.is_a?(Discussion) -%>
+    <meta name="description" content="<%= @discussion.title -%> - <%= truncate(strip_links(@discussion.body),100) if @discussion.body != nil -%>." />
+    <% else -%>
+    <meta name="description" content="Help us build the best source for healthy living and local news by submitting your tips, events and links so that we can all learn to live a more eco-friendly lifestyle." />
+    <% end -%>
+    <meta name="keywords" content="ecolocal, suttree, duncan gough, jane gough, ecoblog, eco blogs, eco blogging, community blog, social blog, uk, uk eco, days out, family events, things to do, home life, health, family, eco local news, local news, earth blog, enviro blog, sustainable lifestyle, community news, healthy living, green alternatives" />
+	<meta name="author" content="ecolocal - Duncan Gough, Jane Gough" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="alternate" type="application/rss+xml" title="ecolocal RSS Feed" href="http://feeds.feedburner.com/ecolocal" />
+	<%= stylesheet_link_tag 'ecolocal' %>
+	<% if controller.controller_name == 'article' && controller.action_name == 'show' -%>
+	    <%= GMap.header :host => @request.host if @map %>
+	    <%= @map.to_html if @map %>
+	<% end -%>
+</head>
+<body>
+	<a name="top"></a>
+	<%= render_partial "partial/page_top" %>
+
+	<% if controller.controller_name == 'location' || controller.controller_name == 'section' -%>
+		<div class='main_image'>
+	<% else -%>
+		<div class='main'>
+	<% end -%>
+
+			<%= @content_for_layout %>
+	</div>
+	
+  <!-- PMOG -->
+  <div class='htreasure' style='display: none;'>
+    <span class="craftor pmogcard">
+      <a class="url fn" href="http://www.bud.com/members/suttree">suttree</a>
+    </span>
+    <div class='item'>
+      <a class="url fn" href="http://www.bud.com/items/sombrero-fallout">Sombrero Fallout</a>
+      <span class='id'>
+        904c2f2f-4e79-40b4-8830-16b4909b1948
+      </span>
+      <span class='description'>
+        The wearer of this fallout will receive many funny looks, but there can be no doubt that this is truly a king Sombrero in a world reduced to poor imitations.
+      </span>
+    </div>
+  </div>
+      
+       
+	<div class="footer">
+		<div class='footer_search'>
+			Tell us where you live...
+			<form action='/search/'>
+				<input type='text' name='q'/>
+				<input type='submit' value='Search' />
+			</form>
+
+			<i><% if session[:locale] === 'au' -%>
+				<span class='eg'>E.g. Canberra, Balgowlah or 0800</span>
+			<% elsif session[:locale] === 'uk' -%>
+				<span class='eg'>E.g. Cornwall, Sidcup or WC1A 1UP</span>
+			<% elsif session[:locale] === 'us' -%>
+				<span class='eg'>E.g. California, Lowell or 90210</span>
+			<% end -%></i>
+
+		</div>
+
+	    All trademarks and copyrights on this page are owned by their respective owners. Comments are owned by the Poster.
+	    <br/>
+		<a href="/help/about">About</a>
+		<a href="/help/contact">Contact</a>
+		<a href="/help">Help</a>
+		<a href="http://feeds.feedburner.com/ecolocal" title="Subscribe to the feed" rel="alternate" type="application/rss+xml">RSS</a>
+		<img src="/images/feed.png" alt="Link to RSS feed" class='rss' />
+	</div>
+  <!-- Start Quantcast tag -->
+  <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+  <script type="text/javascript">
+  _qacct="p-fe9VW9RKRqZGY";quantserve();</script>
+  <noscript>
+  <img src="http://pixel.quantserve.com/pixel/p-fe9VW9RKRqZGY.gif" style="display: none" height="1" width="1" alt="Quantcast"/></noscript>
+  <!-- End Quantcast tag -->
+	<script src="/mint/index.php?js" type="text/javascript"></script>
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  try {
+  var pageTracker = _gat._getTracker("UA-148111-6");
+  pageTracker._trackPageview();
+  } catch(err) {}</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<p>
+<fieldset class='sections'>
+<legend><label for="article_section">Sections - <i>select any, or none of the following relevant categories</i></label></legend>
+
+<table cellspacing='5' width='100%'>
+    <tr>
+        <th align='left'>
+            <input type='checkbox' name='article[section]' value='home_life' <% if params[:section] == 'home_life' %>checked='checked'<% end %> />
+            Home life
+        </th><th align='left'>
+            <input type='checkbox' name='article[section]' value='health' <% if params[:section] == 'health' %>checked='checked'<% end %> />
+            Health
+        </th><th align='left'>
+            <input type='checkbox' name='article[section]' value='family' <% if params[:section] == 'family' %>checked='checked'<% end %> />
+            Family
+        </th>
+    </tr><tr>
+        <td valign='top'>
+            <i>for tradesmen, suppliers, transport, gardening, recycling and anything else for where you live.</i>
+        </td><td valign='top'>
+            <i>for food, diet, alt. therapy, exercise, sports clubs and anything else to maintain your wellbeing.</i>
+        </td><td valign='top'>
+            <i>for places to go, activites, education, parenthood, childcare and the people around you.</i>
+        </td>
+    </tr>
+</table>
+</fieldset>
+</p>

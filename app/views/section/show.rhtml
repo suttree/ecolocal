@@ -1,0 +1,63 @@
+<h2><%=h @article.title %></h2>
+
+<p>
+<%= linkify( @article.body ) if @article.body %>
+<%= linkify( @article.url ) if @article.url %>
+<br/>
+<% if @article.image %>
+    <%= image_tag url_for_file_column( "article", "image" ), :size => '50x50', :alt => 'Image for ' + @article.title, :title => 'Image for ' + @article.title %>
+<% end %>
+
+<% if @article.audio %>
+	<p align='left'><object type="application/x-shockwave-flash" width="400" height="20"
+	data="/swf/xspf_player_slim.swf?song_url=<%= url_for_file_column( "article", "audio" ) %>&song_title=<%= @article.title %>">
+	<param name="movie" 
+	value="/swf/xspf_player_slim.swf?song_url=<%= url_for_file_column( "article", "audio" ) %>&song_title=<%= @article.title %>" />
+	</object>
+	<br/>
+	<a href='<%= url_for_file_column( "article", "audio" ) %>' alt='Audio link' title='<%= @article.title %> - audio story'>Right-click this link to download this story</a>.
+    </p>
+<% end %>
+
+</p>
+
+<% if @session[:user] %>
+    <small>
+        <b>Was this article useful?</b> <%= link_to 'Yes', :action => 'good_article', :id => @article %> / <%= link_to 'No', :action => 'bad_article', :id => @article %>
+        <br/>
+        <a href='#reply'>Reply to this article</a> |
+        <%= link_to 'Report this article', :action => 'report_article', :id => @article %>
+    </small>
+<% end %>
+
+<br/>
+<br/>
+
+<b>Comments:</b>
+<ol id="comment-" class="comment-list">
+    <%= render_collection_of_partials "commentset", @article.comments.sort_by {|c| c.id}.reject { |c| c.parent_id } %>
+</ol>
+
+<% if @session[:user] %>
+    <a name="reply">
+    <b>Enter your comment:</b>
+    <br/>
+    Fields marked with an asterisk* are mandatory. All HTML tags will be escaped. http:// strings in comments will be auto-linked.
+    <br/>
+
+    <%= start_form_tag :action => 'new_comment', :id => @article.id  %>
+
+        <p><label for="comment_title">Title</label><br/>
+        <%= text_field 'comment', 'title'  %></p>
+
+        <p><label for="comment_body">Body</label><br/>
+        <%= text_area 'comment', 'body', :cols => 30, :rows => 10  %></p>
+
+        <%= submit_tag "Comment" %>
+    <%= end_form_tag %>
+
+    <%= link_to 'Edit', :action => 'edit', :id => @article %> |
+    <%= link_to 'Back', :action => 'place' %>
+<% else %>
+    <p>Login to comment on this article</p>
+<% end %>

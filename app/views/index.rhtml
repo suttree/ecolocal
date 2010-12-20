@@ -1,0 +1,146 @@
+<% if @params[:place] %>
+
+    <%= link_to 'Home', :country => @params[:country], :controller => 'search', :action => 'index' %> &raquo;
+    <%= link_to de_normalise(@params[:country].capitalize), :controller => 'location', :action => 'country' if @params[:country] %> &raquo;
+    <%= link_to de_normalise(@params[:county].capitalize), :controller => 'location', :action => 'county' if @params[:county] %> &raquo;
+    <%= link_to de_normalise(@params[:place].capitalize), :controller => 'location', :action => 'place' if @params[:place] %>
+
+<% elsif @params[:county] %>
+
+    <%= link_to 'Home', :country => @params[:country], :controller => 'search', :action => 'index' %> &raquo;
+    <%= link_to de_normalise(@params[:country].capitalize), :controller => 'location', :action => 'country' if @params[:country] %> &raquo;
+    <%= link_to de_normalise(@params[:county].capitalize), :controller => 'location', :action => 'county' if @params[:county] %>
+
+<% else %>
+
+    <%= link_to 'Home', :country => @params[:country], :controller => 'search', :action => 'index' %> &raquo;
+    <%= link_to de_normalise(@params[:country].capitalize), :controller => 'location', :action => 'country' if @params[:country] %>
+
+<% end %>
+
+<div class='ad'>
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-8538574306088468";
+	google_ad_width = 468;
+	google_ad_height = 60;
+	google_ad_format = "468x60_as";
+	google_ad_type = "text";
+	google_ad_channel ="";
+	google_color_border = "336699";
+	google_color_bg = "FFFFFF";
+	google_color_link = "0000FF";
+	google_color_url = "008000";
+	google_color_text = "000000";
+	//--></script>
+	<script type="text/javascript"
+	  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script>
+</div>
+
+<div class='left'>
+	<span class='title'><%=h @article.title.capitalize %></span>
+	<%= linkify( @article.body ) if @article.body %>
+	<%= linkify( @article.url ) if @article.url %>
+	<br/>
+	<% if @article.image %>
+	    <%= image_tag url_for_file_column( "article", "image" ), :size => '50x50', :alt => 'Image for ' + @article.title, :title => 'Image for ' + @article.title %>
+	<% end %>
+
+	<% if @article.audio %>
+		<p align='left'><object type="application/x-shockwave-flash" width="400" height="20"
+		data="/swf/xspf_player_slim.swf?song_url=<%= url_for_file_column( "article", "audio" ) %>&song_title=<%= @article.title %>">
+		<param name="movie" 
+		value="/swf/xspf_player_slim.swf?song_url=<%= url_for_file_column( "article", "audio" ) %>&song_title=<%= @article.title %>" />
+		</object>
+		<br/>
+		<a href='<%= url_for_file_column( "article", "audio" ) %>' alt='Audio link' title='<%= @article.title %> - audio story'>Right-click this link to download this story</a>.
+	    </p>
+	<% end %>
+
+	<% if @session[:user] %>
+		<br/>
+		<span class='title'>
+		    <small>
+		        <a href='#reply'>Reply to this</a> / <%= link_to 'Report this', :action => 'report_article', :id => @article %>
+				<span class='useful'>
+			        <b>Was this article useful?</b> <%= link_to 'Yes', :action => 'good_article', :id => @article %> / <%= link_to 'No', :action => 'bad', :id => @article %>
+				</span>
+		    </small>
+		</span>
+	<% end %>
+	<br/>
+	<b>Comments:</b>
+	<ol id="comment-" class="comment-list">
+	    <%= render_collection_of_partials "commentset", @article.comments.sort_by {|c| c.id}.reject { |c| c.parent_id } %>
+	</ol>
+
+	<% if @session[:user] %>
+	    <a name="reply">
+	    <b>Enter your comment:</b>
+	    <br/>
+		<ul>
+	    	<li>Fields marked with an asterisk* are mandatory.</li>
+			<li>http:// strings in comments will be auto-linked.</li>
+		</ul>
+	    <%= start_form_tag :action => 'new_comment', :id => @article.id  %>
+
+	        <p><label for="comment_title">*Title</label><br/>
+	        <%= text_field 'comment', 'title'  %></p>
+
+	        <p><label for="comment_body">*Body</label><br/>
+	        <%= text_area 'comment', 'body', :cols => 30, :rows => 10  %></p>
+
+	        <%= submit_tag "Comment" %>
+	    <%= end_form_tag %>
+	<% else %>
+	    Login to comment on this article.
+	<% end %>
+</div>
+<div class='right'>
+	<span class='title'>Groups in this area</span>
+	<div class='content'>
+		<small>
+			<% if @groups %>
+				<% for group in @groups %>
+					<a href='<%=h group.url_name %>'><%=h group.name %>
+				<% end %>
+				<hr/>
+				<a href=''>More groups</a>
+				<a href=''>Create a new group</a>
+			<% else %>
+				<i>There are no active groups in this area.</i>
+				<a href=''>Why not start one today?</a>
+			<% end %>
+		</small>
+	</div>
+</div>
+<div class='right'>
+	<span class='title'>Contribute</span>
+	<div class='content'>
+		<small>
+			<% if @session[:user] %>
+				<% if params[ :section ] %>
+					<% if params[ :county ] %>
+					    <%= link_to 'Tell us your news', :country => params[ :country ], :county => params[ :county ], :section => params[ :section ], :controller => 'article', :action => 'news' %>
+					    <%= link_to 'Tell us what\'s on', :country => params[ :country ], :county => params[ :county ], :section => params[ :section ], :controller => 'article', :action => 'whats_on' %>
+					    <%= link_to 'Tell us a story', :country => params[ :country ], :county => params[ :county ], :section => params[ :section ], :controller => 'article', :action => 'story' %>
+					    <%= link_to 'Save an interesting link', :country => params[ :country ], :county => params[ :county ], :section => params[ :section ], :controller => 'article', :action => 'url' %>
+					    <%= link_to 'Upload a picture', :country => params[ :country ], :county => params[ :county ], :section => params[ :section ], :controller => 'article', :action => 'picture' %>
+					<% else %>
+					    <%= link_to 'Tell us your news', :country => params[ :country ], :section => params[ :section ], :controller => 'article', :action => 'news' %>
+					    <%= link_to 'Tell us what\'s on', :country => params[ :country ], :section => params[ :section ], :controller => 'article', :action => 'whats_on' %>
+					    <%= link_to 'Tell us a story', :country => params[ :country ], :section => params[ :section ], :controller => 'article', :action => 'story' %>
+					    <%= link_to 'Save an interesting link', :country => params[ :country ], :section => params[ :section ], :controller => 'article', :action => 'url' %>
+					    <%= link_to 'Upload a picture', :country => params[ :country ], :section => params[ :section ], :controller => 'article', :action => 'picture' %>
+					<% end %>
+				<% else %>
+				    <%= link_to 'Tell us your news', :country => params[ :country ], :controller => 'article', :action => 'news' %>
+				    <%= link_to 'Tell us what\'s on', :country => params[ :country ], :controller => 'article', :action => 'whats_on' %>
+				    <%= link_to 'Tell us a story', :country => params[ :country ], :controller => 'article', :action => 'story' %>
+				    <%= link_to 'Save an interesting link', :country => params[ :country ], :controller => 'article', :action => 'url' %>
+				    <%= link_to 'Upload a picture', :country => params[ :country ], :controller => 'article', :action => 'picture' %>
+				<% end %>
+			<% end %>
+		</small>
+	</div>
+</div>

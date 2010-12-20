@@ -1,0 +1,611 @@
+# Logfile created on Sun Dec 19 10:36:12 +0000 2010 by /
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 1 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 132) LIMIT 1[0m
+  [4;36;1mArticle Load (0.000000)[0m   [0;1mSELECT * FROM articles WHERE (articles.id = 3415) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 3415 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 3415 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 3415 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 2) LIMIT 1[0m
+  [4;36;1mArticle Load (0.000000)[0m   [0;1mSELECT * FROM articles WHERE (articles.id = 2351) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 2351 ) [0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 2351 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 2351 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 132) LIMIT 1[0m
+  [4;36;1mArticle Load (0.000000)[0m   [0;1mSELECT * FROM articles WHERE (articles.id = 704) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 704 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 704 ) [0m
+  [4;35;1mJoin Table Columns (0.004001)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 704 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 132) LIMIT 1[0m
+  [4;36;1mArticle Load (0.000000)[0m   [0;1mSELECT * FROM articles WHERE (articles.id = 459) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 459 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 459 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.084005)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 459 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 132) LIMIT 1[0m
+  [4;36;1mArticle Load (0.000000)[0m   [0;1mSELECT * FROM articles WHERE (articles.id = 920) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 920 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 920 ) [0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 920 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 1744) LIMIT 1[0m
+  [4;36;1mDiscussion Load (0.000000)[0m   [0;1mSELECT * FROM discussions WHERE (discussions.id = 56) LIMIT 1[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 1425) LIMIT 1[0m
+  [4;36;1mArticle Load (0.000000)[0m   [0;1mSELECT * FROM articles WHERE (articles.id = 3547) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 3547 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.004001)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 3547 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 3547 ) [0m
+  [4;35;1mUser Load (0.004000)[0m   [0mSELECT * FROM users WHERE (users.id = 2) LIMIT 1[0m
+  [4;36;1mArticle Load (0.000000)[0m   [0;1mSELECT * FROM articles WHERE (articles.id = 3546) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 3546 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 3546 ) [0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 3546 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 2) LIMIT 1[0m
+Rendered partial/_latest_comments (0.17601)
+Rendered partial/_affiliates (0.00400)
+Cached fragment: www.ecolocal.com/us/florida/events/show/fort_pierce_downtown_farmers_market (0.00000)
+Rendered partial/_page_title (0.00000)
+Rendered partial/_page_top (0.00000)
+Completed in 0.21201 (4 reqs/sec) | Rendering: 0.06800 (32%) | DB: 0.13201 (62%) | 200 OK [http://www.ecolocal.com/us/florida/events/show/fort_pierce_downtown_farmers_market]
+
+
+Processing LocationController#county_tag (for 66.249.71.171 at 2010-12-19 10:36:30) [GET]
+  Session ID: 080eadfd730405ff82fdc6405ed884c8
+  Parameters: {"county"=>"lancashire", "action"=>"county_tag", "country"=>"uk", "tag"=>"home_life", "controller"=>"location"}
+Cookie set: remember_me=; domain=.ecolocal.com; path=/; expires=Sun, 19 Dec 2010 10:36:30 GMT
+Cookie set: remember_me=; domain=.ecolocal.co.uk; path=/; expires=Sun, 19 Dec 2010 10:36:30 GMT
+Fragment read: www.ecolocal.com/uk/lancashire/tag/home_life (0.00800)
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties WHERE (counties.`url_name` = 'lancashire' ) LIMIT 1[0m
+  [4;35;1mArticle Load (0.004000)[0m   [0mSELECT count(*) as count
+ FROM articles, articles_counties, tags, tags_articles
+ WHERE articles.id = tags_articles.article_id
+ AND articles.id = articles_counties.article_id
+ AND tags_articles.tag_id = tags.id
+ AND tags.name = 'home_life'
+ AND articles_counties.county_id = 173[0m
+  [4;36;1mArticle Load (0.004001)[0m   [0;1mSELECT DISTINCT articles.* FROM articles
+ WHERE (SELECT COUNT(articles_tags.article_id) FROM articles_tags, tags
+ WHERE articles_tags.tag_id = tags.id
+ AND articles_tags.article_id = articles.id
+ AND (tags.name = 'home_life')) > 0 LIMIT 0, 10[0m
+Rendering actionlistlayoutfalse within layouts/main
+Rendering location/list
+Rendered partial/_logo (0.00000)
+Rendered partial/_about (0.00000)
+Rendered partial/_breadcrumb (0.00000)
+Rendered partial/_tabs (0.00400)
+Rendered partial/_contribute (0.00000)
+Fragment read: www.ecolocal.com/uk/lancashire/tag/home_life (0.00000)
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_tags[0m
+  [4;36;1mTag Load (0.000000)[0m   [0;1mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 4 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 4 ) [0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 4 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 2) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_tags[0m
+  [4;35;1mTag Load (0.000000)[0m   [0mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 5 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 5 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 5 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 2) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_tags[0m
+  [4;36;1mTag Load (0.000000)[0m   [0;1mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 7 ) [0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 7 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 7 ) [0m
+  [4;35;1mUser Load (0.004000)[0m   [0mSELECT * FROM users WHERE (users.id = 1) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_tags[0m
+  [4;35;1mTag Load (0.068004)[0m   [0mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 8 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 8 ) [0m
+  [4;36;1mJoin Table Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 8 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 1) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_tags[0m
+  [4;36;1mTag Load (0.000000)[0m   [0;1mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 9 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 9 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 9 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 1) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_tags[0m
+  [4;35;1mTag Load (0.000000)[0m   [0mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 13 ) [0m
+  [4;36;1mJoin Table Columns (0.004001)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 13 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 13 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 1) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_tags[0m
+  [4;36;1mTag Load (0.000000)[0m   [0;1mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 15 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 15 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 15 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 1) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.004001)[0m   [0;1mSHOW FIELDS FROM articles_tags[0m
+  [4;35;1mTag Load (0.000000)[0m   [0mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 16 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 16 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 16 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 1) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_tags[0m
+  [4;36;1mTag Load (0.000000)[0m   [0;1mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 17 ) [0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 17 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 17 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 1) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_tags[0m
+  [4;35;1mTag Load (0.000000)[0m   [0mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 18 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.064003)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 18 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 18 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 1) LIMIT 1[0m
+Rendered partial/_paginator (0.00000)
+Rendered partial/_articles (0.22801)
+Cached fragment: www.ecolocal.com/uk/lancashire/tag/home_life (0.00000)
+Rendered partial/_page_title (0.00400)
+Rendered partial/_page_top (0.00000)
+Completed in 0.25201 (3 reqs/sec) | Rendering: 0.07200 (28%) | DB: 0.17201 (68%) | 200 OK [http://www.ecolocal.com/uk/lancashire/tag/home_life]
+
+
+Processing ArticleController#show (for 67.195.112.151 at 2010-12-19 10:36:39) [GET]
+  Session ID: a20bbb89ceb2fd255e371fed51834561
+  Parameters: {"title"=>"barnard_castle_farmers_market", "county"=>"county_durham", "country"=>"uk", "action"=>"show", "controller"=>"article", "section"=>"events"}
+Cookie set: remember_me=; domain=.ecolocal.com; path=/; expires=Sun, 19 Dec 2010 10:36:39 GMT
+Cookie set: remember_me=; domain=.ecolocal.co.uk; path=/; expires=Sun, 19 Dec 2010 10:36:39 GMT
+Fragment read: show_article (0.00000)
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries WHERE (countries.`url_name` = 'uk' ) LIMIT 1[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties WHERE (counties.`url_name` = 'county_durham' ) LIMIT 1[0m
+  [4;35;1mArticle Load Including Associations (0.008000)[0m   [0mSELECT articles.`id` AS t0_r0, articles.`user_id` AS t0_r1, articles.`title` AS t0_r2, articles.`normalised_title` AS t0_r3, articles.`body` AS t0_r4, articles.`url` AS t0_r5, articles.`address` AS t0_r6, articles.`postcode` AS t0_r7, articles.`image` AS t0_r8, articles.`audio` AS t0_r9, articles.`updated_on` AS t0_r10, articles.`created_on` AS t0_r11, countries.`id` AS t1_r0, countries.`name` AS t1_r1, countries.`url_name` AS t1_r2, countries.`description` AS t1_r3, counties.`id` AS t2_r0, counties.`country_id` AS t2_r1, counties.`name` AS t2_r2, counties.`url_name` AS t2_r3, counties.`description` AS t2_r4, places.`id` AS t3_r0, places.`county_id` AS t3_r1, places.`name` AS t3_r2, places.`url_name` AS t3_r3, places.`description` AS t3_r4, comments.`id` AS t4_r0, comments.`user_id` AS t4_r1, comments.`article_id` AS t4_r2, comments.`discussion_id` AS t4_r3, comments.`parent_id` AS t4_r4, comments.`title` AS t4_r5, comments.`body` AS t4_r6, comments.`updated_on` AS t4_r7, comments.`created_on` AS t4_r8, users.`id` AS t5_r0, users.`nickname` AS t5_r1, users.`forename` AS t5_r2, users.`surname` AS t5_r3, users.`email` AS t5_r4, users.`password` AS t5_r5, users.`date_of_birth` AS t5_r6, users.`gender` AS t5_r7, users.`country` AS t5_r8, users.`description` AS t5_r9, users.`subscribe` AS t5_r10, users.`activation_code` AS t5_r11, users.`activation_date` AS t5_r12, users.`admin` AS t5_r13, users.`updated_on` AS t5_r14, users.`created_on` AS t5_r15, local_events.`id` AS t6_r0, local_events.`article_id` AS t6_r1, local_events.`start_date` AS t6_r2, local_events.`end_date` AS t6_r3, local_events.`event_type` AS t6_r4, local_events.`recurrence` AS t6_r5, article_notifications.`id` AS t7_r0, article_notifications.`user_id` AS t7_r1, article_notifications.`article_id` AS t7_r2, article_notifications.`created_on` AS t7_r3, tags.`id` AS t8_r0, tags.`name` AS t8_r1 FROM articles LEFT OUTER JOIN articles_countries ON articles_countries.article_id = articles.id LEFT OUTER JOIN countries ON countries.id = articles_countries.country_id LEFT OUTER JOIN articles_counties ON articles_counties.article_id = articles.id LEFT OUTER JOIN counties ON counties.id = articles_counties.county_id LEFT OUTER JOIN articles_places ON articles_places.article_id = articles.id LEFT OUTER JOIN places ON places.id = articles_places.place_id LEFT OUTER JOIN comments ON comments.article_id = articles.id LEFT OUTER JOIN users ON users.id = articles.user_id LEFT OUTER JOIN local_events ON local_events.article_id = articles.id LEFT OUTER JOIN article_notifications ON article_notifications.article_id = articles.id LEFT OUTER JOIN articles_tags ON articles_tags.article_id = articles.id LEFT OUTER JOIN tags ON tags.id = articles_tags.tag_id WHERE (normalised_title = 'barnard_castle_farmers_market' AND countries.url_name = 'uk' AND counties.url_name = 'county_durham') [0m
+  [4;36;1mPostcode Load (0.000000)[0m   [0;1mSELECT * FROM postcodes WHERE (postcodes.`postcode` IS NULL ) LIMIT 1[0m
+Rendering  within layouts/main
+Rendering article/show
+Fragment read: www.ecolocal.com/uk/county_durham/events/show/barnard_castle_farmers_market (0.00000)
+Rendered partial/_logo (0.00000)
+Rendered partial/_breadcrumb (0.00000)
+Rendered partial/_tabs (0.00400)
+Rendered partial/_contribute (0.00000)
+Rendered partial/_ad (0.00000)
+  [4;35;1mComment Load (0.004000)[0m   [0mSELECT * FROM comments ORDER BY updated_on DESC LIMIT 10[0m
+  [4;36;1mDiscussion Load (0.000000)[0m   [0;1mSELECT * FROM discussions WHERE (discussions.id = 85) LIMIT 1[0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 2) LIMIT 1[0m
+  [4;36;1mArticle Load (0.000000)[0m   [0;1mSELECT * FROM articles WHERE (articles.id = 1) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 1 ) [0m
+  [4;35;1mJoin Table Columns (0.004001)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 1 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 1 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 132) LIMIT 1[0m
+  [4;36;1mArticle Load (0.000000)[0m   [0;1mSELECT * FROM articles WHERE (articles.id = 3415) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 3415 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.004000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 3415 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 3415 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 2) LIMIT 1[0m
+  [4;36;1mArticle Load (0.000000)[0m   [0;1mSELECT * FROM articles WHERE (articles.id = 2351) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 2351 ) [0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 2351 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 2351 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 132) LIMIT 1[0m
+  [4;36;1mArticle Load (0.000000)[0m   [0;1mSELECT * FROM articles WHERE (articles.id = 704) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 704 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 704 ) [0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 704 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 132) LIMIT 1[0m
+  [4;36;1mArticle Load (0.000000)[0m   [0;1mSELECT * FROM articles WHERE (articles.id = 459) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 459 ) [0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 459 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 459 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 132) LIMIT 1[0m
+  [4;36;1mArticle Load (0.000000)[0m   [0;1mSELECT * FROM articles WHERE (articles.id = 920) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 920 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 920 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.080005)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 920 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 1744) LIMIT 1[0m
+  [4;36;1mDiscussion Load (0.000000)[0m   [0;1mSELECT * FROM discussions WHERE (discussions.id = 56) LIMIT 1[0m
+  [4;35;1mUser Load (0.004001)[0m   [0mSELECT * FROM users WHERE (users.id = 1425) LIMIT 1[0m
+  [4;36;1mArticle Load (0.000000)[0m   [0;1mSELECT * FROM articles WHERE (articles.id = 3547) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 3547 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 3547 ) [0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 3547 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 2) LIMIT 1[0m
+  [4;36;1mArticle Load (0.004000)[0m   [0;1mSELECT * FROM articles WHERE (articles.id = 3546) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 3546 ) [0m
+  [4;35;1mJoin Table Columns (0.004001)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 3546 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 3546 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 2) LIMIT 1[0m
+Rendered partial/_latest_comments (0.17201)
+Rendered partial/_affiliates (0.00000)
+Cached fragment: www.ecolocal.com/uk/county_durham/events/show/barnard_castle_farmers_market (0.00400)
+Rendered partial/_page_title (0.00000)
+Rendered partial/_page_top (0.00000)
+Completed in 0.20801 (4 reqs/sec) | Rendering: 0.05600 (26%) | DB: 0.14001 (67%) | 200 OK [http://www.ecolocal.com/uk/county_durham/events/show/barnard_castle_farmers_market]
+
+
+Processing LocationController#county (for 66.249.71.171 at 2010-12-19 10:37:53) [GET]
+  Session ID: 88a2351f735c9d9888ccc6662e5e762e
+  Parameters: {"county"=>"isle_of_wight", "action"=>"county", "country"=>"uk", "controller"=>"location"}
+Cookie set: remember_me=; domain=.ecolocal.com; path=/; expires=Sun, 19 Dec 2010 10:37:53 GMT
+Cookie set: remember_me=; domain=.ecolocal.co.uk; path=/; expires=Sun, 19 Dec 2010 10:37:53 GMT
+Fragment read: www.ecolocal.com/uk/isle_of_wight (0.00000)
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties WHERE (counties.`url_name` = 'isle_of_wight' ) LIMIT 1[0m
+  [4;35;1mArticle Load (0.000000)[0m   [0mSELECT count(*) as count
+ FROM articles, counties, articles_counties
+ WHERE articles.id = articles_counties.article_id
+ AND articles_counties.county_id = counties.id
+ AND counties.id = 172[0m
+  [4;36;1mArticle Load IDs For Limited Eager Loading (0.024002)[0m   [0;1mSELECT DISTINCT articles.id, articles.created_on FROM articles LEFT OUTER JOIN articles_countries ON articles_countries.article_id = articles.id LEFT OUTER JOIN countries ON countries.id = articles_countries.country_id LEFT OUTER JOIN articles_counties ON articles_counties.article_id = articles.id LEFT OUTER JOIN counties ON counties.id = articles_counties.county_id LEFT OUTER JOIN articles_places ON articles_places.article_id = articles.id LEFT OUTER JOIN places ON places.id = articles_places.place_id LEFT OUTER JOIN comments ON comments.article_id = articles.id LEFT OUTER JOIN users ON users.id = articles.user_id LEFT OUTER JOIN local_events ON local_events.article_id = articles.id LEFT OUTER JOIN article_notifications ON article_notifications.article_id = articles.id LEFT OUTER JOIN articles_tags ON articles_tags.article_id = articles.id LEFT OUTER JOIN tags ON tags.id = articles_tags.tag_id WHERE (countries.url_name = 'uk' AND counties.url_name = 'isle_of_wight') ORDER BY articles.created_on DESC LIMIT 0, 10[0m
+  [4;35;1mArticle Load Including Associations (0.000000)[0m   [0mSELECT articles.`id` AS t0_r0, articles.`user_id` AS t0_r1, articles.`title` AS t0_r2, articles.`normalised_title` AS t0_r3, articles.`body` AS t0_r4, articles.`url` AS t0_r5, articles.`address` AS t0_r6, articles.`postcode` AS t0_r7, articles.`image` AS t0_r8, articles.`audio` AS t0_r9, articles.`updated_on` AS t0_r10, articles.`created_on` AS t0_r11, countries.`id` AS t1_r0, countries.`name` AS t1_r1, countries.`url_name` AS t1_r2, countries.`description` AS t1_r3, counties.`id` AS t2_r0, counties.`country_id` AS t2_r1, counties.`name` AS t2_r2, counties.`url_name` AS t2_r3, counties.`description` AS t2_r4, places.`id` AS t3_r0, places.`county_id` AS t3_r1, places.`name` AS t3_r2, places.`url_name` AS t3_r3, places.`description` AS t3_r4, comments.`id` AS t4_r0, comments.`user_id` AS t4_r1, comments.`article_id` AS t4_r2, comments.`discussion_id` AS t4_r3, comments.`parent_id` AS t4_r4, comments.`title` AS t4_r5, comments.`body` AS t4_r6, comments.`updated_on` AS t4_r7, comments.`created_on` AS t4_r8, users.`id` AS t5_r0, users.`nickname` AS t5_r1, users.`forename` AS t5_r2, users.`surname` AS t5_r3, users.`email` AS t5_r4, users.`password` AS t5_r5, users.`date_of_birth` AS t5_r6, users.`gender` AS t5_r7, users.`country` AS t5_r8, users.`description` AS t5_r9, users.`subscribe` AS t5_r10, users.`activation_code` AS t5_r11, users.`activation_date` AS t5_r12, users.`admin` AS t5_r13, users.`updated_on` AS t5_r14, users.`created_on` AS t5_r15, local_events.`id` AS t6_r0, local_events.`article_id` AS t6_r1, local_events.`start_date` AS t6_r2, local_events.`end_date` AS t6_r3, local_events.`event_type` AS t6_r4, local_events.`recurrence` AS t6_r5, article_notifications.`id` AS t7_r0, article_notifications.`user_id` AS t7_r1, article_notifications.`article_id` AS t7_r2, article_notifications.`created_on` AS t7_r3, tags.`id` AS t8_r0, tags.`name` AS t8_r1 FROM articles LEFT OUTER JOIN articles_countries ON articles_countries.article_id = articles.id LEFT OUTER JOIN countries ON countries.id = articles_countries.country_id LEFT OUTER JOIN articles_counties ON articles_counties.article_id = articles.id LEFT OUTER JOIN counties ON counties.id = articles_counties.county_id LEFT OUTER JOIN articles_places ON articles_places.article_id = articles.id LEFT OUTER JOIN places ON places.id = articles_places.place_id LEFT OUTER JOIN comments ON comments.article_id = articles.id LEFT OUTER JOIN users ON users.id = articles.user_id LEFT OUTER JOIN local_events ON local_events.article_id = articles.id LEFT OUTER JOIN article_notifications ON article_notifications.article_id = articles.id LEFT OUTER JOIN articles_tags ON articles_tags.article_id = articles.id LEFT OUTER JOIN tags ON tags.id = articles_tags.tag_id WHERE (countries.url_name = 'uk' AND counties.url_name = 'isle_of_wight') AND articles.id IN ('370') ORDER BY articles.created_on DESC [0m
+Rendering actionlistlayoutfalse within layouts/main
+Rendering location/list
+Rendered partial/_logo (0.00000)
+Rendered partial/_about (0.00000)
+Rendered partial/_breadcrumb (0.00000)
+Rendered partial/_tabs (0.00400)
+Rendered partial/_contribute (0.00000)
+Fragment read: www.ecolocal.com/uk/isle_of_wight (0.00000)
+Rendered partial/_paginator (0.00000)
+Rendered partial/_articles (0.00400)
+Cached fragment: www.ecolocal.com/uk/isle_of_wight (0.00000)
+Rendered partial/_page_title (0.00000)
+Rendered partial/_page_top (0.00000)
+Completed in 0.05200 (19 reqs/sec) | Rendering: 0.01200 (23%) | DB: 0.02400 (46%) | 200 OK [http://www.ecolocal.com/uk/isle_of_wight]
+
+
+Processing LocationController#county_tag (for 207.46.13.84 at 2010-12-19 10:37:55) [GET]
+  Session ID: d7818ddce2808d2933ba14d5243da5da
+  Parameters: {"county"=>"london", "action"=>"county_tag", "country"=>"uk", "tag"=>"london", "controller"=>"location"}
+Cookie set: remember_me=; domain=.ecolocal.com; path=/; expires=Sun, 19 Dec 2010 10:37:55 GMT
+Cookie set: remember_me=; domain=.ecolocal.co.uk; path=/; expires=Sun, 19 Dec 2010 10:37:55 GMT
+Fragment read: www.ecolocal.com/uk/london/tag/london (0.00000)
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties WHERE (counties.`url_name` = 'london' ) LIMIT 1[0m
+  [4;35;1mArticle Load (0.000000)[0m   [0mSELECT count(*) as count
+ FROM articles, articles_counties, tags, tags_articles
+ WHERE articles.id = tags_articles.article_id
+ AND articles.id = articles_counties.article_id
+ AND tags_articles.tag_id = tags.id
+ AND tags.name = 'london'
+ AND articles_counties.county_id = 117[0m
+  [4;36;1mArticle Load (0.008000)[0m   [0;1mSELECT DISTINCT articles.* FROM articles
+ WHERE (SELECT COUNT(articles_tags.article_id) FROM articles_tags, tags
+ WHERE articles_tags.tag_id = tags.id
+ AND articles_tags.article_id = articles.id
+ AND (tags.name = 'london')) > 0 LIMIT 0, 10[0m
+Rendering actionlistlayoutfalse within layouts/main
+Rendering location/list
+Rendered partial/_logo (0.00000)
+Rendered partial/_about (0.00000)
+Rendered partial/_breadcrumb (0.00400)
+Rendered partial/_tabs (0.00000)
+Rendered partial/_contribute (0.00000)
+Fragment read: www.ecolocal.com/uk/london/tag/london (0.00000)
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_tags[0m
+  [4;36;1mTag Load (0.000000)[0m   [0;1mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 17 ) [0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 17 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 17 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 1) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_tags[0m
+  [4;35;1mTag Load (0.004000)[0m   [0mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 35 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 35 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 35 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 1) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_tags[0m
+  [4;36;1mTag Load (0.000000)[0m   [0;1mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 42 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 42 ) [0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 42 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 42 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 1) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM articles_tags[0m
+  [4;35;1mTag Load (0.000000)[0m   [0mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 86 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 86 ) [0m
+  [4;36;1mJoin Table Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.084005)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 86 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 86 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 1) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_tags[0m
+  [4;36;1mTag Load (0.000000)[0m   [0;1mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 106 ) [0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 106 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 106 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 106 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 3) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_tags[0m
+  [4;35;1mTag Load (0.004001)[0m   [0mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 107 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.004000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 107 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 107 ) [0m
+  [4;36;1mJoin Table Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 107 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 3) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_tags[0m
+  [4;36;1mTag Load (0.004001)[0m   [0;1mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 141 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 141 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 141 ) [0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 141 ) [0m
+  [4;35;1mUser Load (0.000000)[0m   [0mSELECT * FROM users WHERE (users.id = 3) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_tags[0m
+  [4;35;1mTag Load (0.000000)[0m   [0mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 146 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 146 ) [0m
+  [4;36;1mJoin Table Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 146 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.004000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 146 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 3) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_tags[0m
+  [4;36;1mTag Load (0.000000)[0m   [0;1mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 166 ) [0m
+  [4;35;1mJoin Table Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles_counties[0m
+  [4;36;1mCounty Load (0.080005)[0m   [0;1mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 166 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_places[0m
+  [4;36;1mPlace Load (0.000000)[0m   [0;1mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 166 ) [0m
+  [4;35;1mJoin Table Columns (0.000000)[0m   [0mSHOW FIELDS FROM articles_countries[0m
+  [4;36;1mCountry Load (0.000000)[0m   [0;1mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 166 ) [0m
+  [4;35;1mUser Load (0.004001)[0m   [0mSELECT * FROM users WHERE (users.id = 3) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_tags[0m
+  [4;35;1mTag Load (0.004000)[0m   [0mSELECT * FROM tags INNER JOIN articles_tags ON tags.id = articles_tags.tag_id WHERE (articles_tags.article_id = 289 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.004000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 289 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 289 ) [0m
+  [4;36;1mJoin Table Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 289 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 3) LIMIT 1[0m
+Rendered partial/_paginator (0.00400)
+Rendered partial/_articles (0.32002)
+Cached fragment: www.ecolocal.com/uk/london/tag/london (0.00000)
+Rendered partial/_page_title (0.00000)
+Rendered partial/_page_top (0.00000)
+Completed in 0.33602 (2 reqs/sec) | Rendering: 0.08001 (23%) | DB: 0.25201 (74%) | 200 OK [http://www.ecolocal.com/uk/london/tag/london]
+
+
+Processing ArticleController#show (for 67.195.112.151 at 2010-12-19 10:38:21) [GET]
+  Session ID: cb0e39685d5dbaa95c113c128dd2dc22
+  Parameters: {"place"=>"newcastle_upon_tyne", "title"=>"organic_food_box", "county"=>"tyne_and_wear", "country"=>"uk", "action"=>"show", "controller"=>"article", "section"=>"home_life"}
+Cookie set: remember_me=; domain=.ecolocal.com; path=/; expires=Sun, 19 Dec 2010 10:38:21 GMT
+Cookie set: remember_me=; domain=.ecolocal.co.uk; path=/; expires=Sun, 19 Dec 2010 10:38:21 GMT
+Fragment read: show_article (0.00000)
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries WHERE (countries.`url_name` = 'uk' ) LIMIT 1[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties WHERE (counties.`url_name` = 'tyne_and_wear' ) LIMIT 1[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places WHERE (places.`url_name` = 'newcastle_upon_tyne' ) LIMIT 1[0m
+  [4;36;1mArticle Load Including Associations (0.012000)[0m   [0;1mSELECT articles.`id` AS t0_r0, articles.`user_id` AS t0_r1, articles.`title` AS t0_r2, articles.`normalised_title` AS t0_r3, articles.`body` AS t0_r4, articles.`url` AS t0_r5, articles.`address` AS t0_r6, articles.`postcode` AS t0_r7, articles.`image` AS t0_r8, articles.`audio` AS t0_r9, articles.`updated_on` AS t0_r10, articles.`created_on` AS t0_r11, countries.`id` AS t1_r0, countries.`name` AS t1_r1, countries.`url_name` AS t1_r2, countries.`description` AS t1_r3, counties.`id` AS t2_r0, counties.`country_id` AS t2_r1, counties.`name` AS t2_r2, counties.`url_name` AS t2_r3, counties.`description` AS t2_r4, places.`id` AS t3_r0, places.`county_id` AS t3_r1, places.`name` AS t3_r2, places.`url_name` AS t3_r3, places.`description` AS t3_r4, comments.`id` AS t4_r0, comments.`user_id` AS t4_r1, comments.`article_id` AS t4_r2, comments.`discussion_id` AS t4_r3, comments.`parent_id` AS t4_r4, comments.`title` AS t4_r5, comments.`body` AS t4_r6, comments.`updated_on` AS t4_r7, comments.`created_on` AS t4_r8, users.`id` AS t5_r0, users.`nickname` AS t5_r1, users.`forename` AS t5_r2, users.`surname` AS t5_r3, users.`email` AS t5_r4, users.`password` AS t5_r5, users.`date_of_birth` AS t5_r6, users.`gender` AS t5_r7, users.`country` AS t5_r8, users.`description` AS t5_r9, users.`subscribe` AS t5_r10, users.`activation_code` AS t5_r11, users.`activation_date` AS t5_r12, users.`admin` AS t5_r13, users.`updated_on` AS t5_r14, users.`created_on` AS t5_r15, local_events.`id` AS t6_r0, local_events.`article_id` AS t6_r1, local_events.`start_date` AS t6_r2, local_events.`end_date` AS t6_r3, local_events.`event_type` AS t6_r4, local_events.`recurrence` AS t6_r5, article_notifications.`id` AS t7_r0, article_notifications.`user_id` AS t7_r1, article_notifications.`article_id` AS t7_r2, article_notifications.`created_on` AS t7_r3, tags.`id` AS t8_r0, tags.`name` AS t8_r1 FROM articles LEFT OUTER JOIN articles_countries ON articles_countries.article_id = articles.id LEFT OUTER JOIN countries ON countries.id = articles_countries.country_id LEFT OUTER JOIN articles_counties ON articles_counties.article_id = articles.id LEFT OUTER JOIN counties ON counties.id = articles_counties.county_id LEFT OUTER JOIN articles_places ON articles_places.article_id = articles.id LEFT OUTER JOIN places ON places.id = articles_places.place_id LEFT OUTER JOIN comments ON comments.article_id = articles.id LEFT OUTER JOIN users ON users.id = articles.user_id LEFT OUTER JOIN local_events ON local_events.article_id = articles.id LEFT OUTER JOIN article_notifications ON article_notifications.article_id = articles.id LEFT OUTER JOIN articles_tags ON articles_tags.article_id = articles.id LEFT OUTER JOIN tags ON tags.id = articles_tags.tag_id WHERE (normalised_title = 'organic_food_box' AND countries.url_name = 'uk' AND counties.url_name = 'tyne_and_wear' AND places.url_name = 'newcastle_upon_tyne') [0m
+  [4;35;1mPostcode Load (0.000000)[0m   [0mSELECT * FROM postcodes WHERE (postcodes.`postcode` IS NULL ) LIMIT 1[0m
+Rendering  within layouts/main
+Rendering article/show
+Fragment read: www.ecolocal.com/uk/tyne_and_wear/newcastle_upon_tyne/home_life/show/organic_food_box (0.00000)
+Rendered partial/_logo (0.00000)
+Rendered partial/_breadcrumb (0.00000)
+Rendered partial/_tabs (0.00400)
+Rendered partial/_contribute (0.00000)
+Rendered partial/_ad (0.00000)
+  [4;36;1mComment Load (0.004000)[0m   [0;1mSELECT * FROM comments ORDER BY updated_on DESC LIMIT 10[0m
+  [4;35;1mDiscussion Load (0.000000)[0m   [0mSELECT * FROM discussions WHERE (discussions.id = 85) LIMIT 1[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 2) LIMIT 1[0m
+  [4;35;1mArticle Load (0.000000)[0m   [0mSELECT * FROM articles WHERE (articles.id = 1) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 1 ) [0m
+  [4;36;1mJoin Table Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 1 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.004000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 1 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 132) LIMIT 1[0m
+  [4;35;1mArticle Load (0.000000)[0m   [0mSELECT * FROM articles WHERE (articles.id = 3415) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 3415 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 3415 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 3415 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 2) LIMIT 1[0m
+  [4;35;1mArticle Load (0.000000)[0m   [0mSELECT * FROM articles WHERE (articles.id = 2351) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 2351 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 2351 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 2351 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 132) LIMIT 1[0m
+  [4;35;1mArticle Load (0.000000)[0m   [0mSELECT * FROM articles WHERE (articles.id = 704) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 704 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 704 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 704 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 132) LIMIT 1[0m
+  [4;35;1mArticle Load (0.000000)[0m   [0mSELECT * FROM articles WHERE (articles.id = 459) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.088005)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 459 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 459 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 459 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 132) LIMIT 1[0m
+  [4;35;1mArticle Load (0.000000)[0m   [0mSELECT * FROM articles WHERE (articles.id = 920) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 920 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 920 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 920 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 1744) LIMIT 1[0m
+  [4;35;1mDiscussion Load (0.000000)[0m   [0mSELECT * FROM discussions WHERE (discussions.id = 56) LIMIT 1[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 1425) LIMIT 1[0m
+  [4;35;1mArticle Load (0.000000)[0m   [0mSELECT * FROM articles WHERE (articles.id = 3547) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.004001)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 3547 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 3547 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 3547 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 2) LIMIT 1[0m
+  [4;35;1mArticle Load (0.000000)[0m   [0mSELECT * FROM articles WHERE (articles.id = 3546) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 3546 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 3546 ) [0m
+  [4;36;1mJoin Table Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 3546 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 2) LIMIT 1[0m
+Rendered partial/_latest_comments (0.18001)
+Rendered partial/_affiliates (0.00000)
+Cached fragment: www.ecolocal.com/uk/tyne_and_wear/newcastle_upon_tyne/home_life/show/organic_food_box (0.00000)
+Rendered partial/_page_title (0.00000)
+Rendered partial/_page_top (0.00000)
+Completed in 0.22401 (4 reqs/sec) | Rendering: 0.08401 (37%) | DB: 0.12801 (57%) | 200 OK [http://www.ecolocal.com/uk/tyne_and_wear/newcastle_upon_tyne/home_life/show/organic_food_box]
+
+
+Processing ArticleController#show (for 91.104.185.162 at 2010-12-19 10:38:21) [GET]
+  Session ID: 156815e33b66237c446d777be03b3b0a
+  Parameters: {"place"=>"greenhithe", "title"=>"bluewaters_winter_wonderland_2008", "county"=>"kent", "country"=>"uk", "action"=>"show", "controller"=>"article", "section"=>"events"}
+Cookie set: remember_me=; domain=.ecolocal.com; path=/; expires=Sun, 19 Dec 2010 10:38:21 GMT
+Cookie set: remember_me=; domain=.ecolocal.co.uk; path=/; expires=Sun, 19 Dec 2010 10:38:21 GMT
+Fragment read: show_article (0.00400)
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries WHERE (countries.`url_name` = 'uk' ) LIMIT 1[0m
+  [4;36;1mCounty Load (0.000000)[0m   [0;1mSELECT * FROM counties WHERE (counties.`url_name` = 'kent' ) LIMIT 1[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places WHERE (places.`url_name` = 'greenhithe' ) LIMIT 1[0m
+  [4;36;1mArticle Load Including Associations (0.012000)[0m   [0;1mSELECT articles.`id` AS t0_r0, articles.`user_id` AS t0_r1, articles.`title` AS t0_r2, articles.`normalised_title` AS t0_r3, articles.`body` AS t0_r4, articles.`url` AS t0_r5, articles.`address` AS t0_r6, articles.`postcode` AS t0_r7, articles.`image` AS t0_r8, articles.`audio` AS t0_r9, articles.`updated_on` AS t0_r10, articles.`created_on` AS t0_r11, countries.`id` AS t1_r0, countries.`name` AS t1_r1, countries.`url_name` AS t1_r2, countries.`description` AS t1_r3, counties.`id` AS t2_r0, counties.`country_id` AS t2_r1, counties.`name` AS t2_r2, counties.`url_name` AS t2_r3, counties.`description` AS t2_r4, places.`id` AS t3_r0, places.`county_id` AS t3_r1, places.`name` AS t3_r2, places.`url_name` AS t3_r3, places.`description` AS t3_r4, comments.`id` AS t4_r0, comments.`user_id` AS t4_r1, comments.`article_id` AS t4_r2, comments.`discussion_id` AS t4_r3, comments.`parent_id` AS t4_r4, comments.`title` AS t4_r5, comments.`body` AS t4_r6, comments.`updated_on` AS t4_r7, comments.`created_on` AS t4_r8, users.`id` AS t5_r0, users.`nickname` AS t5_r1, users.`forename` AS t5_r2, users.`surname` AS t5_r3, users.`email` AS t5_r4, users.`password` AS t5_r5, users.`date_of_birth` AS t5_r6, users.`gender` AS t5_r7, users.`country` AS t5_r8, users.`description` AS t5_r9, users.`subscribe` AS t5_r10, users.`activation_code` AS t5_r11, users.`activation_date` AS t5_r12, users.`admin` AS t5_r13, users.`updated_on` AS t5_r14, users.`created_on` AS t5_r15, local_events.`id` AS t6_r0, local_events.`article_id` AS t6_r1, local_events.`start_date` AS t6_r2, local_events.`end_date` AS t6_r3, local_events.`event_type` AS t6_r4, local_events.`recurrence` AS t6_r5, article_notifications.`id` AS t7_r0, article_notifications.`user_id` AS t7_r1, article_notifications.`article_id` AS t7_r2, article_notifications.`created_on` AS t7_r3, tags.`id` AS t8_r0, tags.`name` AS t8_r1 FROM articles LEFT OUTER JOIN articles_countries ON articles_countries.article_id = articles.id LEFT OUTER JOIN countries ON countries.id = articles_countries.country_id LEFT OUTER JOIN articles_counties ON articles_counties.article_id = articles.id LEFT OUTER JOIN counties ON counties.id = articles_counties.county_id LEFT OUTER JOIN articles_places ON articles_places.article_id = articles.id LEFT OUTER JOIN places ON places.id = articles_places.place_id LEFT OUTER JOIN comments ON comments.article_id = articles.id LEFT OUTER JOIN users ON users.id = articles.user_id LEFT OUTER JOIN local_events ON local_events.article_id = articles.id LEFT OUTER JOIN article_notifications ON article_notifications.article_id = articles.id LEFT OUTER JOIN articles_tags ON articles_tags.article_id = articles.id LEFT OUTER JOIN tags ON tags.id = articles_tags.tag_id WHERE (normalised_title = 'bluewaters_winter_wonderland_2008' AND countries.url_name = 'uk' AND counties.url_name = 'kent' AND places.url_name = 'greenhithe') [0m
+  [4;35;1mPostcode Load (0.000000)[0m   [0mSELECT * FROM postcodes WHERE (postcodes.`postcode` IS NULL ) LIMIT 1[0m
+Rendering  within layouts/main
+Rendering article/show
+Fragment read: www.ecolocal.com/uk/kent/greenhithe/events/show/bluewaters_winter_wonderland_2008 (0.00400)
+Rendered partial/_logo (0.00000)
+Rendered partial/_breadcrumb (0.00000)
+Rendered partial/_tabs (0.00400)
+Rendered partial/_contribute (0.00000)
+Rendered partial/_ad (0.00000)
+  [4;36;1mComment Load (0.000000)[0m   [0;1mSELECT * FROM comments ORDER BY updated_on DESC LIMIT 10[0m
+  [4;35;1mDiscussion Load (0.000000)[0m   [0mSELECT * FROM discussions WHERE (discussions.id = 85) LIMIT 1[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 2) LIMIT 1[0m
+  [4;35;1mArticle Load (0.000000)[0m   [0mSELECT * FROM articles WHERE (articles.id = 1) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.004001)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 1 ) [0m
+  [4;36;1mJoin Table Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 1 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 1 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 132) LIMIT 1[0m
+  [4;35;1mArticle Load (0.000000)[0m   [0mSELECT * FROM articles WHERE (articles.id = 3415) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 3415 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.004000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 3415 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 3415 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 2) LIMIT 1[0m
+  [4;35;1mArticle Load (0.000000)[0m   [0mSELECT * FROM articles WHERE (articles.id = 2351) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 2351 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.072004)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 2351 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 2351 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 132) LIMIT 1[0m
+  [4;35;1mArticle Load (0.000000)[0m   [0mSELECT * FROM articles WHERE (articles.id = 704) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 704 ) [0m
+  [4;36;1mJoin Table Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 704 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.004000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 704 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 132) LIMIT 1[0m
+  [4;35;1mArticle Load (0.000000)[0m   [0mSELECT * FROM articles WHERE (articles.id = 459) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.004000)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 459 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 459 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 459 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 132) LIMIT 1[0m
+  [4;35;1mArticle Load (0.000000)[0m   [0mSELECT * FROM articles WHERE (articles.id = 920) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 920 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 920 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 920 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 1744) LIMIT 1[0m
+  [4;35;1mDiscussion Load (0.000000)[0m   [0mSELECT * FROM discussions WHERE (discussions.id = 56) LIMIT 1[0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 1425) LIMIT 1[0m
+  [4;35;1mArticle Load (0.000000)[0m   [0mSELECT * FROM articles WHERE (articles.id = 3547) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.004001)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 3547 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 3547 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 3547 ) [0m
+  [4;36;1mUser Load (0.004000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 2) LIMIT 1[0m
+  [4;35;1mArticle Load (0.000000)[0m   [0mSELECT * FROM articles WHERE (articles.id = 3546) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_places[0m
+  [4;35;1mPlace Load (0.000000)[0m   [0mSELECT * FROM places INNER JOIN articles_places ON places.id = articles_places.place_id WHERE (articles_places.article_id = 3546 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties INNER JOIN articles_counties ON counties.id = articles_counties.county_id WHERE (articles_counties.article_id = 3546 ) [0m
+  [4;36;1mJoin Table Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM articles_countries[0m
+  [4;35;1mCountry Load (0.000000)[0m   [0mSELECT * FROM countries INNER JOIN articles_countries ON countries.id = articles_countries.country_id WHERE (articles_countries.article_id = 3546 ) [0m
+  [4;36;1mUser Load (0.000000)[0m   [0;1mSELECT * FROM users WHERE (users.id = 2) LIMIT 1[0m
+Rendered partial/_latest_comments (0.16001)
+Rendered partial/_affiliates (0.00000)
+Cached fragment: www.ecolocal.com/uk/kent/greenhithe/events/show/bluewaters_winter_wonderland_2008 (0.00000)
+Rendered partial/_page_title (0.00000)
+Rendered partial/_page_top (0.00400)
+Completed in 0.20801 (4 reqs/sec) | Rendering: 0.07600 (36%) | DB: 0.11601 (55%) | 200 OK [http://www.ecolocal.com/uk/kent/greenhithe/events/show/bluewaters_winter_wonderland_2008]

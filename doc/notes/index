@@ -1,0 +1,71 @@
+<html>
+<head>
+    <link href="ecolocal.css" media="all" rel="Stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<h1 class='breadcrumb'><a href='/uk/'>UK</a></h1> / 
+<h1 class='breadcrumb'><a href='/uk/kent/'>Kent</a></h1> / 
+<h1 class='breadcrumb'><a href='/uk/kent/sidcup'>Sidcup</a></h1>
+
+<br />
+<br />
+<br />
+
+<div>
+    <h1 class='overview'>House</h1>
+    <div class='content'>
+        <i>
+        House blurb, details about what should go in the House section. House stuff should include ...
+        </i>
+        <br />
+        <br />
+        The latest and most popular articles added to the home section will be linked to from here. To read all of the House articles, users will go to <a href='/uk/kent/dartford/home/'>/uk/kent/dartford/home/</a>. To read a specific House article, users will go to <a href='/uk/kent/dartford/home/123'>/uk/kent/dartford/home/123</a>. Users will be able to create, comment and create articles there.
+        <ul>
+            <li><a href=''>Link to an article about green websites</a></li>
+            <li><a href=''>Link to an article about eco-friendly paints</a></li>
+            <li><a href=''>Link to an article about energy savings over winter</a></li>
+        </ul>
+        <a href=''>Create a new House article</a>
+    </div>
+</div>
+
+<div>
+    <h1 class='overview'>Health</h1>
+    <div class='content'>
+        <i>
+        Health blurb, details about what should go in the Health section. Health stuff should include ...
+        </i>
+        <br />
+        <br />
+        The latest and most popular articles added to the health section will be linked to from here. To read all of the Health articles, users will go to <a href='/uk/kent/dartford/health/'>/uk/kent/dartford/health/</a>. To read a specific Health article, users will go to <a href='/uk/kent/dartford/health/123'>/uk/kent/dartford/health/123</a>. Users will be able to create, comment and create articles there.
+        <ul>
+            <li><a href=''>Link to an article about green websites</a></li>
+            <li><a href=''>Link to an article about eco-friendly paints</a></li>
+            <li><a href=''>Link to an article about energy savings over winter</a></li>
+        </ul>
+        <a href=''>Create a new Health article</a>
+    </div>
+</div>
+
+<div>
+    <h1 class='overview'>Family</h1>
+    <div class='content'>
+        <i>
+        Family blurb, details about what should go in the Family section. Family stuff should include ...
+        </i>
+        <br />
+        <br />
+        The latest and most popular articles added to the family section will be linked to from here. To read all of the Family articles, users will go to <a href='/uk/kent/dartford/family/'>/uk/kent/dartford/family/</a>. To read a specific Family article, users will go to <a href='/uk/kent/dartford/family/123'>/uk/kent/dartford/family/123</a>. Users will be able to create, comment and create articles there.
+        <ul>
+            <li><a href=''>Link to an article about green websites</a></li>
+            <li><a href=''>Link to an article about eco-friendly paints</a></li>
+            <li><a href=''>Link to an article about energy savings over winter</a></li>
+        </ul>
+        <a href=''>Create a new Family article</a>
+    </div>
+</div>
+
+</body>
+</html>

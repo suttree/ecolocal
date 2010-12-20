@@ -1,0 +1,42 @@
+<%= render_partial "partial/breadcrumb" %>
+
+<%= render_partial "partial/ad" %>
+
+<div class='left'>
+	<span class='title'>Submit an audio story</span>
+	<div class='content'>
+		<ul>
+			<li>Fields marked with an asterisk* are mandatory.</li>
+		</ul>
+
+		<%= start_form_tag :controller => 'article', :action => 'save', :country => params[:country], :county => params[:county], :section => params[:section] %>
+
+	    <%= error_messages_for 'article' %>
+
+	    <p><label for="article_title">* Story title</label><br/>
+	    <%= text_field 'article', 'title'  %></p>
+
+	    <p><label for="article_body">* Story description</label><br/>
+	    <%= text_area 'article', 'body', :rows => 10, :cols => 60 %></p>
+
+	    <p><label for="article_audio">* Upload an audio file</label><br/>
+	    <%= file_column_field 'article', 'audio' %>
+
+		<%= render_partial "partial/sections" %>
+
+		<p><label for="article_tags">Tags</label><br/>
+		<%= text_field_tag('tags', '', 'size' => 50) %><br/>
+		<i>e.g. kids, days out, etc</i></p>
+
+		<input type='hidden' name='article_type' value='stories' />
+		<p><%= submit_tag "Save" %></p>
+
+	<%= end_form_tag %>
+	</div>
+</div>
+
+<%= render_partial "partial/about" %>
+
+<%= render_partial "partial/groups" %>
+
+<%= render_partial "partial/contribute" %>

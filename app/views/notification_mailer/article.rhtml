@@ -1,0 +1,31 @@
+Hello <%= @user.forename -%>,
+
+A new comment has been posted to your article ,'<%= @article.title -%>'.
+Copy and paste the following url into your web browser to view the comment:
+
+<%
+	# Make sure that the article link points to a section, if one is applicable
+	#
+	# Note that I'm adding the slashes to the section variable as we're not using 'link_to' here
+	if @article.tagged_with?('events')
+		section = 'events/'
+	elsif @article.tagged_with?('home_life')
+		section = 'home_life/'
+	elsif @article.tagged_with?('health')
+		section = 'health/'
+	elsif @article.tagged_with?('family')
+		section = 'family/'
+	end
+-%>
+<% if @article.places != [] -%>
+http://www.ecolocal.com/<%= @article.countries[0].url_name -%>/<%= @article.counties[0].url_name -%>/<%= @article.places[0].url_name -%>/<%= section -%>show/<%= @article.normalised_title -%>#comment_<%= @comment_id -%>
+<% elsif @article.counties != [] -%>	
+http://www.ecolocal.com/<%= @article.countries[0].url_name -%>/<%= @article.counties[0].url_name -%>/<%= section -%>show/<%= @article.normalised_title -%>#comment_<%= @comment_id -%>
+<% elsif @article.countries != [] -%>
+http://www.ecolocal.com/<%= @article.countries[0].url_name -%>/<%= section -%>show/<%= @article.normalised_title -%>#comment_<%= @comment_id -%>
+<% end -%>
+
+
+Thanks,
+
+ecolocal

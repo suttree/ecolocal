@@ -1,0 +1,19 @@
+<%= render_partial "partial/breadcrumb" %>
+
+	<div class='logowrapper'>	
+		<div class='logo'>
+			<h1 class='logo1'>eco</h1><h1 class='logo2'>local</h1>
+			<h2 class='subtitle'>find out about green living in your area</h2>
+		</div>
+	</div>
+	&nbsp;
+
+	<form name="search" class="home" action='/search/counties/' method='post'>
+	  <label for="search">Tell us where you live...</label><br/>
+      <%= collection_select( 'county', 'id', @counties, 'id', 'name', { :include_blank => true }) %>
+	  <input type="submit" value="Search" />
+	</form>
+
+	<div class='alt_search'>
+		Or explore ecolocal through these sections...
+	</div>

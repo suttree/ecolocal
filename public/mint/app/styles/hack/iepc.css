@@ -1,0 +1,145 @@
+/******************************************************************************
+ Mint CSS for IE PC
+
+ Copyright 2004-2005 Shaun Inman. This code cannot be redistributed without
+ permission from http://www.shauninman.com/
+
+ More info at: http://www.haveamint.com/
+ 
+******************************************************************************
+CURE ALL
+-----------------------------------------------------------------------------*/
+div, 
+li, 
+ul, 
+form,
+label,
+#header a.update
+{
+	height: 1%;
+}
+
+/*
+----------------------------------------------------------------------------- 
+REPAIRS
+-----------------------------------------------------------------------------*/
+body
+{
+	padding: 0;
+	/** /background-color: red; /**/
+}
+
+#header-container
+{
+	position: relative;
+}
+
+#header
+{
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/*
+----------------------------------------------------------------------------- 
+VISITS PANE
+-----------------------------------------------------------------------------*/
+td.left th.last-child,
+td.right th.first-child
+{
+	background-image: url(../../images/bg-table-head.png);
+	background-position: left bottom;
+}
+
+td.left table.inline th.last-child,
+td.right table.inline th.first-child
+{
+	background-image: url(../../images/bg-table-inline-head.png);
+}
+
+td.left,
+td.left td.last-child,
+td.right td.first-child
+{
+	background-image: none;
+}
+
+td.left table.inline-foot tr.last-child td.last-child,
+td.left table.inline-foot tr.only-child td.last-child,
+td.right table.inline-foot tr.last-child td.first-child,
+td.right table.inline-foot tr.only-child td.first-child
+{
+	background-image: url(../../images/bg-table-inline-foot.png);
+	background-position: left bottom;
+}
+
+/*
+----------------------------------------------------------------------------- 
+PANES
+-----------------------------------------------------------------------------*/
+div.pane div.footer
+{
+}
+
+div.pane div.footer div
+{
+	padding-top: 4px;
+}
+
+/*
+----------------------------------------------------------------------------- 
+SCROLL/THEAD DISABLED
+IE adds the scrollbars outside the width, making panes to wide.
+-----------------------------------------------------------------------------*/
+div.scroll-inline
+{
+	overflow: hidden;
+}
+
+div.scroll
+{
+	overflow: hidden;
+	margin-top: 28px;
+}
+
+div.scroll thead tr
+{
+	top: 0;
+}
+
+div.scroll thead th.last-child
+{
+	margin-right: -26px;
+}
+
+/*
+----------------------------------------------------------------------------- 
+LOGIN FORM
+-----------------------------------------------------------------------------*/
+.mini div.pane div.content
+{
+	padding-top: 2px;
+	background-image: none;
+}
+
+form th
+{
+	width: 1%;
+	color: #FFF;
+}
+
+form td
+{
+	width: 100%;
+}
+
+form span
+{
+	padding: 0 1px;
+}
+
+.mini div.pane div.footer,
+.mini div.pane div.footer div
+{
+	background-image: none;
+}

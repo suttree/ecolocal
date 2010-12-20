@@ -1,0 +1,113 @@
+<% count = 0 -%>
+
+<% if @article != [] -%>
+	<% if @article.is_a?(Article) -%>
+		@article[] = @article
+	<% end -%>
+
+	<ul>
+	<% for article in @article -%>
+		<% count += 1 -%>
+		<p><li>
+			<span class='<%= cycle( 'no-stripe', 'stripe' ) -%>'>
+				<%
+					# Make sure that the article link points to a section, if one is applicable
+					if article.tagged_with?('events')
+						section = 'events'
+					elsif params[:section]
+						section = params[:section]
+					elsif article.tagged_with?('home_life')
+						section = 'home_life'
+					elsif article.tagged_with?('health')
+						section = 'health'
+					elsif article.tagged_with?('family')
+						section = 'family'
+					end
+				-%>
+
+				<% if article.counties[ 0 ] != nil && article.places[ 0 ] != nil -%>
+
+                    <%= link_to truncate(article.title.capitalize, 45), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :place => article.places[ 0 ].url_name, :section => section, :action => 'show', :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize -%> by <%= link_to article.user.nickname, :controller => 'members', :action => 'index', :nickname => article.user.nickname -%>, <%= time_ago_in_words( article.created_on ) -%> ago
+
+                <% elsif article.counties[ 0 ] != nil -%>
+
+                    <%= link_to truncate(article.title.capitalize, 45), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :section => section, :action => 'show', :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize -%> by <%= link_to article.user.nickname, :controller => 'members', :action => 'index', :nickname => article.user.nickname -%>, <%= time_ago_in_words( article.created_on ) -%> ago
+
+				<% else -%>
+
+                    <%= link_to truncate(article.title.capitalize, 45), { :controller => 'article', :country => article.countries[0].url_name, :section => section, :action => 'show', :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize -%> by <%= link_to article.user.nickname, :controller => 'members', :action => 'index', :nickname => article.user.nickname -%>, <%= time_ago_in_words( article.created_on ) -%> ago
+
+				<% end -%>
+			</span>
+
+			<% if count <= 3 && article.body != nil -%>
+
+				<%= truncate( strip_links(article.body), 150) -%>
+
+	        <% elsif count <= 3 && article.url != nil -%>
+
+				<%= linkify( article.url ) -%>&nbsp;<img src='/images/offsite.gif' title='External link' class='icons'>
+
+			<% end -%>
+		</li></p>
+
+	<% end -%>
+	</ul>
+
+	<% if @article_pages -%>
+
+		<%= render_partial "partial/paginator", @article_pages -%>
+
+	<% end -%>
+	
+<% else -%>
+
+<div class='article_body'>
+
+	<big>
+	<span class='no-stripe'>
+		<b>You're the first!</b>
+	</span>
+
+	<p>
+		<% if session[:user] != nil -%>
+
+			We're a young website which means that not every place in <%= params[:country].upcase -%> has something to display. Since you're the first, why not <%= link_to 'have your say', :country => params[ :country ], :county => params[ :county ], :place => params[ :place ], :controller => 'article', :section => params[:section], :action => 'new' -%>?
+
+		<% else -%>
+
+			We're a young website which means that not every place in <%= params[:country].upcase -%> has something to display. Since you're the first, why not <%= link_to 'register for free', :controller => 'register', :action => 'index' -%>?
+
+		<% end -%>
+
+		<% if params[:place] -%>
+
+			<p>You might find more information by looking in the <%= link_to de_normalise( params[:county].capitalize ), :controller => 'location', :action => 'county' -%> section of ecolocal.</p>
+
+			<p>Alternatively, you can browse our <%= de_normalise( params[:county].capitalize ) -%> <%= link_to 'events database', :controller => 'section', :action => 'county', :country => params[:country], :county => params[:county], :section => 'events' -%>.</p>
+
+		<% elsif params[:county] -%>
+
+			<p>You might find more information by looking in the <%= link_to de_normalise( params[:country].upcase ), :controller => 'location', :action => 'country' -%> section of ecolocal.</p>
+	
+			<p>Alternatively, you can browse our comprehensive <%= de_normalise( params[:country].upcase ) -%> <%= link_to 'events database', :controller => 'section', :action => 'country', :country => params[:country], :section => 'events' -%>.</p>
+
+		<% end -%>
+	</p>
+
+	<span class='stripe'>
+		<b>Need more help?</b>
+	</span>
+
+	<p>
+		<a href='/'>ecolocal.co.uk</a> is a website that can help find out how to live a healthy, green life:
+		<ul>
+			<li><a href='/register/'>Register now</a> and you can submit local news and events.</li>
+			<li>Search our <a href='/<%= session[:locale] -%>/events/'>events database</a> to find things do with or without your family.</li>
+			<li>Get in contact with other people and make an eco-friendly difference.</li>
+		</ul>
+	</p>
+	</big>
+</div>
+	
+<% end -%>

@@ -1,0 +1,87 @@
+== Requirements ==
+
+  * How much do I need to make per month, to cover things?
+  * Save two to three months worth of salary to cover things in the worst case scenario.
+  * What bills can we reduce (e.g., TV)
+  * What ideas have we got?
+  * What outgoings are there (e.g. freelance web designer, flash developer, hostings, Google Ads account, etc)
+
+== In practice ==
+
+HOME PAGE
+
+A search box and underneath it a list of main sections (kids, houses, finance, news, classifieds, special offers).
+Can go straight to the sections or can search
+
+SECTION PAGES
+
+CONTENT ABOUT EACH SECTION
+OPTION TO GOLOCAL AND REFINE THE SEARCH DATA TO YOUR TOWN/STREET/PART OF THE WORLD
+
+LOCAL SECTION PAGES
+
+CONTENT ABOUT EACH SECTION, TAILORED TO LOCAL AREA
+THREADED COMMENTS AVAILABLE ON EACH ITEM, WITH FULL +1/-1 RATINGS AND OPTION TO VIEW AT SET THRESHOLDS
+
+FORUM
+
+NEED SOME WAY TO ALLOW PEOPLE TO ADD NEW LOCATIONS TO THE SITE
+e.g., if Dartford isn't listed, then add it as part of SE LONDON.
+If AoC isn't listed, then add it as part of Dartford, etc, etc?
+
+NEED A HOME PAGE THAT FILLS UP WITH YOUR INFO AND YOUR NEWS
+GIVE PEOPLE A BLOG SECTION TOO?
+
+
+Users
+    id
+    nickname
+    forename
+    surname
+    email
+    password
+    date
+
+Counties
+    ID, Name, Type, Country, Parent, Population
+
+
+Places
+    ID, Name, County, Easting, Northing, Population, Area(Hectares)
+
+Postcodes
+    
+    id, postcode, place_id
+
+
+
+WHEN USER CREATE A NEW WIKI PAGE, AREN'T JUST ASKED FOR TOWN NAME, ARE ASKED FOR 
+CONTEXT TOO - NORTH, TOWN NAME, STREET NAME, ETC
+
+HOW DOES THIS WORK FOR GROUPS? JUST STANDARD WIKI NAMING IF IT'S A GROUP
+
+THERE ARE NO 'CREATE PAGE' FOR LOCATIONS. START THE SITE WITH ALL UK AND US LOCATIONS
+IN PLACE, USERS CAN EMAIL US TO ADD A NEW PAGE BUT NO MORE THAN THAT.
+
+HOWEVER, FOCUS ON CREATE GROUP AND LET PEOPLE CREATE GROUPS FOR THEIR CLUBS, ROADS,
+COUNTIES, ETC AND HAVE THAT PAGE ASK FOR LOCATION INFORMATION ETC, ETC
+
+
+
+
+UK --> NearestCounty --> You
+
+SERVICES TO BE BUILT ONTO OF THIS - EVENTS SEARCH LIKE ZVENTS.COM.
+LIKE MOG, LET PPL TAG STUFF THEY ADD TO THE SITE USING BASIC CATEGORY ICONS,
+THEN THEY CAN BE SEARCHED EASILY TO FIND ALL KIDS EVENTS IN KENT THIS WEEKEND, FOR EXAMPLE
+
+
+
+eco VNC
+TVWINNERS
+PORTOFOLIO SCREENSHOTS
+
+
+http://exploding-boy.com/images/cssmenus2/menus.html#
+http://exploding-boy.com/images/cssmenus/menus.html
+http://exploding-boy.com/images/cssmenus2/menus.html

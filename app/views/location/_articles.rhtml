@@ -1,0 +1,28 @@
+<table border='1' width='100%'>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Place</th>
+    <th>County</th>
+    <th>Section</th>
+    <th>Tags</th>
+    <th>&nbsp;</th>
+  </tr>
+  
+<% for article in @article %>
+  <tr>
+    <td><%=h article.title %></td>
+    <td><%=h article.body %></td>
+    <td><%=h article.place.name %></td>
+    <td><%=h article.county.name %></td>
+    <td><%=h article.section.capitalize %></td>
+    <td><%=h article.tag_names.join(' ') %></td>
+    <td><%= link_to 'Read more...', :controller => 'section', :county => normalise(article.county.name), :place => normalise(article.place.name), :section => article.section.downcase, :action => 'show', :title => article.normalised_title %></td>
+  </tr>
+<% end %>
+</table>
+
+<br/>
+
+<%= render_partial "partial/paginator", @article_pages %>
+<% #pagination_links(@article_pages) %>

@@ -1,0 +1,106 @@
+<%= render_partial "partial/about" -%>
+
+<%= render_partial "partial/breadcrumb" -%>
+
+<%= render_partial "partial/tabs" -%>
+
+<div class='list_full'>
+
+	<%= render_partial "partial/search_results" %>
+
+	<h2>Search results for '<%= params[:q].capitalize -%>'</h2>
+
+	<% if @places == [] && @counties == [] -%>
+		We weren't able to find any locations that matched that name, please <a href='/'>go back</a> or use the form below to try again...
+
+		<h3>Tell us where you live...</h3>
+		<form action='/search/'>
+			<input type='text' name='q'/>
+			<input type='submit' value='Search' />
+		</form>
+
+		<i><% if session[:locale] === 'au' -%>
+			<span class='eg'>E.g. Canberra, Balgowlah or 0800</span>
+		<% elsif session[:locale] === 'uk' -%>
+			<span class='eg'>E.g. Cornwall, Sidcup or WC1A 1UP</span>
+		<% elsif session[:locale] === 'us' -%>
+			<span class='eg'>E.g. California, Lowell or 90210</span>
+		<% end -%></i>
+
+		<br/>
+		<br/>
+
+		You are currently searching in <%= session[:locale].upcase -%>. Click on a flag to change your location
+			<% if session[:locale] === 'au' -%>
+				<a href='/locale/au'><img src='/images/flags_png/au_small.png' class='flag_icon_current' alt='flag icon' title='ecolocal - Australia' border='0' /></a>
+			<% else -%>
+				<a href='/locale/au'><img src='/images/flags_png/au_small.png' class='flag_icon' alt='flag icon' title='ecolocal - Australia' border='0' /></a>
+			<% end -%>
+
+			<% if session[:locale] === 'uk' -%>
+				<a href='/locale/gb'><img src='/images/flags_png/uk_small.png' class='flag_icon_current' alt='flag icon' title='ecolocal - United Kingdom' border='0' /></a>
+			<% else -%>
+				<a href='/locale/gb'><img src='/images/flags_png/uk_small.png' class='flag_icon' alt='flag icon' title='ecolocal - United Kingdom' border='0' /></a>
+			<% end -%>
+
+			<% if session[:locale] === 'us' -%>
+				<a href='/locale/us'><img src='/images/flags_png/us_small.png' class='flag_icon_current' alt='flag icon' title='ecolocal - United States' border='0' /></a>
+			<% else -%>
+				<a href='/locale/us'><img src='/images/flags_png/us_small.png' class='flag_icon' alt='flag icon' title='ecolocal - United States' border='0' /></a>
+			<% end -%>
+
+		<br/>
+		<br/>
+
+		Alternatively, you can browse 
+		<% if session[:locale] === 'au' -%>
+			<a href='/au/'>all news in Australia &raquo;</a>
+		<% elsif session[:locale] === 'uk' -%>
+			<a href='/uk/'>all news in the UK &raquo;</a>
+		<% elsif session[:locale] === 'us' -%>
+			<a href='/us/'>all news in the US &raquo;</a>
+		<% end -%>
+	<% else -%>
+
+		<% if @places != [] -%>
+			<h2>Matching places</h2>
+		<% end -%>
+
+		<span class='search-results'>
+			<% for place in @places -%>
+				<% if place.name != place.county.name -%>
+			        <%= link_to place.name, :controller => 'location', :country => place.county.country.url_name, :county => place.county.url_name, :place => place.url_name, :action => 'place' -%> in <%= link_to place.county.name, :controller => 'location', :country => place.county.country.url_name, :county => place.county.url_name, :action => 'county' -%><br/>
+				<% else -%>
+			        <%= link_to place.name, :controller => 'location', :country => place.county.country.url_name, :county => place.county.url_name, :place => place.url_name, :action => 'place' -%><br/>
+				<% end -%>
+			<% end -%>
+
+			<% if @counties != [] -%>
+				<h2>Matching counties</h2>
+			<% end -%>
+
+	         <% for county in @counties -%>
+	            <%= link_to county.name, :controller => 'location', :country => county.country.url_name, :county => county.url_name, :action => 'county' %><br/>
+	        <% end -%>
+		</span>
+
+	<% end -%>
+
+	<% if params[:dbg] -%>
+		<p>
+		URL used (if any)
+		<br/>
+		<a href='<%= @ws_url -%>' target='_blank'><%= @ws_url -%></a>
+		<br/>
+		<br/>
+		Counties
+		<%= debug( @counties ) -%>
+		Places
+		<%= debug( @places ) -%>
+		Postcodes
+		<%= debug( @postcodes ) -%>
+		Subdomain
+		<%= debug( @subdomain ) -%>
+		</p>
+	<% end -%>
+</div>

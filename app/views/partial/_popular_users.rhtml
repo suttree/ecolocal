@@ -1,0 +1,11 @@
+<div class='right'>
+	<span class='title'>Popular users</span>
+	<div class='content'>
+		<small>
+		<% for user in @popular_users %>
+			<%= link_to user.nickname, :controller => 'members', :action => 'index', :nickname => user.nickname %>
+		<% end -%>
+		</small>
+	</div>
+</div>
+

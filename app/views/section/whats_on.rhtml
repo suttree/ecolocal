@@ -1,0 +1,31 @@
+<h1><%=h @params[:section].capitalize %> event</h1>
+<br/>
+Fields marked with an asterisk* are mandatory. All HTML tags will be escaped. http:// strings in comments will be auto-linked. 
+
+<%= start_form_tag :action => 'create' %>
+    <%= error_messages_for 'article' %>
+
+    <!--[form:article]-->
+    <p><label for="article_title">Event title</label><br/>
+    <%= text_field 'article', 'title'  %></p>
+
+    <p><label for="article_body">Event description</label><br/>
+    <%= text_area 'article', 'body'  %></p>
+
+    <p><label for="article_start_date">Start date</label><br/>
+    <%= date_select 'article', 'start_date' %></p>
+
+    <p><label for="article_end_date">End date</label><br/>
+    <%= date_select 'article', 'end_date' %></p>
+
+    <p><label for="article_tag">Tags</label><br/>
+    <% for tag in @tags %>
+        <p><%= tag.capitalize %> &raquo; <%= check_box_tag( 'tags[]', tag ) %></p>
+    <% end %>
+    </p>
+
+    <!--[eoform:article]-->
+    <%= submit_tag "Tell us what's on" %>
+<%= end_form_tag %>
+
+<%= link_to 'Back', :action => 'list' %>

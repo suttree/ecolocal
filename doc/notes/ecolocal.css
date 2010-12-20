@@ -1,0 +1,64 @@
+body {
+    font-family: Gill sans, Verdana, Helvetica, Arial, Sans;
+    font-size: 10pt;
+}
+
+h1.breadcrumb {
+    font-size: 12pt;
+    line-height: 140%;
+    display: inline;
+}
+
+h1.overview {
+    margin: 0px;
+    font-size: 13pt;
+}
+
+div.content {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding: 5px;
+    background-color: #EEE;
+}
+
+div.content ul {
+    list-style-type: square;
+    background-color: #EEE;
+}
+
+div.main {
+    text-align: center;
+    line-height: 40px;
+}
+
+form
+{
+  margin: 5px;
+  padding: 5px;
+  font-size: 20px;
+  color: #000;
+  background-image: url('green_bg.gif');
+}
+
+div.main
+{
+  margin: 5px;
+  padding: 5px;
+  font-size: 20px;
+  color: #000;
+  text-align: left;
+  background-image: url('green_bg.gif');
+}
+
+form input, form textarea
+{
+  #display: block;
+  font-size: 18px;
+  color: #666;
+}
+
+table.tags
+{
+  font-size: 20px;
+  color: #666;
+}

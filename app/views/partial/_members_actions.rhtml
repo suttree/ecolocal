@@ -1,0 +1,39 @@
+<div class='buttons'>
+<% if session[:user] %>
+	<div class="rbroundbox">
+		<div class="rbtop"><div></div></div>
+			<div class="rbcontent">
+				<%= link_to 'Members home', :controller => '/members/', :action => 'index' %>
+			</div>
+		<div class="rbbot"><div></div></div>
+	</div>
+	<div class="rbroundbox">
+		<div class="rbtop"><div></div></div>
+			<div class="rbcontent">
+				<%= link_to 'Update your profile', :controller => '/members/profile', :action => 'index' %>
+			</div>
+		<div class="rbbot"><div></div></div>
+	</div>
+	<div class="rbroundbox">
+		<div class="rbtop"><div></div></div>
+			<div class="rbcontent">
+				<%= link_to 'Logout', :controller => '/members/login', :action => 'logout' %>
+			</div>
+		<div class="rbbot"><div></div></div>
+	</div>
+<% else %>
+	<div class="rbroundbox">
+		<div class="rbtop"><div></div></div>
+			<div class="rbcontent">
+				<%= link_to 'Login', :controller => 'members/login', :action => 'index' %>
+			</div>
+		<div class="rbbot"><div></div></div>
+	</div>
+	<div class="rbroundbox">
+		<div class="rbtop"><div></div></div>
+			<div class="rbcontent">
+				<%= link_to 'Register', :controller => 'register', :action => 'index' %>
+		</div>
+	<div class="rbbot"><div></div></div>
+<% end %>
+</div>

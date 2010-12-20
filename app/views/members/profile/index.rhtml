@@ -1,0 +1,48 @@
+<%= render_partial "partial/about" -%>
+
+<%= render_partial "partial/breadcrumb" -%>
+
+<%= render_partial "partial/tabs" -%>
+
+<%= render_partial "partial/members_actions" %>
+
+<div class='list'>
+
+	<h3><%= session[:user][:nickname] %>'s profile</h3>
+	
+	<%= link_to 'Click here to change your password', :action => 'password' %>
+
+	<%= error_messages_for 'user' %>
+
+	<%= start_form_tag :action => 'update', :id => session[:user][:id] %>
+		<p>About you<br/>
+		<%= text_area 'user', 'description', :rows => 10, :cols => 50 %></p>
+	
+		<p>Forename<br/>
+		<%= text_field 'user', 'forename'  %></p>
+
+		<p>Surname<br/>
+		<%= text_field 'user', 'surname'  %></p>
+
+		<p>Email<br/>
+		<%= text_field 'user', 'email'  %></p>
+
+		<p>Gender<br/>
+		<%= select( "user", "gender", { "Male" => "M", "Female" => "F"}) %>
+		</p>
+
+		<p>Date of birth<br/>
+		<%= date_select( :user, :date_of_birth, :start_year => 1930, :order => [:day, :month, :year], :include_blank => true ) %></p>
+
+		<p>Subscribe to email updates: 
+		<%= check_box("user", "subscribe" ) %>
+		<br/>
+		<small><i>
+		We will not sell your details to any other companies. We will only email you with details of news relevant to ecolocal.co.uk
+		</i></small>
+		</p>
+
+		<%= submit_tag 'Update profile' %>
+	<%= end_form_tag %>
+
+</div>

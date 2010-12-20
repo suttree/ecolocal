@@ -1,0 +1,76 @@
+<%= javascript_include_tag :defaults -%>
+
+<%= render_partial "partial/about" -%>
+
+<%= render_partial "partial/breadcrumb" -%>
+
+<%= render_partial "partial/tabs" -%>
+
+<div class='list_full'>
+
+	<%= render_partial "partial/about_event" -%>
+
+	<h2>Submit a new event</h2>
+
+        <% if params[:place] -%>
+                This event will appear in the <%= params[:place].capitalize -%> section of <a href='/'>ecolocal.co.uk</a>.
+        <% elsif params[:county] -%>
+                This event will appear in the <%= params[:county].capitalize -%> section of <a href='/'>ecolocal.co.uk</a>.
+        <% else -%>
+                This event will appear in the UK section of <a href='/'>ecolocal.co.uk</a>.
+        <% end -%>
+        <p>
+                <span class='misc'>
+                        * Fields marked with an asterisk* are mandatory.
+			<br/>
+			* Some html is allowed.
+                </span>
+        </p>
+
+	<%= start_form_tag :controller => 'article', :action => 'save', :country => params[:country], :county => params[:county], :place => params[:place], :section => params[:section] -%>
+
+    <%= error_messages_for 'article' -%>
+
+    <p><label for="article_title">* Event title</label><br/>
+    <%= text_field 'article', 'title'  -%></p>
+
+    <p><label for="article_url">Event website</label><br/>
+    <%= text_field 'article', 'url'  -%></p>
+
+    <% if params[:country] == 'us' -%>
+    <fieldset>
+    <legend><a href="" onclick="Element.toggle('article_address'); return false;">Include a map with this post?</a></legend>
+    <div id="article_address" style="display: none">
+	    <p>
+		<label for="article_address">Address</label><br/>
+		<%= text_field 'article', 'address'  -%>
+		<br/>
+		<i>E.g. 341 E. Benson Blvd. Anchorage Alaska</i>
+	    </p>
+
+	    <p>
+		<label for="article_postcode">Zip code</label><br/>
+		<%= text_field 'article', 'postcode'  -%>
+		<br/>
+		<i>E.g. 90210</i>
+	    </p>
+    </div>
+    </fieldset>
+    <% end -%>
+
+    <p><label for="article_body">* Event details</label><br/>
+    <%= text_area 'article', 'body', :rows => 10, :cols => 60  -%></p>
+
+	<%= render_partial "partial/dates" -%>
+
+	<%= render_partial "partial/sections" -%>
+      
+	<%= render_partial "partial/tags" -%>
+
+	<input type='hidden' name='article_type' value='events' />
+
+	<p><%= submit_tag "Save" -%></p>
+
+	<%= end_form_tag -%>
+
+</div>

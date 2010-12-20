@@ -1,0 +1,98 @@
+<div class='section_links_title'>
+Still looking for more? Here are the most recent stories on ecolocal.
+</div>
+<div class='home_life'>
+	<% cache( :name => 'top_home_life_stories' ) do -%>
+	<div class='section_title'>
+		<%= link_to( image_tag( '/images/blue/home_life.gif', :size => '16x16', :class => 'icon', :title => 'Home life' ), :controller => 'section', :action => 'country', :country => session[:locale], :section => 'home_life' ) -%>
+    <%= link_to 'Home life', :controller => 'section', :action => 'country', :country => session[:locale], :section => 'home_life' -%>
+	</div>
+	<div class='links'>
+		<small>
+			<% if @top_home_life_stories -%>
+				<% for article in @top_home_life_stories -%>
+					<% if article.places[ 0 ] != nil -%>
+						<%= link_to truncate( article.title.capitalize, 30 ), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :place => article.places[ 0 ].url_name, :section => 'home_life', :action => 'show', :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize -%>
+					<% elsif article.counties[ 0 ] != nil -%>
+						<%= link_to truncate( article.title.capitalize, 30 ), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :section => 'home_life', :action => 'show', :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize -%>
+					<% else -%>
+						<%= link_to truncate( article.title.capitalize, 30 ), { :controller => 'article', :county => nil, :place => nil, :section => 'home_life', :action => 'show', :country => 'uk', :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize -%>
+					<% end -%>
+				<% end -%>
+			<% end -%>
+		</small>
+	</div>
+	<% end -%>
+</div>
+
+<div class='health'>
+	<% cache( :name => 'top_health_stories' ) do -%>
+	<div class='section_title'>
+		<%= link_to( image_tag( '/images/blue/health.gif', :size => '16x16', :class => 'icon', :title => 'Health' ), :controller => 'section', :action => 'country', :country => session[:locale], :section => 'health' ) %>
+    <%= link_to 'Health', :controller => 'section', :action => 'country', :country => session[:locale], :section => 'health' %>
+	</div>
+	<div class='links'>
+		<small>
+			<% if @top_health_stories -%>
+				<% for article in @top_health_stories -%>
+					<% if article.places[ 0 ] != nil %>
+						<%= link_to truncate( article.title.capitalize, 30 ), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :place => article.places[ 0 ].url_name, :section => 'health', :action => 'show', :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize %>
+					<% elsif article.counties[ 0 ] != nil %>
+						<%= link_to truncate( article.title.capitalize, 30 ), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :section => 'health', :action => 'show', :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize %>
+					<% else %>
+						<%= link_to truncate( article.title.capitalize, 30 ), { :controller => 'article', :section => 'health', :action => 'show', :country => article.countries[0].url_name, :county => nil, :place => nil, :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize %>
+					<% end -%>
+				<% end -%>
+			<% end -%>
+		</small>
+	</div>
+	<% end -%>
+</div>
+
+<div class='family'>
+	<% cache( :name => 'top_family_stories' ) do -%>
+	<div class='section_title'>
+		<%= link_to( image_tag( '/images/blue/family.gif', :size => '16x16', :class => 'icon', :title => 'Famil' ), :controller => 'section', :action => 'country', :country => session[:locale], :section => 'family' ) %>
+    <%= link_to 'Family', :controller => 'section', :action => 'country', :country => session[:locale], :section => 'family' %>
+	</div>
+	<div class='links'>
+		<small>
+			<% if @top_family_stories -%>
+				<% for article in @top_family_stories -%>
+					<% if article.places[ 0 ] != nil %>
+						<%= link_to truncate( article.title.capitalize, 30 ), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :place => article.places[ 0 ].url_name, :section => 'family', :action => 'show', :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize %>
+					<% elsif article.counties[ 0 ] != nil %>
+						<%= link_to truncate( article.title.capitalize, 30 ), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :section => 'family', :action => 'show', :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize %>
+					<% else %>
+						<%= link_to truncate( article.title.capitalize, 30 ), { :controller => 'article', :section => 'family', :action => 'show', :country => article.countries[0].url_name, :county => nil, :place => nil, :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize %>
+					<% end -%>
+				<% end -%>
+			<% end -%>
+		</small>
+	</div>
+	<% end -%>
+</div>
+
+<div class='events'>
+	<% cache( :name => 'top_events_stories' ) do -%>
+	<div class='section_title'>
+		<%= link_to( image_tag( '/images/blue/events.gif', :size => '16x16', :class => 'icon', :title => 'Events' ), :controller => 'section', :action => 'country', :country => session[:locale], :section => 'events' ) %>
+    <%= link_to 'Events', :controller => 'section', :action => 'country', :country => session[:locale], :section => 'events' %>
+	</div>
+	<div class='links'>
+		<small>
+			<% if @top_events_stories -%>
+				<% for article in @top_events_stories -%>
+					<% if article.places[ 0 ] != nil %>
+						<%= link_to truncate( article.title.capitalize, 30 ), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :place => article.places[ 0 ].url_name, :section => 'events', :action => 'show', :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize %>
+					<% elsif article.counties[ 0 ] != nil %>
+						<%= link_to truncate( article.title.capitalize, 30 ), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :section => 'events', :action => 'show', :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize %>
+					<% else %>
+						<%= link_to truncate( article.title.capitalize, 30 ), { :controller => 'article', :section => 'events', :action => 'show', :country => article.countries[0].url_name, :county => nil, :place => nil, :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize %>
+					<% end -%>
+				<% end -%>
+			<% end -%>
+		</small>
+	</div>
+	<% end -%>
+</div>

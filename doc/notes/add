@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>eco-local</title>
+    <link href="ecolocal.css" media="all" rel="Stylesheet" type="text/css" />
+</head>
+<body>
+    <h2>Add content to /UK/Kent/Sidcup</h2>
+    <form>
+        Title
+        <br />
+        <input type='text' name='' value='' width='20' />
+        <br />
+        <br />
+        Details
+        <br />
+        <textarea rows='10' cols='40'></textarea>
+        <br />
+        <br />
+        Categories
+        <table class='tags'>
+            <tr>
+                <td><input type='checkbox' name='tag' value='tag'> &raquo; Home</td>
+                <td><input type='checkbox' name='tag' value='tag'> &raquo; Health</td>
+                <td><input type='checkbox' name='tag' value='tag'> &raquo; Family</td>
+                <td><input type='checkbox' name='tag' value='tag'> &raquo; Classified</td>
+                <td><input type='checkbox' name='tag' value='tag'> &raquo; Days out</td>
+            </tr>
+            <tr>
+                <td><input type='checkbox' name='tag' value='tag'> &raquo; News</td>
+                <td><input type='checkbox' name='tag' value='tag'> &raquo; People</td>
+                <td><input type='checkbox' name='tag' value='tag'> &raquo; History</td>
+                <td><input type='checkbox' name='tag' value='tag'> &raquo; Events</td>
+                <td><input type='checkbox' name='tag' value='tag'> &raquo; Etc</td>
+            </tr>
+        </table>
+        <br />
+        When you are ready, click <input type="image" src="btn-submit.gif" alt="Log in" style='vertical-align: middle' /> to continue.
+    </form>
+</body>
+</html>

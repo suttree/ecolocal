@@ -1,0 +1,29 @@
+ecolocal.co.uk
+
+Overview:
+
+Ecolocal is a website targeting local information, to be built around the County and Place nature of the U.K. Users will be able to register and submit news, links, opinions and articles about a wide range of mostly middle-class topics, such as childcare, schools, housing, health and fitness, which will be aggregated into three broad categories - home, health and family.
+
+Aggregation plays a larger part on the site as data from the places, the lowest point of focus on the site, will feed the parent areas of the site according to their popularity. For example, a user would submit a link to a local health food shop with a few words about how good it is. Other users will be able to vote their approval for that article and it will bubble up from the single 'place' page so that it appears on the 'county' page once enough votes are in place. The best example of this is the way news stories are voted up to the front page on social news websites like digg.com
+
+Going back to the 'place' page again, all of the content that users can submit should be permalinked, so that it appears on it's own page, whilst also being open to comments to further the discussion amongst other users. The original article should allow voting as should each comment. A good article will therefore appear on it's own page with the best comments highlighted beneath it, giving readers a clear picture of what information is valuable on the page.
+
+The website will follow the principles of REST so that every page has a clean, readable url attached to it. The application will make correct use of POST and GET where appropriate.
+
+Website components
+
+	Registration
+	Login, Logout, Remember me
+	Personal Profile
+	Public Profile
+	Article creation and editing, including tagging
+	Threaded comments with support for voting and reporting of inappropriate content
+	Rating of articles and reporting of inappropriate content
+	Aggregation of articles onto grandparent location and grandparent topic pages
+	Search engine
+	Photo upload area
+	Subscription service (don't display ads if user has paid not to see them)
+
+In conclusion:
+
+	The ecolocal website is a weblog-like application with support for tagging and aggregation. It should be written in either PHP or RubyOnRails and feature full support for content caching. The design should follow a solid MVC (model, view, controller) architecture and all URLs should be 'pretty', i.e. search engine friendly. The design of the website will take place at a later date, so the html should aim to be semantically correct, CSS driven and without reliance on tables for formatting.

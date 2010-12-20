@@ -1,0 +1,116 @@
+New ecolocal user paths
+---------------------------------
+
+1. Home Page			Static page with a search box and a couple of links.
+
+					2.	User enters name of town and 'searches'
+					3.	User clicks on one of the three main section links for Home, Health, Family
+
+2. Search results		Lists all matching results for the user search from the home page.
+					
+					4.	If there is only one result, take the user straight the overview page.
+
+					5.	If there are no results, user is asked to create this page
+
+3. Global sections		Lists everything relevant to each section - Home, Health, Family.
+					Articles sorted by popularity and recency. Users can page through them.
+
+4. Overview page		Provides an overview to the area page, listing the top Home, Health and Family articles.
+
+5. Create page			User can create a page that is missing on ecolocal
+
+					Required fields and how they are used:
+
+					- Name (non-editable), is used to create the place name and in the url
+
+					- County (chosen from a drop down or checkboxes). Used to connect the place to a county,
+					  which is also used to create the aggregated county pages that work like digg.com
+
+					- Description. A brief description about this new page.
+
+					All three fields are used by the home page search engine to find relevant content when a user 					searches.
+
+
+URLs
+--------
+
+Home Page
+----------------
+
+/
+
+Help pages
+---------------
+
+/help/
+/help/about/
+/help/contact/
+/help/advertising/
+
+
+Main sections
+-------------------
+
+/home/
+/health/
+/family/
+
+County page
+-----------------
+
+/about/kent/
+
+County, main section page
+------------------------------------
+
+/about/kent/home/
+/about/kent/health/
+/about/kent/family/
+
+County, tag page
+-----------------------
+
+/about/kent/tag/events/
+
+County, town page
+--------------------------
+
+/about/kent/dartford/
+
+County, town, main section page
+--------------------------------------------
+
+/about/kent/dartford/home/
+/about/kent/dartford/health/
+/about/kent/dartford/family/
+
+County, town, tag page
+-------------------------------
+
+/about/kent/dartford/tag/events/
+
+Initial setup
+---------------
+
+Create all the county pages so that no-one else can create them.
+Create all the well-known town pages too.
+Use with_score in the Rails finder methods
+
+
+Features to build on top of ecolocal
+-----------------------------------------------
+
+Classifieds
+Local businesses selling ads
+Reviews (food, music, pubs)
+Jobs
+Swap-shop
+Events
+Groups
+Subscribe to be a pro member, see no ads, get more photo space
+
+Ideas
+-----
+  * Create groups to discuss eco issues vs. create groups to discuss local issues.
+  * The digg style of aggregated local content vs. the digg style of aggregated topical content
+  * The user who wants to talk about Dartford vs. the user who wants to talk about ecofriendly insulation.

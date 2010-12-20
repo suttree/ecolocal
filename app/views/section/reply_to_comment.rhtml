@@ -1,0 +1,30 @@
+<h2><%=h @article.title %></h2>
+
+<p><%=h @article.body %></p>
+
+<p><small><b>Section</b>: <%=h @article.section.capitalize %></small></p>
+
+<b>Replying to this comment:</b>
+
+<ol id="comment-" class="comment-list">
+    <%= render_partial "comment", @parent_comment %>
+</ol>
+
+<b>Enter your reponse:</b>
+<br/>
+
+<%= start_form_tag :action => 'new_comment', :id => @article.id  %>
+
+    <p><label for="comment_title">Title</label><br/>
+    <%= text_field 'comment', 'title', :value => 'Re: ' + @parent_comment.title %></p>
+    <%= hidden_field 'comment', 'parent_id', :value => @parent_comment.id %></p>
+
+    <p><label for="comment_body">Body</label><br/>
+    <%= text_area 'comment', 'body', :cols => 30, :rows => 10  %></p>
+
+    <%= submit_tag "Comment" %>
+<%= end_form_tag %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @article %> |
+<%= link_to 'Back', :action => 'place' %>
+

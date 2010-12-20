@@ -1,0 +1,245 @@
+body {
+	margin: 0px;
+	padding-left: 60px;
+	padding-right: 60px;
+	background-color: #fff;
+	background-image: url(../images/background.png);
+	#font-family: Lucida Grande, Tahoma, verdana, arial, Helvetica, Sans-serif;
+	#font-family: Gill Sans, Georgia, Times;
+	#font-family: Georgia, sans-serif;
+	font-family: Verdana, Arial, Geneva, Sans-serif;
+	color: #336633;
+}
+
+img.icon {
+	border: 0;
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+	border: 2px solid #fff;
+	vertical-align: middle;
+}
+
+div.border {
+	background-color: #eee;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+}
+
+div.top {
+	margin: 0px;
+	padding: 5px;
+	color: #ddd;
+	text-align: right;
+	background-color: #000;
+}
+
+div.top a {
+	color: #fff;
+	font-size: small;
+	padding: 5px;
+	text-decoration: none;
+}
+
+div.top a:hover {
+	text-decoration: underline;
+}
+
+div.top span.actions {
+	float: right;
+}
+
+div.top span.actions a {
+	color: #fff;
+	text-decoration: none;
+}
+
+div.top span.actions a:hover {
+	text-decoration: underline;
+}
+
+div.bib {
+	background-color: #F0F7E2;
+}
+
+div.logowrapper {
+	padding: 25px;
+	display: block;
+}
+
+div.logo {
+	position: absolute;
+	left: 70px;
+	top: 10px;
+	display: block;
+}
+
+div.logo h1.logo1 {
+	margin: 0px;
+	padding-left: 10px;
+	display: inline;
+	font-family: Tahoma;
+	font-size: 48px;
+	color: #00CC00;
+}
+
+div.logo h1.logo2 {
+	top: 10px;
+	margin: 0px;
+	display: inline;
+	font-family: Tahoma;
+	font-size: 48px;
+	color: #B3B300;
+}
+
+h2.subtitle {
+	margin: 0px;
+	padding-left: 10px;
+	font-size: 11px;
+}
+
+form.home {
+	margin-top: 90px;
+	padding: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+	font-size: 16px;
+	background: transparent url(../images/fff.gif);
+	border: 1px solid #fff;
+	text-align: center;
+}
+
+form.home input {
+	font-size: 24px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+div.alt_search {
+	margin-top: 50px;
+	padding-left: 150px;
+	font-size: 16px;
+}
+
+div.overview {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	background: transparent url(../images/fff.gif);
+	border: 1px solid #fff;
+}
+
+div.home_life {
+	display: block;
+	padding: 15px;
+	padding-left: 150px;
+	border-top: 2px solid #fff;
+	background-color: #DEF0CC;
+	clear: both;
+}
+
+div.health {
+	display: block;
+	padding: 15px;
+	padding-left: 150px;
+	border-top: 2px solid #fff;
+	background-color: #D4EA99;
+}
+
+div.family {
+	display: block;
+	padding: 15px;
+	padding-left: 150px;
+	border-top: 2px solid #fff;
+	background-color: #A9C973;
+}
+
+div.home_life_listings {
+	margin-top: 40px;
+	margin-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	display: block;
+	#padding: 2px;
+	#border: 1px solid #fff;
+	background-color: #DEF0CC;
+}
+
+div.health_listings {
+	margin-top: 40px;
+	margin-bottom: 10px;
+	#margin-left: auto;
+	#margin-right: auto;
+	width: 45%;
+	float: right;
+	display: block;
+	padding: 2px;
+	border: 1px solid #fff;
+	background-color: #D4EA99;
+}
+
+div.family_listings {
+	margin-top: 40px;
+	margin-bottom: 10px;
+	width: 45%;
+	float: left;
+	display: block;
+	padding: 2px;
+	border: 1px solid #fff;
+	background-color: #A9C973;
+}
+
+div.content {
+	display: block;
+	color: #000;
+	padding: 15px;
+	background: transparent url(../images/fff.gif);
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	foo: #FAF6F7;
+	bar: #F7EEF0;
+}
+
+div.listings p {
+	margin: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-top: 1px solid #fff;
+	padding-left: 50px;
+}
+
+div.listings p.list {
+	background-color: #eee;
+}
+
+div.listings p.listalt {
+	#background-color: #ddd;
+	#background-color: #DFEED9;
+	background-color: #E6FFBF;
+}
+
+div.listings a.title {
+	display: block;
+	color: #526681;
+	font-weight: bold;;
+}
+
+div.listings small {
+	font-size: smaller;
+	color: #666666;
+}
+
+div.footer {
+	margin-top: 5px;
+	line-height: 25px;
+	text-align: center;
+	font-size: small;
+	color: #ddd;	
+}
+
+div.footer a {
+	padding: 5px;
+}

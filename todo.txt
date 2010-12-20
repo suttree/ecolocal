@@ -1,0 +1,150 @@
+For storing events in the database, runt objects wouldn't serialize properly.
+Try out model serialization, though, if performance slows down:
+
+class User < ActiveRecord::Base
+  serialize :preferences
+end
+
+-----------------------------------------------------------------------------
+
+Move over to Site5 - setup email forwarding too
+http://wiki.rubyonrails.org/rails/pages/HowToInstallOnSite5
+
+Replace underscores with hyphens in normalised_titles
+
+Optimise the SQL queries for latest/most popular articles (see further below).
+Also, make place searches include county name in that query, to avoid this bug:
+http://ecolocal.co.uk/uk/cornwall/brighton
+Also, check location searches - combine places, counties, place and county into one, unique, array.
+
+Fix this bug - http://ecolocal.co.uk/uk/london/family/latest/2
+
+Image upload and resize for articles?
+
+Google maps plugin + GeoRSS stuff
+
+Get involved with 'Carnival of the green'
+http://cityhippy.blogspot.com/2005/10/feature-carnival-of-green.html
+
+-----------------------------------------------------------------------------
+
+DISCUSS :: Groups - for Eat Organic month and for Eat Local month
+(Bring back a blog element (home coded i guess) and pull out popular topics to create blog posts/features.
+e.g. - pull out all the home posts and create a 'building an eco-home' feature.)
+
+New designs - home page and show/listing pages
+Display ad only on pages big enough to accomodate them on the right hand side.
+Subsume the right hand panels into the main body content and flow the text around them.
+
+Google maps for events and articles.
+
+Pay for a logo.
+
+Localisations - sweden(ppay for), germany, france, netherlands, united states
+
+Globalise using this - http://www.agilewebdevelopment.com/plugins/html_helpers?
+
+Microformats for recurring events?
+
+
+
+
+Optimize SQL
+============
+
+	Keys added
+	==========
+
+	alter table tags add index tag_name(name);
+	alter table articles_countries add index article(article_id);
+	alter table articles_counties add index article(article_id);
+	alter table articles_places add index article(article_id);
+
+Doing the SQL by hand doesn't load up the associated models :(
+Try to rewrite this using a mix of :select, :include and :order statements
+http://www.bigbold.com/snippets/posts/show/2089
+
+SELECT articles.*, SUM(article_ratings.rating) as score,
+countries.*, counties.*, places.*, users.*, comments.*
+FROM articles, tags_articles, tags, users, comments
+LEFT OUTER JOIN article_ratings ON articles.id = article_ratings.article_id 
+LEFT OUTER JOIN articles_countries ON articles.id = articles_countries.article_id
+LEFT OUTER JOIN countries ON articles_countries.country_id = countries.id
+LEFT OUTER JOIN articles_counties ON articles.id = articles_counties.article_id
+LEFT OUTER JOIN counties ON articles_counties.county_id = counties.id
+LEFT OUTER JOIN articles_places ON articles.id = articles_places.article_id
+LEFT OUTER JOIN places ON articles_places.place_id = places.id
+WHERE articles.id = tags_articles.article_id
+AND articles.id = comments.article_id
+AND articles.user_id = users.id
+AND tags_articles.tag_id = tags.id
+AND tags.name = 'events'
+GROUP BY articles.id 
+ORDER BY articles.created_on DESC
+LIMIT 10
+
+
+WORK ON THIS:
+
+articles = Article.find(
+	:all,
+	:select => 'SUM(article_ratings.rating) AS score',
+	:include => [ :countries, :counties, :places, :user, :comments ],
+	:order => 'articles.created_on DESC',
+	:limit => 10
+)
+
+articles = Article.find(
+	:all,
+	:select => 'sum(articles.id) as articles_score, countries.id as test',
+	#:include => [ :countries, :counties, :places, :article_ratings, :user, :comments ],
+	:include => [ :countries ],
+	:order => 'articles.created_on DESC',
+	:group => 'articles.id',
+	:limit => 1
+)
+
+articles = Article.find(
+	:all,
+	:select => 'sum(articles.id) as score, articles.*',
+	:group => 'articles.id'
+)
+
+
+a = Article.find_by_sql(
+  [ 'SELECT articles.*, SUM(article_ratings.rating) as score 
+  FROM articles, tags_articles, tags
+  LEFT OUTER JOIN article_ratings ON articles.id = article_ratings.article_id 
+  WHERE articles.id = tags_articles.article_id
+  AND tags_articles.tag_id = tags.id
+  AND tags.name = 'events'
+  GROUP BY articles.id 
+  ORDER BY created_on DESC
+  LIMIT 10']
+
+
+
+
+
+
+
+
+CAN'T BE DONE.
+HOWEVER. ON EACH ARTICLE RATING AND COMMENT RATING, UPDATE THE ARTICLES TABLE WITH THE NEW SCORE,
+THEN ACTIVERECORD CAN ORDER USING THAT AND MAKE USE OF PROPER EAGER LOADING.
+
+ALTER TABLE articles ADD COLUMN score AFTER audio DEFAULT 0 NOT NULL;
+
+in good_article/bad_article and good_comment/bad_comment calculate the sum/avg score of article and comments,
+then update the relevant article with that score.
+clear the relevant cache files
+done!
+
+articles = Article.find(
+	:all,
+	:include => [ :countries, :counties, :places, :user, :comments ],
+	:order => 'articles.score DESC, articles.created_on DESC',
+	:limit => 10
+)
+
+use railsbench to find out the bottlenecks on the site?

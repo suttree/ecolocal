@@ -1,0 +1,292 @@
+<%= javascript_include_tag :defaults -%>
+
+<% cache( :country => params[:country], :county => params[:county], :place => params[:place], :section => params[:section], :title => params[:title], :notice => flash[:notice], :logged_in => session[:logged_in], :user_id => session[:user].id, :admin => session[:user].admin? ) do -%>
+	<div class='article_info'>
+		<%= render_partial "partial/logo" -%>
+
+		<h1><%= @article.title -%></h1>
+		<h2><small>Posted by <%= link_to @article.user.nickname, :controller => 'members', :action => 'index', :nickname => @article.user.nickname -%>, <%= time_ago_in_words( @article.created_on ) -%> ago</small></h2>
+
+		<% if @article.tag_names.size > 0  -%>
+
+		<div class='tags'>
+			<small>
+			Tags: 
+			<% for tag in @article.tag_names -%>
+
+				<% if @article.counties[0] != nil -%>
+
+					<%= link_to tag, { :country => params[:country], :county => @article.counties[0].url_name, :controller => 'location', :action => 'county_tag', :tag => tag }, :rel => "category tag" -%>
+
+				<% else -%>
+
+					<%= link_to tag, { :country => params[:country], :controller => 'location', :action => 'country_tag', :tag => tag }, :rel => "category tag" -%>
+
+				<% end -%>
+
+			<% end -%>
+			</small>
+		</div>
+
+		<% end -%>
+
+		<% if @article.url != '' && @article.url != nil -%>
+
+			<div class='link'>
+				<small>
+					Link: <%= linkify( @article.url ) -%>&nbsp;<img src='/images/offsite.gif' title='External link' class='icons'>
+				</small>
+			</div>
+
+		<% end -%>
+		
+		<div class='article_notification'>
+			<div id='article_notification_status_<%= @article.id -%>'>
+				<form>
+					<small>
+						<% if @article.user_id == session[:user].id -%>
+							<%= render_partial "partial/article_notification", @article -%>
+						<% end -%>
+					</small>
+				</form>
+			</div>
+		</div>
+
+		<span class='more'>
+      <br/>
+			<i>If you want to learn about <a href='/discuss/organic_versus_local'>organic food</a>, <a href='/uk/family/show/nappies__the_dilemma'>diapers/nappies</a> or just <a href='/discuss/how_to_be_green'>how to be green</a> then why not <a href='/register'>join today</a>?</i>
+			<br/>
+      <br/>
+      <% if session[:user] && (session[:user].nickname == 'suttree' || session[:user].nickname == 'jane') %>
+          <% if @article.counties.empty? or @article.places.empty? %>
+            <%= link_to "Admin: add county/place?", :controller => 'article', :action => 'edit', :country => params[ :country ], :county => params[ :county ], :place => params[ :place ], :section => params[ :section ], :title => @article.normalised_title, :type => 'check_location' %>
+          <% end %>
+      <% end %>
+		</span>
+	</div>
+
+	<div class='article_image'>
+		<a href='/' alt='Link to home' title='ecolocal Home'><img src='/images/relax.gif' width='270' height='164' alt'Logo image' title='ecolocal | Find out about healthy living' border='0'/></a>
+		<div class='browse_all'>
+			<small>Browse all - <a href='/uk' class='country'>UK</a>, <a href='/us' class='country'>US</a>, <a href='/au' class='country'>Aus</a></small>
+		</div>
+	</div>
+
+	<%= render_partial "partial/breadcrumb" -%>
+
+	<%= render_partial "partial/tabs" -%>
+
+	<%= render_partial "partial/contribute" -%>
+		
+	<%= render_partial "partial/ad", @article -%>
+
+	<%= render_partial "partial/latest_comments" -%>
+
+	<div class='article_body'>
+		<span class='misc_hi'>
+			<% if @article.local_events.size > 0 -%>
+			    <big><b>Reading event "<%= @article.title -%>"</b></big> - <a href='#reply'>Reply to this</a> / <a href='#comments'><%= @article.comments.size -%> comment(s)</a>
+			<% else -%>
+			    <big><b>Reading article "<%= @article.title -%>"</b></big> - <a href='#reply'>Reply to this</a> / <a href='#comments'><%= @article.comments.size -%> comment(s)</a>
+			<% end -%>
+		</span>
+
+	    <br/>
+
+		<%= linkify( @article.body ) if @article.body -%>
+		
+		<% if @article.audio %>
+		    <p align='left'><object type="application/x-shockwave-flash" width="400" height="20" data="/swf/xspf_player_slim.swf?song_url=http://www.ecolocal.com/article/audio/<%= @article.id -%>/<%= @article.audio -%>&song_title=<%= @article.title %>">
+		    <param name="movie" value="/swf/xspf_player_slim.swf?song_url=http://www.ecolocal.com/article/audio/<%= @article.id -%>/<%= @article.audio -%>&song_title=<%= @article.title %>" />
+		    </object></p>
+		<% end %>
+
+		<% if @article.url != '' && @article.url != nil -%>
+			<p><%= linkify( @article.url ) -%>&nbsp;<img src='/images/offsite.gif' title='External link' class='icons'></p>
+		<% end -%>
+
+		<% if @article.address != nil && @article.postcode != nil && @article.address != '' && @article.address != '' -%>
+			<p>
+				<b>Address</b>: <%= @article.address -%>, <%= @article.postcode -%>
+			</p>
+		<% end -%>
+
+	        <%= @map.div(:width => 600, :height => 400) if @map %>
+
+		<% if @article.local_events.size > 0 -%>
+
+			<p>
+
+				<% if @article.local_events[0].start_date != nil -%>
+
+					<img src='/images/green/calendar.gif' alt='Start date' title='Events start date' class='icon' />
+					<b>Start date:</b> <%= @article.local_events[0].start_date.to_s(:presentable_date) -%>
+
+					<% if @article.local_events[0].end_date -%>
+
+						<br/>
+						<img src='/images/green/calendar.gif' alt='End date' title='Event end date' class='icon' />
+						<b>End date:</b> <%= @article.local_events[0].end_date.to_s(:presentable_date) -%>
+					<% end -%>
+
+				<% elsif @article.local_events[0].event_type == 'recurring_month_day' -%>
+
+					<img src='/images/green/calendar.gif' alt='Recurrence' title='Event recurrence' class='icon' />
+
+					<% events = []
+					for event in @article.local_events
+						events << event[:recurrence]
+					end -%>
+
+					Occurs every <%= events.join( ', ' ) -%>.<br/>
+
+				<% elsif @article.local_events[0].event_type == 'recurring_month_index' -%>
+					<img src='/images/green/calendar.gif' alt='Recurrence' title='Event recurrence' class='icon' />
+					Occurs on the 
+
+					<% if @article.local_events[0][:recurrence].to_i == 1 || @article.local_events[0][:recurrence].to_i == 11 || @article.local_events[0][:recurrence].to_i == 21 || @article.local_events[0][:recurrence].to_i == 31 -%>
+
+						<%= @article.local_events[0][:recurrence] -%>st
+
+					<% elsif @article.local_events[0][:recurrence].to_i % 2 == 0 -%>
+
+						<%= @article.local_events[0][:recurrence] -%>nd
+
+					<% elsif @article.local_events[0][:recurrence].to_i % 3 == 0 -%>
+
+						<%= @article.local_events[0][:recurrence] -%>rd
+
+					<% else -%>
+
+						<%= @article.local_events[0][:recurrence] -%>th
+
+					<% end -%>
+
+					of every month.
+
+				<% elsif @events.size > 0 -%>
+
+					<% for event in @events -%>
+
+						<% if event[0] && event[1] -%>
+
+							<img src='/images/green/calendar.gif' alt='Recurrence' title='Event recurrence' class='icon' />
+							Occurs on the <%= event[0] -%> <%= event[1] -%> of every month.<br/> 
+
+						<% end -%>
+
+					<% end -%>
+
+			<% end -%>
+
+			</p>
+
+		<% end -%>
+
+    <span class='useful'>
+
+		<% if session[:user].id != nil -%>
+
+				<% if @article.user_id == session[:user].id -%>
+
+					<%= link_to 'Edit this article', :country => params[:country], :county => params[:county], :place => params[:place], :section => params[:section], :action => 'edit', :title => @article.normalised_title -%> / 
+
+        <% end -%>
+
+		<% end -%>
+
+      <a href='#reply'>Reply to this</a>
+    </span>
+    <br/>
+
+    <%= render_partial "partial/affiliates" -%>
+    
+    <a name="comments"></a>
+    <img src='/images/green/comment.gif' alt='Comments' title='Comments' class='icon' />
+    <h2 class='comments'>Comments</h2>
+
+		<% if @article.comments.size > 0 -%>
+
+			<ol id="comment-" class="comment-list">
+
+			    <%= render_collection_of_partials "commentset", @article.comments.sort_by {|c| c.id}.reject { |c| c.parent_id } -%>
+			</ol>
+
+		<% else -%>
+
+			<p>
+				<span>
+					No comments at this time
+				</span>
+			</p>
+
+
+		<% end -%>
+	</div>
+		
+	<%= render_partial "partial/latest_events" if @article.comments.size > 2 -%>
+
+	<div class='article_body'>
+
+		<% if session[:user].id != nil -%>
+
+		    <br/>
+		    <a name="reply"></a>
+		    <img src='/images/green/comment.gif' alt='Comments' title='Comments' class='icon' />
+		    <h2 class='comments'>Enter your comment</h2>
+		    <br/>
+
+			<div class='yoga'>
+				<img src='/images/yoga.gif' width='204' height='250' alt='ecolocal: Yoga image' title='ecolocal: Yoga, health, green and local news'/>
+				<br/>
+				<a href='#top'>Back to top</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			</div>
+
+			<%
+				# Here's a nasty bug, the last comment from the list of comments above
+				# is ending up in the 'enter comment' box below. So, reset the @comment
+				# variable now and it should all be fine...
+				@comment = nil
+			-%>
+
+		    <%= start_form_tag :action => 'new_comment', :country => params[:country], :county => params[:county], :place => params[:place], :section => params[:section], :title => @article.normalised_title  -%>
+
+			<p><label for="comment_title">*Title</label><br/>
+			<input id="comment_title" name="comment[title]" size="50" type="text" value="Re: <%= @article.title -%>" /></p>
+
+			<p><label for="comment_body">*Body</label><br/>
+			<%= text_area 'comment', 'body', :cols => 50, :rows => 10, :value => '' -%></p>
+
+			<p><i>
+				Please be respectful and keep your comments on-topic.
+				<br/>
+				If we think you're being offensive for no reason, we'll delete your comment. Some html is allowed.
+			</i></p>
+
+			<%= submit_tag "Submit comment" -%>
+		    <%= end_form_tag -%>
+
+		<% else -%>
+
+			<div class='yoga'>
+				<img src='/images/yoga.gif' width='204' height='250' alt='ecolocal: Yoga image' title='ecolocal: Yoga, health, green and local news'/>
+				<br/>
+				<a href='#top'>Back to top</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			</div>
+
+			<br/>
+			<br/>
+
+			<h2>About ecolocal.co.uk</h2>
+
+			<b>Ecolocal</b> is free to join - why not <a href='/register'>register today</a>? Our members can start discussions and comment on all the threads taking place throughout <a href='/'>ecolocal.co.uk</a>.
+			<br/>
+			<br/>
+			Help us build the best source for healthy living and <b>local news</b> by submitting your tips, events and links so that we can all learn how to live a more <b>eco-friendly</b> lifestyle.
+
+		<% end -%>
+
+		</div>
+
+	</div>
+<% end -%>

@@ -1,0 +1,19 @@
+<%= render_partial "partial/about" -%>
+
+<%= render_partial "partial/breadcrumb" -%>
+
+<%= render_partial "partial/tabs" -%>
+
+<%= render_partial "partial/contribute" -%>
+
+<div class='list'>
+
+	<h3>Search results for '<%= params[:q] %>'</h3>
+
+	<% if @article.size > 0 -%>
+		<%= render_partial "partial/articles", @article_ratings %>
+	<% else -%>
+		Sorry, no results found.
+	<% end -%>
+
+</div>

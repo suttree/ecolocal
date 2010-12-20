@@ -1,0 +1,13 @@
+Receive an email whenever someone replies to this discussion:  <input type="checkbox" id="discussion_notification_<%= @discussion.id -%>" <% if @discussion.discussion_notifications[0] != nil -%> checked="checked" <% end -%>name="discussion_notification" />
+
+<%= observe_field(  "discussion_notification_#{@discussion.id}",
+                    :update => "discussion_notification_status_#{@discussion.id}",
+                    :url => { :controller => 'discussion', :action => :discussion_notification, :title => @discussion, :discussion_id => @discussion.id },
+					:loading => "Element.show('indicator_#{@discussion.id}')",
+					:complete => "Element.hide('indicator_#{@discussion.id}')",
+                    :with => "status"
+                 )
+-%>
+<span id='indicator_<%= @discussion.id -%>' style="display: none;">
+	<img src='/images/indicator.gif' border='0' />
+</span>

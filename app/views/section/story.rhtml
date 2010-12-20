@@ -1,0 +1,27 @@
+<h1><%=h @params[:section].capitalize %> story</h1>
+<br/>
+Fields marked with an asterisk* are mandatory. All HTML tags will be escaped. http:// strings in comments will be auto-linked. 
+
+<%= form_tag({:action=>'create'}, :multipart => true)%>
+    <%= error_messages_for 'article' %>
+
+    <!--[form:article]-->
+    <p><label for="article_title">Story title</label><br/>
+    <%= text_field 'article', 'title'  %></p>
+
+    <p><label for="article_body">Story description</label><br/>
+    <%= text_area 'article', 'body'  %></p>
+
+    <p><label for="article_audio">Upload an audio file</label><br/>
+    <%= file_column_field 'article', 'audio' %>
+
+    <p><label for="article_tag">Tags</label><br/>
+    <% for tag in @tags %>
+        <p><%= tag.capitalize %> &raquo; <%= check_box_tag( 'tags[]', tag ) %></p>
+    <% end %>
+
+    <!--[eoform:article]-->
+    <%= submit_tag "Upload a story" %>
+<%= end_form_tag %>
+
+<%= link_to 'Back', :action => 'list' %>

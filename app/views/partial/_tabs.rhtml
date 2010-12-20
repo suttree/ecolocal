@@ -1,0 +1,48 @@
+<div class='strapline-alt'>
+	<div class='sections'>
+		Sub-sections:
+		
+		<%
+			# A hack for the members page, within which the url has no country
+			if params[:country] == nil
+				params[:country] = 'uk'
+			end
+		-%>
+		
+		<% if params[:place] -%>
+			<%= link_to 'Home life', :controller => 'section', :action => 'place', :country => params[:country], :county => params[:county], :place => params[:place],  :section => 'home_life', :page => nil -%>
+		<% elsif params[:county] -%>
+			<%= link_to 'Home life', :controller => 'section', :action => 'county', :country => params[:country], :county => params[:county], :place => params[:place],  :section => 'home_life', :page => nil -%>
+		<% else -%>
+			<%= link_to 'Home life', :controller => 'section', :action => 'country', :country => params[:country], :county => params[:county], :place => params[:place],  :section => 'home_life', :page => nil -%>
+		<% end -%>
+
+		<% if params[:place] -%>
+			<%= link_to 'Health', :controller => 'section', :action => 'place', :country => params[:country], :county => params[:county], :place => params[:place],  :section => 'health', :page => nil -%>
+		<% elsif params[:county] -%>
+			<%= link_to 'Health', :controller => 'section', :action => 'county', :country => params[:country], :county => params[:county], :place => params[:place],  :section => 'health', :page => nil -%>
+		<% else -%>
+			<%= link_to 'Health', :controller => 'section', :action => 'country', :country => params[:country], :county => params[:county], :place => params[:place],  :section => 'health', :page => nil -%>
+		<% end -%>
+
+		<% if params[:place] -%>
+			<%= link_to 'Family', :controller => 'section', :action => 'place', :country => params[:country], :county => params[:county], :place => params[:place],  :section => 'family', :page => nil -%>
+		<% elsif params[:county] -%>
+			<%= link_to 'Family', :controller => 'section', :action => 'county', :country => params[:country], :county => params[:county], :place => params[:place],  :section => 'family', :page => nil -%>
+		<% else -%>
+			<%= link_to 'Family', :controller => 'section', :action => 'country', :country => params[:country], :county => params[:county], :place => params[:place],  :section => 'family', :page => nil -%>
+		<% end -%>
+
+		<% if params[:place] -%>
+			<%= link_to 'Events', :controller => 'section', :action => 'place', :country => params[:country], :county => params[:county], :place => params[:place],  :section => 'events', :page => nil -%>
+		<% elsif params[:county] -%>
+			<%= link_to 'Events', :controller => 'section', :action => 'county', :country => params[:country], :county => params[:county], :place => params[:place],  :section => 'events', :page => nil -%>
+		<% else -%>
+			<%= link_to 'Events', :controller => 'section', :action => 'country', :country => params[:country], :county => params[:county], :place => params[:place], :section => 'events', :page => nil -%>
+		<% end -%>
+
+		-
+
+		<a href='/discuss/'>Discuss</a>
+		</div>
+	</div>

@@ -1,0 +1,92 @@
+
+ -  L I N K    S P I C E
+ -  v2.0
+ -  (c) 2006, 2007, Craig Mod 
+ -  http://craigmod.com/interactive/link_spice/
+
+
+* * * * * *
+INSTALL AT YOUR OWN RISK
+   - While this Pepper doesn't modify your mint database, it's always a good idea (and easy
+  now that Shaun provides Backup/Restore) to have periodic backups of your data.
+* * * * * *
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+W h a t ?
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  Link Spice allows you to "tag" incoming links to your site with 'campaigns' and 'terms' 
+  enabling you to track incoming clicks from ads, newsletters, emailings and any other 
+  form of incoming link you have control over.
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+W h a t ' s    N e w    i n    2 . 0 ?
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  Not much. ;-) Just an update to make it work a little more smoothly with Mint 2.0. 
+  Folders look better. It's using proper table classes now. Also fixed a database query bug. 
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+I n s t a l l i n g    L i n k    S p i c e
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  1. Create the /craigmod/ directory under your /mint/pepper/ directory.
+
+  2. Upload the /LinkSpice/ subdirectory to /mint/pepper/craigmod/ on your server. 
+
+  3. Login to your Mint installation. Go to "Preferences."  Click "Install" under "Pepper."
+
+  3. Click the Link Spice "Install" button.
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+U p g r a d i n g    L i n k    S p i c e
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  1. Replace /pepper/craigmod/LinkSpice/class.php with the new class.php file. 
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+N o t e s   &   T i p s
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  - Encode spaces in your URLs using "%2b."
+  - Try to always pair a keyword with a campaign for more detailed statistics
+  - Be creative: things like PDFs with links back to your site are great places to tag links
+  - Tag within your site if you want to track flow from a certain page
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+L i n k   T a g s
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  Link Spice only recognizes the "utm_campaign" and "utm_term" link tags. The first 
+  tag is offset with a "?" in the URL. The second tag (if you are specifying both a 
+  campaign and term) follows the first immediately with an "&". Tag order is irrelevant. 
+  You can tag links with both campaigns and terms, or just terms, or just campaigns. 
+
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  More info here: http://craigmod.com/interactive/link_spice/
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  Link Spice was written by Craig Mod in August/September 2006. It didn't take long 
+  but it required quite a few hours of focus and persistence. It also required much 
+  ice cream eating on the roof of Co-Lab. Which, to be honest, isn't all that great 
+  of a view. Seriously. We're a few floors short of having an excellent view. But
+  at least the sky is beautiful. Especially around 5 pm. When all the rays slant 
+  into our west facing windows, and the Giant ice cream bought for ´100 dribbles
+  in your hand. 
+
+  I'm not going to charge money for this because that would be ridiculous. If you 
+  like this, buy one of the books the publishing company I co-run sells -- they're
+  all really damn good, and pretty damn sexy. 
+
+    ---> http://chinmusicpress.com
+
+  I will say that this work is licensed under the Creative Commons 
+  Attribution-ShareAlike License. Which you can see here: 
+  http://creativecommons.org/licenses/by-sa/2.5/. It's quite an exciting license 
+  isn't it? If you're feeling particularly adventurous, and, for God only knows 
+  what reason really want some hard-copy of the license, write these guys a letter:
+  Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+  I'm sure they'd love to hear from you, and whatever ice cream stories you might have. 

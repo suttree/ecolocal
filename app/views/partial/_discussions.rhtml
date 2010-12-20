@@ -1,0 +1,72 @@
+<% count = 0 -%>
+
+<% if @discussions != [] -%>
+	<% if @discussions.is_a?(Discussion) -%>
+		@discussions[] = @discussions
+	<% end -%>
+
+	<% for discussion in @discussions -%>
+		<% count += 1 -%>
+		<p><li>
+			<span class='<%= cycle( 'no-stripe', 'stripe' ) -%>'>
+                <%= link_to truncate(discussion.title.capitalize, 45), { :controller => 'discussion', :action => 'show', :title => discussion.normalised_title }, :title => discussion.title.capitalize, :alt => discussion.title.capitalize -%> by <%= link_to discussion.user.nickname, :controller => 'members', :action => 'index', :nickname => discussion.user.nickname -%>, <%= time_ago_in_words( discussion.created_on ) -%> ago
+			</span>
+
+			<% if count <= 3 && discussion.body != nil -%>
+
+				<%= truncate( strip_links(discussion.body), 150) -%>
+
+	        <% elsif count <= 3 && discussion.url != nil -%>
+
+				<%= linkify( discussion.url ) -%>&nbsp;<img src='/images/offsite.gif' title='External link' class='icons'>
+
+			<% end -%>
+		</li></p>
+
+	<% end -%>
+
+	<% if @discussions_pages -%>
+
+		<%= render_partial "partial/paginator", @discussions_pages -%>
+
+	<% end -%>
+
+<% else -%>
+
+<div class='list'>
+	<p><li>
+		<span class='no-stripe'>
+			You're the first!
+		</span>
+	</li></p>
+	<p><li>
+		<% if session[:user] != nil -%>
+
+			We're a young website which means that not every place in the UK has something to display. Since you're the first, why not <%= link_to 'have your say', :country => params[ :country ], :county => params[ :county ], :place => params[ :place ], :controller => 'discussion', :section => params[:section], :action => 'new' -%>?
+
+		<% else -%>
+
+			We're a young website which means that not every place in the UK has something to display. Since you're the first, why not <%= link_to 'register for free', :controller => 'register', :action => 'index' -%>?
+
+		<% end -%>
+
+	</li></p>
+	<br/>
+	<p><li>
+		<span class='useful'>
+			Need more help?
+		</span>
+
+		<p>
+			<a href='/'>ecolocal.co.uk</a> is a website that can help find out how to live a healthy, green life:
+			<ul>
+				<li><a href='/register/'>Register now</a> and you can submit local news and events.</li>
+				<li>Search our <a href='/uk/events/'>events database</a> to find things do with or without your family.</li>
+				<li>Get in contact with other people and make an eco-friendly difference.</li>
+			</ul>
+		</p>
+	</li></p>
+	<br/>
+</div>
+
+<% end -%>

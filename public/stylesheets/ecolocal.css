@@ -1,0 +1,727 @@
+body {
+	margin: 0px 0px 10px 0px;
+	min-width: 800px;
+	color: #000;
+	background-color: #fff;
+	font-family: "Lucida Grande", Verdana, sans-serif;
+}
+
+a {
+	color: #990033;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:visited {
+	color: purple;
+}
+
+div.top {
+	margin: 0px;
+	text-align: right;
+	#background-color: #25383c;
+	#background-color: #347c17;
+	#background-color: #004D28;
+	background-color: #556B2F;
+	font-size: small;
+	padding: 5px 10px 5px 10px;
+	border-bottom: 3px solid #ddd;
+}
+
+div.top span.logo {
+	float: left;
+	padding-top: 4px;
+}
+
+div.top a {
+	color: #fff;
+	padding: 5px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+div.top a:hover {
+	text-decoration: underline;
+}
+
+div.top a:visited {
+	color: #fff;
+}
+
+div.top form {
+	display: inline;
+}
+
+div.logo {
+	height: 49px;
+	width: 228px;
+	padding: 0px;
+	margin: 10px 5px 0px 0px;
+	border-top: 1px solid #fff;
+	border-left: 1px solid #fff;
+	border-right: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+
+}
+
+div.logo img:hover {
+	border-top: 1px solid #eee;
+	border-left: 1px solid #eee;
+	border-right: 2px solid #ddd;
+	border-bottom: 2px solid #ddd;
+}
+
+div.main, div.main_image {
+	padding: 0px 10px 0px 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.about, div.article_info {
+	float: left;
+	width: auto;
+	width: 60%;
+	max-width: 60%;
+}
+
+div.about {
+	height: 220px;
+	margin-bottom: 20px;
+}
+
+div.about span.more, div.article_info span.more {
+	font-size: small;
+}
+
+div.article_info a, div.article_body a, div.list_full a, div.list a, div.about a, div.about span.more a, div.ad a {
+	color: blue;
+}
+
+div.article_info a:hover, div.article_body a:hover, div.about a:hover, div.list_full a:hover, div.list span.no-stripe a:hover, div.list span.stripe a:hover, div.about span.more a:hover, div.ad a:hover {
+	text-decoration: none;
+}
+
+div.article_info a:visited, div.article_body a:visited, div.about a:visited, div.list_full span.no-stripe a:visited, div.list_full span.stripe a:visited, div.list span.no-stripe a:visited, div.list span.stripe a:visited, div.ad a:visited {
+	color: purple;
+}
+
+div.about span.more a, div.article_info a {
+	color: blue;
+}
+
+div.about span.more a:visited {
+	color: blue;
+}
+ 
+div.about_image, div.article_image {
+	float: right;
+	width: auto;
+	height: 220px;
+	max-width: 40%;
+	padding: 20px 0px 0px 0px;
+}
+
+div.about_image img, div.article_image img, div.yoga img {
+	border: 1px solid #fff;;
+}
+
+div.about h1, div.article_info h1 {
+	margin: 0px;
+	color: #000;
+	font-size: 24px;
+	font-weight: bold;
+	font-family: "Trebuchet MS", Tahoma, Verdana, sans-serif;
+	padding: 5px 0px 5px 0px;
+}
+
+div.about h2, div.article_info h2 {
+	margin: 0px;
+	padding: 0px;
+	font-weight: normal;
+	font-size: small;
+}
+
+div.discussions, div.local_news, div.events {
+	float: left;
+	width: 33%;
+	line-height: 20px;
+	margin-top: 20px;
+	padding-bottom: 20px;
+}
+
+div.local_news div.tell_us {
+	display: block;
+	padding: 5px;
+	margin-right: 20px;
+}
+
+div.discussions h2, div.local_news h2, div.events h2 {
+	color: #fff;
+	padding: 5px;
+	font-size: 18px;
+	margin-top: 0px;
+	margin-right: 20px;
+	margin-bottom: 7px;
+	background-color: #6F4E37;
+	border: 1px solid #ddd;
+}
+
+div.discussions span.more, div.latest_local_news span.more, div.events span.more {
+	font-size: small;
+}
+
+div.local_news span.more {
+	font-size: small;
+	float: right;
+}
+
+div.local_news span.more a {
+	color: #4F3726;
+	font-weight: bold;
+	font-size: smaller;
+	text-align: right;
+	#padding: 2px 2px 2px 5px;
+	padding: 0px;
+	margin: 0px 12px 0px 0px;
+}
+
+div.discussions a, div.local_news a, div.events a {
+	color: blue;
+	font-size: small;
+	line-height: 25px;
+	text-decoration: none;
+	padding: 0px 2px 0px 2px;
+}
+
+div.discussions a, div.latest_local_news a, div.events a {
+	display: block;
+	color: #4F3726;
+	font-weight: bold;
+	padding: 4px 2px 4px 5px;
+	margin: 0px 12px 0px 0px;
+	border-bottom: 2px solid #fff;
+	background-color: #FFFBE0;
+}
+
+div.latest_local_news a.toggle, div.search_local_news a.toggle {
+	display: inline;
+	background-color: #fff;
+	color: blue;
+	font-size: small;
+	font-weight: normal;
+}
+
+div.latest_local_news a.toggle:hover, div.search_local_news a.toggle:hover {
+	color: blue;
+	text-decoration: underline;
+}
+
+div.discussions a:hover, div.latest_local_news a:hover, div.events a:hover {
+	color: #B39078;
+}
+
+div.discussions a:hover, div.local_news a:hover, div.events a:hover {
+	text-decoration: underline;
+}
+
+div.discussions a:visited, div.local_news a:visited, div.events a:visited {
+}
+
+div.discussions ul, div.latest_local_news ul, div.events ul {
+	padding: 0px;
+	margin: 0px 10px 0px 0px;
+}
+
+div.discussions li, div.events li {
+	list-style: none;
+	display: block;
+}
+
+div.local_news form {
+	padding: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: #FFFBE0;
+}
+
+div.discussions span.icon, div.local_news span.icon, div.events span.icon {
+	float: right;
+	display: inline;
+	padding: 0px;
+	margin: 7px 30px 0px 0px;
+}
+
+div.local_news span.eg {
+	font-size: small;
+}
+
+div.strapline, div.strapline-alt {
+	float: left;
+	width: 100%;
+	color: #fff;
+	line-height: 20px;
+	padding: 5px 0px 5px 0px;
+}
+
+div.strapline {
+	background-color: #6F4E37;
+	border-top: 2px solid #eee;
+}
+
+div.strapline-alt {
+	margin-bottom: 20px;
+	background-color: #B39078;
+	border-bottom: 2px solid #eee;
+}
+
+div.buttons, div.latest-comments, div.members-actions, div.article-about {
+	float: right;
+	text-align: center;
+	background-color: #fff;
+	padding: 0px 0px 0px 20px;
+	width: 150px;
+}
+
+div.latest-comments, div.members-actions, div.article-about {
+	margin-top: 20px;
+	padding: 0px;
+	text-align: left;
+	width: 150px;
+	clear: right;
+}
+
+div.buttons a {
+	padding: 0px;
+	color: #FEFEF2;
+	display: block;
+	font-size: small;
+}
+
+div.buttons a:hover {
+	text-decoration: none;
+}
+	
+div.breadcrumb, div.sections {
+	width: auto;
+	font-size: small;
+}
+
+div.breadcrumb {
+	float: left;
+	padding-left: 10px;
+}
+
+div.sections {
+	color: #000;
+	float: right;
+	padding-right: 10px;
+}
+
+div.strapline div.sections a, div.strapline div.breadcrumb a, div.strapline-alt div.sections a, div.strapline-alt div.breadcrumb a {
+	color: #fff;
+	padding-right: 2px;
+}
+
+div.strapline div.sections a:hover, div.strapline div.breadcrumb a:hover, div.strapline-alt div.sections a:hover, div.strapline-alt div.breadcrumb a:hover {
+	text-decoration: none;
+}
+
+div.article_body, div.list, div.list_full {
+	clear: left;
+	font-size: smaller;
+	line-height: 1.5em;
+}
+
+div.list h3 {
+	display: block;
+	padding: 5px 0px 5px 0px;
+	background-color: #FFF8C6;
+	margin-bottom: 5px;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
+div.article_body {
+	width: 80%;
+}
+
+div.article_body a {
+	color:	blue;
+}
+
+div.article_body label, div.list_full label, div.list label {
+	font-weight: bold;
+	background-color: #FFF8C6;
+	padding: 2px 20px 2px 15px;
+}
+
+div.article_body fieldset, div.list_full fieldset, div.list fieldset {
+	width: 70%;
+	border: 1px dotted #ddd;
+}
+
+div.article_body form {
+	padding: 5px;
+	width: 500px;
+}
+
+div.article_body input, div.article_body textarea, div.list_full input, div.list_full textarea, div.list input, div.list textarea {
+	padding: 5px;
+}
+
+div.list {
+	width: 80%;
+}
+
+div.list_full {
+	width: 100%;
+}
+
+div.list ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+div.list li {
+	list-style: none;
+}
+
+div.list span.stripe, span.stripe {
+	display: block;
+	margin: 0px 0px 5px 0px;
+	padding: 5px 0px 5px 0px;
+	background-color: #eee;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+div.list span.no-stripe, span.no-stripe {
+	display: block;
+	margin: 0px 0px 5px 0px;
+	padding: 5px 0px 5px 0px;
+	background-color: #fff;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
+div.tags, div.link, div.article_notification, div.discussion_notification {
+	padding: 5px 0px 0px 0px;
+	font-size: small
+}
+
+span.useful {
+	clear: left;
+	display: block;
+	text-align: center;
+	margin: 10px 0px 5px 0px;
+	padding: 5px 0px 5px 0px;
+	background-color: #eee;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+span.useful a {
+	color: blue;
+}
+
+span.useful form {
+	margin: 0px;
+	padding: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+div.ad {
+	clear: right;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px 0px 0px 0px;
+	font-size: small;
+	text-align: left;
+	float: right;
+	width: 140px;
+}
+
+div.pf {
+	clear: right;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px 10px 0px 0px;
+	font-size: small;
+	float: right;
+	width: 160px;
+}
+
+div.adbrite {
+	margin-left: auto;
+	margin-right: auto;
+  margin-bottom: 15px;
+	padding: 0px 0px 0px 0px;
+	font-size: small;
+	text-align: center;
+  border: 1px solid #fff;
+}
+
+div.adbrite:hover {
+  border: 1px solid #ddd;
+}
+
+div.affiliates {
+	margin-left: auto;
+	margin-right: auto;
+  margin-bottom: 15px;
+	padding: 0px 0px 0px 0px;
+	font-size: small;
+	text-align: center;
+	border: 1px dotted #fff;
+}
+
+div.affiliates fieldset {
+  width: 97%;
+	border: 1px dotted #ddd;
+}
+
+div.affiliates fieldset:hover {
+  width: 97%;
+	border: 1px dotted #000;
+}
+
+div.footer {
+	color: gray;
+	clear: both;
+	display:block;
+	margin-top: 50px;
+	padding-top: 10px;
+	line-height: 15px;
+	font-size: x-small;
+	text-align: center;
+	border-top: 1px solid #ddd;
+}
+
+div.footer a {
+	color: #990033;
+	padding: 5px;
+}
+
+div.footer a:hover {
+	text-decoration: none;
+}
+
+div.footer img.rss {
+	vertical-align: center;
+}
+
+/*
+Rounder corner code from http://www.neuroticweb.com/recursos/css-rounded-box/index.php?color=eeeeee&fondo=ffffff
+*/
+
+/*
+We can have rounded corners on every corner, but I prefer just two
+.rbtop div { background: url(../images/tl.gif) no-repeat top left; }
+.rbbot { background: url(../images/br.gif) no-repeat bottom right; }
+*/
+
+.rbroundbox {
+	background: url(../images/nt7.gif) repeat;
+}
+
+.rbtop {
+	background: url(../images/tr7.gif) no-repeat top right;
+}
+
+.rbbot div {
+	background: url(../images/bl7.gif) no-repeat bottom left;
+}
+
+.rbtop div, .rbtop, .rbbot div, .rbbot {
+	width: 100%;
+	height: 7px;
+	font-size: 1px;
+}
+
+.rbcontent {
+	margin: 0 7px;
+}
+
+.rbroundbox {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+/* And for the home page */
+.rbroundbox-home {
+	background: url(../images/nt-home.gif) repeat; margin-right: 12px;
+}
+
+.rbbot-home {
+	background: url(../images/br-home.gif) no-repeat bottom right;
+}
+
+/* height and width stuff, width not really nessisary. */
+.rbtop-home div, .rbtop-home, .rbbot-home div, .rbbot-home {
+	height: 7px;
+	font-size: 1px;
+}
+
+.rbcontent-home {
+	margin: 0px;
+}
+
+.rbcontent-home span.more a {
+	font-size: smaller;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	line-height: 0px;
+	border: none;
+	text-align: right;
+}
+
+.rbroundbox-home { }
+
+/* Done with rounded corners */
+
+div.comment_notification_status {
+    margin: 0px;
+    padding: 0px;
+}   
+    
+div.indicator {
+    margin: 0px;
+    padding: 0px;
+    float: right;
+    display: none;
+}
+
+.comment-list, .comment-sublist {
+    list-style-type: none;
+    line-height: 1.5em;
+}
+
+div.counter {
+	padding-top: 20px;
+	text-align: center;
+}
+
+span.misc, span.misc_hi {
+	display: block;
+	background-color: #eee;
+	padding: 5px 0px 5px 0px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+span.misc_hi {
+	background-color: #FFF8C6;
+	margin-bottom: 5px;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
+span.misc a {
+	color: blue;
+}
+
+span.misc_hi a {
+	color: #990033;
+}
+
+div.article-about span.misc, div.latest-comments span.misc {
+	font-size: small;
+	padding: 10px;
+}
+
+div.latest-comments span.misc {
+	line-height: 1em;
+	background-color: #fff;
+	border: none;
+}
+
+h2.comments {
+	display: inline;
+}
+
+span.search-results {
+	line-height: 20px;
+}
+
+#map_div {
+	border: 2px solid #ddd;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+div.yoga {
+	margin: 15px 30px 0px 10px;
+	padding-top: 10px;
+	float: right;
+	text-align: center;
+}
+
+img.flag_icon {
+	padding: 0px;
+}
+
+img.flag_icon_current {
+	padding: 0px;
+	margin-bottom: 5px;
+}
+
+span.flags {
+	display: block;
+	float: middle;
+	text-align: center;
+	padding: 5px 0px 0px 0px;
+}
+
+div.footer_search {
+	font-size: x-small;
+	color: #000;
+	padding: 0px;
+	margin: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.footer_search form {
+	display: inline;
+}
+
+div.browse_all {
+	text-align: center;
+}
+
+div.browse_all a.country {
+	display: inline;
+	background-color: #fff;
+	color: blue;
+	font-size: small;
+	font-weight: normal;
+}
+
+.pullquote {
+  width: 20%;
+  float:right;
+  font-size:125%;
+  line-height:140%;
+  margin:10px;
+  background: url(/images/closequote.gif) no-repeat bottom right !important;
+  background /**/:url(); /* removing quote graphic in IE5+ */
+  padding:0px 25px 5px 0px;
+}
+
+.pullquote:first-letter {
+  background: url(/images/openquote.gif) no-repeat left top !important;
+  padding:5px 2px 10px 35px!important;
+  padding /**/:0px;   /* resetting padding in IE5+ */
+  background /**/: url(); /* removing quote graphic in IE5+ */
+}
+
+img.thumbnail {
+  background-color:#C0D4AF;
+  border:1px solid #ddd;
+  margin: 3px;
+  padding:2px;
+}

@@ -1,0 +1,28 @@
+<div class='latest-comments'>
+	<span class='misc'>
+			<img src='/images/green/events.gif' width='10' height='10' alt='Latest events'>&nbsp;<b>Latest events</b>
+			<br/><br/>
+			<small>
+	        <% for article in latest_events() -%>
+
+            <% if article.places.size > 0 -%>
+
+              <%= link_to truncate(article.title, 30), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :place => article.places[ 0 ].url_name, :section => 'events', :action => 'show', :title => article.normalised_title }, :title => article.title, :alt => article.title-%>
+
+            <% elsif article.counties.size > 0 -%>
+
+              <%= link_to truncate(article.title, 30), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :section => 'events', :action => 'show', :title => article.normalised_title }, :title => article.title, :alt => article.title-%>
+
+            <% else -%>
+
+              <%= link_to truncate(article.title, 30), { :controller => 'article', :country => article.countries[0].url_name, :section => 'events', :action => 'show', :title => article.normalised_title }, :title => article.title, :alt => article.title-%>
+
+            <% end -%>
+
+            by <%= link_to article.user.nickname, :county => nil, :place => nil, :controller => 'members', :action => 'index', :nickname => article.user.nickname -%>
+            <br/><br/>
+
+	        <% end -%>
+		</small>
+	</span>
+</div>

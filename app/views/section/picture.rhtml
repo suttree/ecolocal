@@ -1,0 +1,28 @@
+<h1><%=h @params[:section].capitalize %> picture</h1>
+<br/>
+Fields marked with an asterisk* are mandatory. All HTML tags will be escaped. http:// strings in comments will be auto-linked. 
+
+<%= form_tag({:action=>'create'}, :multipart => true)%>
+
+    <%= error_messages_for 'article' %>
+
+    <!--[form:article]-->
+    <p><label for="article_title">Picture title</label><br/>
+    <%= text_field 'article', 'title'  %></p>
+
+    <p><label for="article_body">Picture body</label><br/>
+    <%= text_area 'article', 'body'  %></p>
+
+    <p><label for="article_picture">Upload an picture file</label><br/>
+    <%= file_column_field 'article', 'image' %>
+
+    <p><label for="article_tag">Tags</label><br/>
+    <% for tag in @tags %>
+        <p><%= tag.capitalize %> &raquo; <%= check_box_tag( 'tags[]', tag ) %></p>
+    <% end %>
+
+    <!--[eoform:article]-->
+    <%= submit_tag "Upload a picture" %>
+<%= end_form_tag %>
+
+<%= link_to 'Back', :action => 'list' %>

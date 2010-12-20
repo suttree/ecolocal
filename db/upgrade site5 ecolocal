@@ -1,0 +1,57 @@
+Importing US and AU data
+========================
+
+Close ecolocal.co.uk down
+
+Transfer domain
+
+Backup Site5 
+
+mysqldump -uecolocal -p ecolocal_production > backups/ecolocal.xx.xx.xx.b0rked.sql 
+
+Dump counties, places and postcodes from live.
+
+mysqldump -usuttree -p suttree_ecolocal_production --opt places postcodes counties > places_postcodes_counties.sql
+
+#scp places_postcodes_counties.sql ecolocal@66.29.109.221:/home/ecolocal/
+
+Ftp the files down from textdrive and Import them into the dev site on suttree.local.
+
+mysql -uecolocal -p ecolocal_production < places_postcodes_counties.sql 
+
+Create places_postcodes using db/places_postcodes.sql
+
+mysql -uecolocal -p ecolocal_production < sites/ecolocal.co.uk/db/places_postcodes.sql
+
+Run US upload
+	Check 90201
+
+alter table places drop column postcode_id;
+alter table postcodes add column longitude varchar(255);
+alter table postcodes add column latitude varchar(255);
+alter table postcodes add index postcode(postcode);
+
+Run US lat/long
+	Check 90210
+	
+Run AU upload
+	Check Balgowlah
+	
+Dump from suttree.local and upload to live:
+
+mysqldump -usuttree -p ecolocal_development places postcodes counties places_postcodes > places_postcodes_counties.sql
+scp places_postcodes_counties.sql ecolocal@66.29.109.221:/home/ecolocal/
+
+Dump from textdrive to site5
+============================
+
+On textdrive:
+
+mysqldump -usuttree -p ecolocal_production article_notifications article_ratings articles articles_counties articles_countries articles_places comment_notifications comment_ratings comments local_events mint__config mint_visit tags tags_articles users > ecolocal.articles.sql
+
+Add postcode for events
+=======================
+
+alter table articles add column postcode varchar(255) after url;
+            
+And test!

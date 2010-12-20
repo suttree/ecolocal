@@ -1,0 +1,46 @@
+<b><%=h comment.title -%></b>
+<a name='comment_<%= comment.id -%>'></a> by <%= link_to comment.user.nickname, :controller => 'members', :action => 'index', :nickname => comment.user.nickname -%>, <%= time_ago_in_words( comment.updated_on ) -%> ago
+<% if session[:user].admin? -%>
+  <a href='/report_spam/<%= comment.id -%>'><small>Report as spam and delete?</small></a>
+<% end -%>
+<p>
+	<%= linkify( comment.body ) -%>
+	<p>
+	<span class='useful'>
+		
+    <% if session[:user].id != nil -%>
+
+			<% if @session[:user].id == comment.user_id -%>
+
+				<div id='comment_notification_status_<%= comment.id -%>'>
+					<form>
+
+						<% @comment = comment -%>
+						<%= render_partial "partial/comment_notification", @comment -%>
+
+					</form>
+				</div>
+
+				<%= link_to 'Edit this comment', :action => 'edit_comment', :title => comment -%> / 
+
+			<% end -%>
+
+            <%= link_to 'Reply to this comment', :action => 'reply_to_comment', :title => comment, :anchor => 'reply' -%>
+
+    <% else -%>
+
+            <%= link_to 'Reply to this comment', :action => 'reply_to_comment', :title => comment, :anchor => 'reply' -%>
+
+        <% end -%>
+
+    </span>
+	</p>
+
+	<% if comment.children.size > 0 -%>
+
+	    <ol id="commentsub-<%= comment.id -%>" class="comment-sublist">
+	        <%= render_collection_of_partials "commentset", comment.children.sort_by {|c| c.id} -%>   
+	    </ol>
+
+	<% end -%>
+</p>

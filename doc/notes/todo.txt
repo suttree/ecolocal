@@ -1,0 +1,22 @@
+Seeing things through
+=====================
+
+  * Member home pages - list of articles read (see habtm below...)
+  * Write a design brief
+
+  * Create a county map page to list all the places in a county (or wait until the PAF data is used)
+  * Search engine
+  * Tie in the USA county/place data. Investigate dutch, french, spanish, german district/place maps too.
+  * Globalize the app - http://wiki.rubyonrails.org/rails/pages/Internationalization and http://globalize-rails.org/wiki/
+  * Get a TextDrive account and port suttree over too
+  * Then call in a designer
+
+Setup a habtm association between users and articles so i can track who has read what (rails book, pages 240 and 241) as part of member homepages
+
+Question - Where are the wiki elements? In the group pages? All wiki stuff in groups, allows users to add groups to cover locations that don't exists (we're missing them or they're highly local and non-standard, e.g. housing estates)
+
+Links
+=====
+
+US county/place names - http://www.mysociety.org/?p=83
+Family tie-ins - http://familyconnect.rubyforge.org/

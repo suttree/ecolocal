@@ -1,0 +1,75 @@
+<div class='article_info'>
+
+	<h1><%= @article.title -%></h1>
+	<h2>Posted by <%= link_to @article.user.nickname, :controller => 'members', :action => 'index', :nickname => @article.user.nickname %>, <%= time_ago_in_words( @article.updated_on ) -%> ago
+
+	<% if @article.tag_names.size > 0  %>
+
+	<div class='tags'>
+		Tags: 
+		<% for tag in @article.tag_names %>
+
+			<% if @article.counties[0] != nil %>
+
+				<%= link_to tag, { :country => params[:country], :county => @article.counties[0].url_name, :controller => 'location', :action => 'county_tag', :tag => tag }, :rel => "category tag" %>
+
+			<% else %>
+
+				<%= link_to tag, { :country => params[:country], :controller => 'location', :action => 'country_tag', :tag => tag }, :rel => "category tag" %>
+
+			<% end %>
+
+		<% end %>
+	</div>
+
+	<% end -%>
+
+	<% if @article.url != '' && @article.url != nil %>
+
+		<div class='link'>
+			Link: <%= linkify( @article.url ) %>&nbsp;<img src='/images/offsite.gif' title='External link' class='icons'>
+		</div>
+
+	<% end %>
+	
+	<div class='article_notification'>
+		<div id='article_notification_status_<%= @article.id -%>'>
+			<form>
+				<%= render_partial "partial/article_notification", @article -%>
+			</form>
+		</div>
+	</div>
+
+</div>
+
+<div class='article_image'>
+	<img src='/images/relax.gif' width='270' height='164' alt'Logo image' title='ecolocal | Find out about healthy living'/>
+</div>
+
+
+<%= render_partial "partial/breadcrumb" -%>
+
+<%= render_partial "partial/tabs" -%>
+
+<%= render_partial "partial/contribute" -%>
+
+<div class='article_body'>
+	<h2>Edit your comment:</h2>
+	<br/>
+
+	<%= start_form_tag :action => 'update_comment', :title => @comment.id  %>
+
+	    <p><label for="comment_title">Title</label><br/>
+	    <%= text_field 'comment', 'title', :value => @comment.title, :size => '50' %></p>
+
+	    <p><label for="comment_body">Body</label><br/>
+	    <%= text_area 'comment', 'body', :cols => 50, :rows => 10  %></p>
+
+		<p><i>Please be respectful and keep your comments on-topic.
+			<br/>
+			If we think you're being offensive for no reason, we'll delete your comment.
+		</i></p>
+
+	    <%= submit_tag "Reply" %>
+	<%= end_form_tag %>
+</div>

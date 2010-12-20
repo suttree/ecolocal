@@ -1,0 +1,19 @@
+<%= render_partial "partial/breadcrumb" %>
+
+<%= render_partial "partial/ad" %>
+
+<div class='left'>
+	<span class='title'>Search events</span>
+	<div class='content'>
+		<form action='results/'>
+			Search for
+			<input type='text' name='tags' value='' size='10' />
+			events in
+			<input type='text' name='location' value=''/>
+			<%= select("", "period", [ 'All time', 'Today', 'This week', 'This month', 'Next week', 'Next month' ] ) %>
+			<input type='submit' value='Go'/>
+		</form> 
+	</div>
+</div>
+
+<%= render_partial "partial/contribute" %>

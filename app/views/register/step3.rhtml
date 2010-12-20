@@ -1,0 +1,9 @@
+<%= error_messages_for("register") %>
+<%= start_form_tag :action => 'validate_step3' %> 
+    <div>Terms and conditions blurb to go here..</div>
+    <br/>
+    Do you agree to these terms and conditions?
+    <div><%= check_box("register", "terms" ) %></div>
+    <br/>
+    <%= submit_tag( "Next step" ) %>
+<%= end_form_tag %>

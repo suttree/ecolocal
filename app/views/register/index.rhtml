@@ -1,0 +1,46 @@
+<%= render_partial "partial/about" -%>
+
+<%= render_partial "partial/breadcrumb" -%>
+
+<%= render_partial "partial/tabs" -%>
+
+<div class='list_full'>
+	<span class='misc'><big><b>Join ecolocal</b></big></span>
+
+	<p>It's <b>free</b> to join ecolocal. All you need to do is pick a <b>nickname</b> and <b>password</b> and tell us your <b>email</b> address. Fill out the form below and your account will be created on the next page.</p>
+
+	<%= error_messages_for("register") -%>
+	<%= start_form_tag :action => 'validate_step1' -%> 
+      <%= negative_captcha(@captcha) %>
+
+	    <p><label for="register_nickname">Nick</label><br/>
+	    <!--<%#= text_field("register", "nickname", "size" => 40 ) -%></p>-->
+      <%= negative_text_field_tag @captcha, :nickname, :size => 40 -%></p>
+
+	    <p><label for="register_forename">Forename</label><br/>
+	    <!--<%#= text_field("register", "forename", "size" => 40 ) -%></p>-->
+      <%= negative_text_field_tag @captcha, :forename, :size => 40 -%></p>
+
+	    <p><label for="register_surname">Surname</label><br/>
+	    <!--<%#= text_field("register", "surname", "size" => 40 ) -%></p>-->
+      <%= negative_text_field_tag @captcha, :surname, :size => 40 -%></p>
+	    
+	    <p><label for="register_email">Email</label><br/>
+	    <!--<%#= text_field("register", "email", "size" => 40 ) -%></p>-->
+      <%= negative_text_field_tag @captcha, :email, :size => 40 -%></p>
+
+	    <p><label for="register_password">Password</label><br/>
+	    <!--<%#= password_field("register", "password") -%></p>-->
+      <%= text_field_tag @captcha, :password, :size => 40 -%></p>
+
+	    <p><label for="register_password">Confirm password</label><br/>
+	    <%= password_field("register", "password_confirmation") -%></p>
+
+	    <p><label for="register_subscribe">Email updates</label><%= check_box("register", "subscribe", :checked => 'checked') -%></p>
+
+	    <%= submit_tag( "Register for ecolocal" ) -%>
+	<%= end_form_tag %>
+
+	<p><i>Join ecolocal and you can submit news, save popular stories and share your own ideas about living a greener, healthier lifestyle.  <a href='/members/login/'>Login here if you're already created an account</a>.</i></p>
+
+</div>

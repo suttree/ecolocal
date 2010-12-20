@@ -1,0 +1,44 @@
+<%= render_partial "partial/about" -%>
+
+<%= render_partial "partial/breadcrumb_discussion" -%>
+
+<%= render_partial "partial/tabs_discussion" -%>
+
+<div class='list_full'>
+
+	<%= render_partial "partial/about_new_discussion" -%>
+
+	<h2>Start a new discussion</h2>
+	
+	<p>
+		<span class='misc'>
+			* Fields marked with an asterisk* are mandatory.
+			<br/>
+			* Some html is allowed.
+		</span>
+	</p>
+
+	<%= start_form_tag :controller => 'discussion', :action => 'save' -%>
+	    <%= error_messages_for 'discussion' -%>
+
+	    <p>
+		<label for="discussion_title">* Title</label><br/>
+	        <%= text_field 'discussion', 'title'  -%>
+    	    </p>
+
+	    <p>
+		<label for="discussion_url">Website address</label><br/>
+	        <%= text_field 'discussion', 'url'  -%>
+	    </p>
+
+	    <p>
+		<label for="discussion_body">* Body</label><br/>
+	        <%= text_area 'discussion', 'body', :rows => 10, :cols => 60 -%>
+	    </p>
+
+		<%= render_partial "partial/tags" -%>
+	
+	    <%= submit_tag "Start this discussion" -%>
+	<%= end_form_tag -%>
+
+</div>

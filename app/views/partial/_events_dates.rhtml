@@ -1,0 +1,52 @@
+<div class='buttons'>
+	<b>Sort by date</b>
+	<div class="rbroundbox">
+		<div class="rbtop"><div></div></div>
+			<div class="rbcontent">
+            <%= link_to 'All', :controller => 'section', :action => 'country', :country => params[:country], :section => params[:section] -%>
+			</div>
+		<div class="rbbot"><div></div></div>
+	</div>
+	<div class="rbroundbox">
+		<div class="rbtop"><div></div></div>
+			<div class="rbcontent">
+            <%= link_to 'Today', :controller => 'section', :action => 'events_date', :country => params[:country], :county => params[:county], :place => params[:place], :section => params[:section], :tag => 'today' -%>
+			</div>
+		<div class="rbbot"><div></div></div>
+	</div>
+	<div class="rbroundbox">
+		<div class="rbtop"><div></div></div>
+			<div class="rbcontent">
+            <%= link_to 'Tomorrow', :controller => 'section', :action => 'events_date', :country => params[:country], :county => params[:county], :place => params[:place], :section => params[:section], :tag => 'tomorrow' -%>
+			</div>
+		<div class="rbbot"><div></div></div>
+	</div>
+	<div class="rbroundbox">
+		<div class="rbtop"><div></div></div>
+			<div class="rbcontent">
+            <%= link_to 'This weekend', :controller => 'section', :action => 'events_date', :country => params[:country], :county => params[:county], :place => params[:place], :section => params[:section], :tag => 'this_weekend' -%>
+			</div>
+		<div class="rbbot"><div></div></div>
+	</div>
+	<div class="rbroundbox">
+		<div class="rbtop"><div></div></div>
+			<div class="rbcontent">
+            <%= link_to 'Next weekend', :controller => 'section', :action => 'events_date', :country => params[:country], :county => params[:county], :place => params[:place], :section => params[:section], :tag => 'next_weekend' -%>
+			</div>
+		<div class="rbbot"><div></div></div>
+	</div>
+	<div class="rbroundbox">
+		<div class="rbtop"><div></div></div>
+			<div class="rbcontent">
+            <%= link_to 'This week', :controller => 'section', :action => 'events_date', :country => params[:country], :county => params[:county], :place => params[:place], :section => params[:section], :tag => 'this_week' -%>
+			</div>
+		<div class="rbbot"><div></div></div>
+	</div>
+	<div class="rbroundbox">
+		<div class="rbtop"><div></div></div>
+			<div class="rbcontent">
+            <%= link_to 'Next week', :controller => 'section', :action => 'events_date', :country => params[:country], :county => params[:county], :place => params[:place], :section => params[:section], :tag => 'next_week' -%>
+			</div>
+		<div class="rbbot"><div></div></div>
+	</div>
+</div>

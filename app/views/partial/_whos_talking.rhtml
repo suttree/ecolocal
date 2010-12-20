@@ -1,0 +1,30 @@
+<div id="whos_talking" style="display: none">
+	<span class='misc_hi'>
+		<big><b>Who's joined in with this discussion?</b></big>
+	</span>
+	<br/>
+	Discussion started by <%= link_to @discussion.user.nickname, :controller => 'members', :action => 'index', :nickname => @discussion.user.nickname %>
+	<br/><br/>
+	<% if @discussion.comments.size > 0 -%>
+		<%
+			# Unique nicknames only, please
+			users = []
+			for comment in @discussion.comments
+				users << comment.user.nickname if !users.include?( comment.user.nickname )
+			end
+			
+		-%>	
+		With contributions from
+		<% for user in users -%>
+			<%= link_to user, :controller => 'members', :action => 'index', :nickname => user %>
+		<% end -%>
+	<% else -%>
+		With no other users contributing at this time.
+	<% end -%>
+
+	<br/>
+
+	<p align='right'>
+		<a href="" onclick="Element.toggle('whos_talking'); return false;">[Close]</a>
+	</p>
+</div>

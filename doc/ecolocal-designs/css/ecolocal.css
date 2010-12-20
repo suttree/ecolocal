@@ -1,0 +1,284 @@
+body {
+	margin: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #fff;
+	background-image: url(../images/background.png);
+	#font-family: Lucida Grande, Tahoma, verdana, arial, Helvetica, Sans-serif;
+	#font-family: Gill Sans, Georgia, Times;
+	#font-family: Georgia, sans-serif;
+	font-family: Verdana, Arial, Geneva, Sans-serif;
+	color: #336633;
+}
+
+div.border {
+	background-color: #eee;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+}
+
+div.top {
+	margin: 0px;
+	padding: 5px;
+	color: #ddd;
+	text-align: right;
+	background-color: #000;
+}
+
+div.top a {
+	color: #fff;
+	font-size: small;
+	padding: 5px;
+	text-decoration: none;
+}
+
+div.top a:hover {
+	text-decoration: underline;
+}
+
+div.top span.logo {
+	float: left;
+	margin-top: 2px;
+}
+
+div.top span.logo a {
+	color: #C80461;
+	font-size: small;
+	padding: 5px;
+	text-decoration: none;
+}
+
+div.top span.logo a:hover {
+	text-decoration: underline;
+}
+	
+div.bib {
+	background-color: #F0F7E2;
+	padding-top: 10px;
+}
+
+div.logowrapper {
+    padding: 25px;
+    display: block;
+}
+
+div.ad {
+	text-align: center;
+	margin: 2px;
+	padding: 2px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.logo {
+	position: absolute;
+	left: 25px;
+	top: 15px;
+	display: block;
+}
+
+div.logo h1.logo1 {
+	margin: 0px;
+	padding-left: 10px;
+	display: inline;
+	font-family: Tahoma;
+	font-size: 48px;
+	#color: #00CC00;
+	color: #65CE0C;
+}
+
+div.logo h1.logo2 {
+	margin: 0px;
+	display: inline;
+	font-family: Tahoma;
+	font-size: 48px;
+	color: #B3B300;
+}
+
+h2.subtitle {
+	margin: 0px;
+	padding-left: 10px;
+	font-size: 11px;
+}
+
+form.search {
+	margin: 0px;
+	padding: 0px;
+	display: inline;
+}
+
+form.search input {
+	vertical-align: middle;
+	border: 2px solid #000;
+}
+
+form.home {
+	margin-top: 90px;
+	padding: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+	font-size: 16px;
+	background: transparent url(../images/fff.gif);
+	border: 1px solid #fff;
+	text-align: center;
+}
+
+form.home select {
+    font-size: 24px;
+}
+
+form.home input {
+	font-size: 24px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+div.alt_search {
+	margin-top: 50px;
+	padding-left: 150px;
+	font-size: 16px;
+}
+
+div.home_life {
+	color: #000;
+	display: block;
+	padding: 15px;
+	padding-left: 30px;
+	border-top: 2px solid #fff;
+	background-color: #DEF0CC;
+	clear: both;
+}
+
+div.health {
+	color: #000;
+	display: block;
+	padding: 15px;
+	padding-left: 30px;
+	border-top: 2px solid #fff;
+	background-color: #D4EA99;
+}
+
+div.family {
+	color: #000;
+	display: block;
+	padding: 15px;
+	padding-left: 30px;
+	border-top: 2px solid #fff;
+	background-color: #A9C973;
+}
+
+div.section_title {
+	float: left;
+	width: 20%;
+}
+
+div.links {
+	#border: 1px solid red;
+}
+
+table.main {
+	padding: 0px;
+	margin: 0px;
+}
+
+div.overview {
+	margin: 10px;
+	padding: 2px;
+	border: 1px solid #fff;
+	background-color: #DEF0CC;
+}
+
+div.left {
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	width: 70%;
+	height: 300px;
+	float: left;
+	padding: 2px;
+	color: #000;
+	#border: 1px solid #fff;
+	#background-color: #A9C973;
+}
+
+div.right {
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	width: 25%;
+	float: right;
+	display: block;
+	padding: 2px;
+	border: 1px solid #fff;
+	background-color: #D4EA99;
+	background-image: url(../images/background.png);
+}
+
+div.left span.title {
+	display: block;
+	padding: 10px;
+	margin-bottom: 10px;
+	color: #000;
+	font-size: big;
+	font-weight: bold;
+	background-image: url(../images/background.png);
+}
+
+span.list_tags {
+	font-size: small;
+	border: 1px solid red;
+}
+
+div.right span.title {
+	margin: 10px;
+	color: green;
+}
+
+div.content {
+	display: block;
+	color: #000;
+	padding: 15px;
+	height: 80%;
+	line-height: 20px;
+	
+	#background-color: #D6ECC0;
+	#background-color: #DEF0CC;
+	#background-color: #F2FAEB;
+
+	#background: transparent url(../images/slash.png);
+	#background-color: #E9F7D4;
+	background-color: #F0F7E2;
+	#background: transparent url(../images/fff.gif);
+	
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	foo: #FAF6F7;
+	bar: #F7EEF0;
+}
+
+div.content a {
+	display: block;
+}
+
+div.footer {
+	margin-top: 5px;
+	line-height: 25px;
+	text-align: center;
+	font-size: small;
+	color: #ddd;	
+}
+
+div.footer a {
+	padding: 5px;
+}
+
+img.icon {
+	border: 0;
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+	border: 2px solid #fff;
+	vertical-align: middle;
+}

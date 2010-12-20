@@ -1,0 +1,11 @@
+Hello <%= @user.forename -%>,
+
+A new comment has been posted to your discussion ,'<%= @discussion.title -%>'.
+Copy and paste the following url into your web browser to view the comment:
+
+http://www.ecolocal.com/discuss/<%= @discussion.normalised_title -%>#comment_<%= @comment_id -%>
+
+
+Thanks,
+
+ecolocal

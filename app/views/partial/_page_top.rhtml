@@ -1,0 +1,21 @@
+<div class='top'>
+	<span class='logo'>
+        <a href='/'>Home</a>
+	</span>
+
+	<a href='/help/about'>About</a>
+	<a href='/help/contact'>Contact</a>
+	<a href='/help'>Help</a>
+
+	<% if session[:logged_in] %>
+		<a href='/members/logout/'>Logout</a>
+		<%= link_to 'Profile', :controller => '/members', :action => 'index' %>
+	<% else %>
+		<a href='/members/login'>Login</a>
+		<a href='/register'>Register</a>
+	<% end %>
+	<form action='/uk/search/results/' class='search'>
+		<input type='text' name='q' class='search'>
+		<input type='submit' value='Search'>
+	</form>
+</div>

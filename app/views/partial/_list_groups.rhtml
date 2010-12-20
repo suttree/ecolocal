@@ -1,0 +1,24 @@
+<% if @groups %>
+	<% for group in @groups %>
+		<div class='article'>
+			<div class='article_title'>
+				<b><%= link_to group.name.capitalize, :controller => 'groups', :action => 'group' %></b> by <%= group.user.nickname %>
+			</div>
+			<div class='article_body'>
+				<%= group.description %>
+				<%= link_to 'Read more &raquo;', :controller => 'groups', :action => 'group' %>
+			</div>
+		</div>
+	<% end %>
+<% else %>
+<div class='article'>
+	<div class='article_title'>
+		<b>No matching groups</b>
+	</div>
+	<div class='article_body'>
+		There are no matching groups to display.
+	</div>
+</div>
+<% end %>
+
+<%= render_partial "partial/paginator", @group_pages %>

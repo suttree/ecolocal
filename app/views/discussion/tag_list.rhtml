@@ -1,0 +1,20 @@
+<%= render_partial "partial/about" -%>
+
+<%= render_partial "partial/breadcrumb_discussion" -%>
+
+<%= render_partial "partial/tabs_discussion" -%>
+
+<%= render_partial "partial/contribute" -%>
+
+<div class='list'>
+	<h3>Latest discussions tagged with '<%=h params[:tag] %>' on ecolocal</h3>
+	<% cache( :discuss => 'discuss', :page => params[:page], :logged_in => session[:logged_in] ) do -%>
+		<%= render_partial "partial/discussions" -%>
+	<% end -%>
+
+	<% if @discussion_pages -%>
+
+		<%= render_partial "partial/paginator", @discussion_pages -%>
+
+	<% end -%>
+</div>

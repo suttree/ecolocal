@@ -1,0 +1,45 @@
+xml.rss('version' => '2.0') do
+  xml.channel do 
+    xml.title('ecolocal.com')
+    xml.link('http://ecolocal.com/')
+    xml.description('ecolocal.com - Find out about healthy living in your area')
+
+    @discussions.each { |a|
+      xml.item do 
+        xml.title(a.title + ' by ' + a.user.nickname)
+    		xml.link(@request.protocol + @request.host_with_port + url_for( :controller => "discussion", :section => "discuss", :action => "show", :title => a.normalised_title))
+        xml.description(a.body)
+        xml.pubDate(CGI.rfc1123_date(a.updated_on))
+    end
+    }
+
+    @articles.each { |a|
+      xml.item do 
+        xml.title(a.title + ' by ' + a.user.nickname)
+
+      	if a.tagged_with?('events')
+      		section = 'events'
+      	elsif a.tagged_with?('home_life')
+      		section = 'home_life'
+      	elsif a.tagged_with?('health')
+      		section = 'health'
+      	elsif a.tagged_with?('family')
+      		section = 'family'
+      	else
+      		section = nil
+      	end
+
+      	if a.places[0] != nil
+      		xml.link(@request.protocol + @request.host_with_port + url_for( :controller => "article", :country => a.countries[0].url_name, :county => a.counties[0].url_name, :place => a.places[0].url_name, :section => section, :action => "show", :title => a.normalised_title))
+      	elsif a.counties[0] != nil
+      		xml.link(@request.protocol + @request.host_with_port + url_for( :controller => "article", :country => a.countries[0].url_name, :county => a.counties[0].url_name, :section => section, :action => "show", :title => a.normalised_title))
+      	else
+      		xml.link(@request.protocol + @request.host_with_port + url_for( :controller => "article", :country => a.countries[0].url_name, :section => section, :action => "show", :title => a.normalised_title))
+      	end
+
+        xml.description(a.body)
+        xml.pubDate(CGI.rfc1123_date(a.updated_on))
+    end
+    }
+  end
+end

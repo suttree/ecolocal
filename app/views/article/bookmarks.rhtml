@@ -1,0 +1,46 @@
+<%= render_partial "partial/breadcrumb" %>
+
+<%= render_partial "partial/ad" %>
+
+<div class='left'>
+	<span class='title'>Bookmark an interesting link</span>
+	<div class='content'>
+		<% if params[:place] -%>
+			This bookmark will appear in the <%= params[:place].capitalize -%> section of <a href='/'>ecolocal.co.uk</a>.
+		<% elsif params[:county] -%>
+			This bookmark will appear in the <%= params[:county].capitalize -%> section of <a href='/'>ecolocal.co.uk</a>.
+		<% else -%>
+			This bookmark will appear in the UK section of <a href='/'>ecolocal.co.uk</a>.
+		<% end -%>
+		<p>
+			<span class='misc'>
+				* Fields marked with an asterisk* are mandatory.
+			</span>
+		</p>
+		<%= start_form_tag :controller => 'article', :action => 'save', :country => params[:country], :county => params[:county], :place => params[:place], :section => params[:section] %>
+		    <%= error_messages_for 'article' %>
+
+		    <p>
+			<label for="article_title">* Name of website</label><br/>
+		        <%= text_field 'article', 'title'  %>
+	    	    </p>
+
+		    <p>
+			<label for="article_url">* Website address</label><br/>
+		        <%= text_field 'article', 'url'  %>
+		    </p>
+
+		    <p>
+			<label for="article_body">* Bookmark description</label><br/>
+		        <%= text_area 'article', 'body', :rows => 10, :cols => 60 %>
+		    </p>
+
+			<%= render_partial "partial/tags" %>
+
+			<input type='hidden' name='article_type' value='bookmarks' />
+		    <%= submit_tag "Save" %>
+	<%= end_form_tag %>
+	</div>
+</div>
+
+<%= render_partial "partial/about_bookmarks" %>

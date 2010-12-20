@@ -1,0 +1,10 @@
+<div class='right'>
+	<span class='title'>Popular counties</span>
+	<div class='content'>
+		<small>
+		<% for county in @popular_counties %>
+			<%= link_to county.name.capitalize, :country => county.country.url_name, :controller => 'location', :county => county.name %>
+		<% end -%>
+		</small>
+	</div>
+</div>

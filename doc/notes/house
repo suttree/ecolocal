@@ -1,0 +1,74 @@
+<html>
+<head>
+    <link href="ecolocal.css" media="all" rel="Stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<h1 class='breadcrumb'><a href='/uk/'>UK</a></h1> / 
+<h1 class='breadcrumb'><a href='/uk/kent/'>Kent</a></h1> / 
+<h1 class='breadcrumb'><a href='/uk/kent/sidcup'>Sidcup</a></h1>
+
+<br />
+<br />
+<br />
+
+<div>
+    <h1 class='overview'>House</h1>
+    <div class='content'>
+        <i>
+        House blurb, details about what should go in the House section. House stuff should include ...
+        </i>
+        <br />
+        <h3><u>An article on Lorem Ipsum in Sidcup</u></h3>
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut ornare convallis metus. Morbi tincidunt viverra nisi. Pellentesque neque. Duis nec ipsum. Vivamus sed lacus. Nam dolor diam, lacinia eu, interdum ut, eleifend in, pede. Sed nibh dui, luctus et, viverra ac, aliquet ut, erat. Phasellus tempor velit ac arcu. Vivamus urna. Etiam tempus neque ac quam vulputate convallis. Pellentesque nulla diam, mattis vel, ullamcorper in, cursus et, nunc. Duis et diam a metus porta sagittis. Quisque massa tellus, interdum a, nonummy non, ornare sed, justo. Sed pellentesque, sem quis sollicitudin lobortis, neque justo ullamcorper velit, in tristique orci elit vel sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.
+        <br />
+        <br />
+Sed tristique tincidunt justo. Vestibulum in sapien. Maecenas hendrerit. Etiam egestas nisl in libero. Duis sit amet pede. In eget sem. Maecenas est pede, vestibulum id, facilisis id, blandit vel, sem. Sed semper, odio nec lobortis tempor, velit ipsum malesuada magna, lobortis consequat tellus erat a quam. Praesent porttitor. Phasellus in sem ut massa cursus blandit. Ut neque risus, viverra ut, imperdiet ac, molestie at, libero. Integer tortor erat, blandit ac, tincidunt eget, euismod eget, nisl. Curabitur dapibus ultricies sem. Fusce pede odio, dignissim a, sagittis id, tempus sit amet, dui. Vivamus erat dolor, rhoncus non, pharetra sed, commodo eu, pede.
+        <br />
+        <br />
+Phasellus sagittis erat vel mauris. Curabitur tempus magna volutpat neque. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc convallis mattis lorem. Aenean tristique, elit non gravida ullamcorper, ipsum diam tincidunt velit, venenatis consequat risus ante condimentum urna. Suspendisse dapibus. Morbi nunc. Fusce ornare. Nam auctor ipsum id orci. Integer eu nunc eu urna vulputate feugiat. Donec ac nunc non dolor aliquet convallis. Nam id pede ac massa suscipit vestibulum. Vivamus ipsum arcu, fermentum a, dictum vel, faucibus et, mauris. Sed neque orci, vehicula et, congue sit amet, auctor eu, elit.
+        <br />
+        <br />
+Sed ullamcorper, augue id euismod hendrerit, lacus odio imperdiet leo, at consequat lectus est nec libero. Cras ut velit ullamcorper nisl lobortis bibendum. Etiam ornare aliquet turpis. Vivamus odio purus, pretium in, ullamcorper nec, posuere eget, nisl. Cras vel erat at arcu condimentum tempor. Phasellus auctor tincidunt est. Cras tellus nulla, posuere in, aliquam eu, malesuada tincidunt, arcu. Maecenas pulvinar blandit massa. Etiam nisi ipsum, bibendum ac, imperdiet ut, laoreet et, nisi. Suspendisse molestie ultricies libero.
+        <br />
+        <br />
+Praesent mollis nisl sit amet turpis. Cras est. Vestibulum mi sem, ornare quis, scelerisque et, congue ac, massa. Nam vulputate libero ut lacus. Sed lacus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus a leo. Aliquam at lorem. Vestibulum quam. Integer vestibulum orci a nunc.
+        <ul>
+            <li>Created by <a href=''>Duncan Gough</a> on Saturday, December 31st, 2005.</li>
+            <li><a href=''>Rate this artice</a>, popular articles are promoted throughout the website.</li>
+            <li><a href=''>Comment on this article</a>, have your say on local issues like this.</li>
+        </ul>
+
+        <hr />
+
+        <h3>Comments</h3>
+
+        <ul>
+            <li>
+                <i>Reply from Jane Gough on Sunday, January 1st, 2006</i>
+                <br />
+                <br />
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut ornare convallis metus. Morbi tincidunt viverra nisi. Pellentesque neque. Duis nec ipsum. Vivamus sed lacus. Nam dolor diam, lacinia eu, interdum ut, eleifend in, pede. Sed nibh dui, luctus et, viverra ac, aliquet ut, erat. Phasellus tempor velit ac arcu. Vivamus urna.
+            </li>
+
+            <br/>
+
+            <li>
+                <i>Reply from Ryan Gough on Tuesday, January 3rd, 2006</i>
+                <br />
+                <br />
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut ornare convallis metus. Morbi tincidunt viverra nisi. Pellentesque neque. Duis nec ipsum. Vivamus sed lacus. Nam dolor diam, lacinia eu, interdum ut, eleifend in, pede. Sed nibh dui, luctus et, viverra ac, aliquet ut, erat. Phasellus tempor velit ac arcu. Vivamus urna.
+            </li>
+
+            <br />
+
+            <li><a href=''>Comment on this article</a>, have your say on local issues like this.</li>
+
+        </ul>
+        <a href=''>Create a new House article</a>, discuss issues relevant to you in Sidcup and Kent.
+    </div>
+</div>
+
+</body>
+</html>

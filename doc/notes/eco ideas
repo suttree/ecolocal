@@ -1,0 +1,38 @@
+User searches for Dartford, no results.
+
+User is asked to create new page:
+
+  * Name (pre-filled with Dartford)
+  * Description (free text)
+  * Location (choose from drop down list of counties in UK, Wales and Ireland).
+
+Page is then created and user can add content to it.
+
+URL for page
+
+ecolocal.co.uk/about/dartford/ or ecolocal/co.uk/dartford/?
+
+ecolocal.co.uk/about/kent/
+ecolocal.co.uk/about/dartford/
+ecolocal.co.uk/about/kent/dartford/ ?
+
+Are people creating groups in their area, of places?
+e.g., am I creating a group for finding out about green issues in the south-east, or am i creating a group to discuss everything green relevant to Dartford?
+
+What's the difference? A group in kent suggests /kent/groupname/, a town in kent suggests /kent/townname/, so there's no real difference? If I want hackable urls then we need to allow for the county/group_or_place_name hierarchy.
+
+So, / is the root, /help/ is reserved for the site, as is /home_life/, /health/ and /family/, then /countyname/ is a county name. There are no other first order urls available.
+
+On the next level, /countyname/whatever reveals a place or group based in a specific county.
+
+My concern is that we're tieing people to a location by enforcing the county/place hierarchy, which i wanted to avoid. However, by placing the place or group in a county, we are able to aggregate local news, offer location based advertising, put people in touch with like-minded people in their area. So, there are two aspects to the site, for the readers - those who want to find out local news and those who want to find out 'issue' news.
+
+Do we need to offer further aggregators like south-east, north-east, etc?
+
+Do we need to direct people to the issues first, and locations second? E.g., when you create a new article do you get taken to /home/ or /kent/dartford/home/? Depends how you came into the site to create it, I guess.
+
+So, how do we help people discuss topics rather than just location-sensitive news? Currently we push everything through the section pages before a user can create news. I think we should continue to do that. No matter where the user is, they can create new content by going into a section page.
+
+Must *never* tie a user to a single location - alwyas offer a web out of the current page by prodviding links to the parent county/country, category, section, tags, users, etc.
+
+Also, always allow users to select more than one location to identify themselves with. So, for events or swaps listings, user will get results for more than one location if they've specified it. Further, when a user activates their account, they get to choose what locations are relevant to them - which works like an inbox does on delicious, giving them the local news for all the relevant areas.

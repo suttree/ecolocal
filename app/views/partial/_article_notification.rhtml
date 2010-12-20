@@ -1,0 +1,13 @@
+Receive an email whenever someone replies to this article:  <input type="checkbox" id="article_notification_<%= @article.id -%>" <% if @article.article_notifications[0] != nil -%> checked="checked" <% end -%>name="article_notification" />
+
+<%= observe_field(  "article_notification_#{@article.id}",
+                    :update => "article_notification_status_#{@article.id}",
+                    :url => { :controller => 'article', :action => :article_notification, :title => @article, :article_id => @article.id },
+					:loading => "Element.show('indicator_#{@article.id}')",
+					:complete => "Element.hide('indicator_#{@article.id}')",
+                    :with => "status"
+                 )
+-%>
+<span id='indicator_<%= @article.id -%>' style="display: none;">
+	<img src='/images/indicator.gif' border='0' />
+</span>

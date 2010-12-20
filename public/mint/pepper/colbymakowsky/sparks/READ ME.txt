@@ -1,0 +1,40 @@
+YOU INSTALL AT YOUR OWN RISK.
+
+Important! Please uninstall any previous version of Sparks! before updating.
+
+===========================================================================
+Installing Sparks!
+---------------------------------------------------------------------------
+
+1. If you've installed any previous version of Sparks! please uninstall using
+the Mint preference pane. This is an important step.
+
+2. Upload the /sparks/ directory and its contents to 
+/mint/pepper/colbymakowsky/. If the directory /colbymakowsky/ doesn't exist, create it.
+
+3. Login to your Mint installation and in the Preferences click "Install" under Pepper.
+
+4. Click the Sparks! "Install" button. Click "Okay."
+
+That's all there is to it. Sparks! Pepper doesn't touch your database.
+
+===========================================================================
+Troubleshooting Sparks! Pepper
+---------------------------------------------------------------------------
+
+DO YOU HAVE GD INSTALLED AS A MODULE?
+
+Sparks! Pepper is built on the Sparkline PHP Graphing Library, which requires
+that you have GD installed as a PHP module. If Sparks! Pepper doesn't generate graphs, try loading the following page:
+
+http://[yourwebsite.com]/mint/pepper/colbymakowsky/sparks/util/-gdinfo.php
+
+You will see a list of installed modules; if "gd" is not in the list, contact
+your site administrator to see if it can be installed.
+
+Once you have confirmed Sparks! runs on your server, you should delete
+the -gdinfo.php file.
+
+===========================================================================
+
+Sparks! is written by Colby Makowsky and Marc A. Garrett. This work is licensed under the Creative Commons Attribution-ShareAlike License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.

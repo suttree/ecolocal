@@ -1,0 +1,16 @@
+<small>
+	<i>Check this box to receive an email whenever someone replies to this comment: 
+		<input type="checkbox" id="comment_notification_<%= @comment.id -%>" <% if @comment.comment_notifications[0] != nil -%> checked="checked" <% end -%>name="comment_notification" />
+	</i>
+</small>
+<%= observe_field(  "comment_notification_#{@comment.id}",
+                    :update => "comment_notification_status_#{@comment.id}",
+                    :url => { :controller => 'discuss', :action => :comment_notification, :title => @comment, :comment_id => @comment.id },
+					:loading => "Element.show('indicator_#{@comment.id}')",
+					:complete => "Element.hide('indicator_#{@comment.id}')",
+                    :with => "status"
+                 )
+-%>
+<span id='indicator_<%= @comment.id -%>' style="display: none;">
+	<img src='/images/indicator.gif' border='0' />
+</span>

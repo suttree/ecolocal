@@ -1,0 +1,222 @@
+<%= render_partial "partial/logo" -%>
+
+<div class='article_info'>
+	<h1><%= @article.title -%></h1>
+	<h2>Posted by <%= link_to @article.user.nickname, :controller => 'members', :action => 'index', :nickname => @article.user.nickname %>, <%= time_ago_in_words( @article.updated_on ) -%> ago
+
+	<% if @article.tag_names.size > 0  %>
+
+	<div class='tags'>
+		Tags: 
+		<% for tag in @article.tag_names %>
+
+			<% if @article.counties[0] != nil %>
+
+				<%= link_to tag, { :country => params[:country], :county => @article.counties[0].url_name, :controller => 'location', :action => 'county_tag', :tag => tag }, :rel => "category tag" %>
+
+			<% else %>
+
+				<%= link_to tag, { :country => params[:country], :controller => 'location', :action => 'country_tag', :tag => tag }, :rel => "category tag" %>
+
+			<% end %>
+
+		<% end %>
+	</div>
+
+	<% end -%>
+
+	<% if @article.url != '' && @article.url != nil %>
+
+		<div class='link'>
+			Link: <%= linkify( @article.url ) %>&nbsp;<img src='/images/offsite.gif' title='External link' class='icons'>
+		</div>
+
+	<% end %>
+	
+	<div class='article_notification'>
+		<div id='article_notification_status_<%= @article.id -%>'>
+			<form>
+				<%= render_partial "partial/article_notification", @article -%>
+			</form>
+		</div>
+	</div>
+
+</div>
+
+<div class='article_image'>
+	<img src='/images/relax.gif' width='270' height='164' alt'Logo image' title='ecolocal | Find out about healthy living'/>
+</div>
+
+
+<%= render_partial "partial/breadcrumb" -%>
+
+<%= render_partial "partial/tabs" -%>
+
+<%= render_partial "partial/contribute" -%>
+
+<div class='article_body'>
+	<h2>Update post</h2>
+	<span class='misc'>
+		* Fields marked with an asterisk* are mandatory.
+		<br/>
+		* Some html is allowed.
+	</span>
+	<%= start_form_tag :controller => 'article', :action => 'update', :country => params[:country], :county => params[:county], :section => params[:section], :title => @article.normalised_title %>
+	    
+		<%= error_messages_for 'article' %>
+
+		<p><label for="article_title">* Title</label><br/>
+		<%= text_field 'article', 'title'  %></p>
+
+		<p><label for="article_url">* URL</label><br/>
+		<%= text_field 'article', 'url'  %></p>
+
+		<p><label for="article_body">* Body</label><br/>
+		<%= text_area 'article', 'body', :rows => 10, :cols => 60 %></p>
+
+		<% if @is_event -%>
+
+			<p>* Event type<br/>
+			One off: <input type='radio' name='event_type' onclick="Element.hide('recurring'); Element.show('one_off');" value='one_off' <% if @article.local_events[0].start_date != nil -%>checked='on'<% end -%> /> |
+			Recurring: <input type='radio' name='event_type' onclick="Element.hide('one_off'); Element.show('recurring');" value='recurring' <% if @article.local_events[0].event_type != 'one_off' -%>checked='on'<% end -%>/></p>
+
+			<div id='one_off' <% if @article.local_events[0].start_date == nil -%>style="display: none;"<% end -%>>
+				<p><label for="article_start_date">* Start date</label><br/>
+				<%= date_select 'local_events', 'start_date' %></p>
+
+				<p><label for="article_end_date">End date</label><br/>
+				<%= date_select 'local_events', 'end_date' %></p>
+			</div>
+
+			<div id='recurring' <% if @article.local_events[0].event_type == nil -%>style="display: none;"<% end -%>>
+				
+				<div id='recurring_week_month'>
+
+					<input type='radio' name='recurring_period' value='recurring_week_month' <% if @article.local_events[0].event_type == 'recurring_week_month' -%>checked=checked<% end -%> />
+
+					<% for event in @article.local_events -%>
+						<% 
+							recurrence = []
+							recurrence = event.recurrence.split(',')
+						 -%>
+						The <select id="local_event_week" name="local_event[week][]">
+							<option <% if recurrence[0] == 'First' -%>selected<% end -%> value="First">First</option>
+							<option <% if recurrence[0] == 'Second' -%>selected<% end -%> value="Second">Second</option>
+							<option <% if recurrence[0] == 'Third' -%>selected<% end -%> value="Third">Third</option>
+							<option <% if recurrence[0] == 'Fourth' -%>selected<% end -%> value="Fourth">Fourth</option>
+							<option <% if recurrence[0] == 'Last' -%>selected<% end -%> value="Last">Last</option>
+						</select>
+						<select id="local_event_day" name="local_event[day][]">
+							<option <% if recurrence[1] == 'Sunday' -%>selected<% end -%> value="Sunday">Sunday</option>
+							<option <% if recurrence[1] == 'Monday' -%>selected<% end -%> value="Monday">Monday</option>
+							<option <% if recurrence[1] == 'Tuesday' -%>selected<% end -%> value="Tuesday">Tuesday</option>
+							<option <% if recurrence[1] == 'Wednesday' -%>selected<% end -%> value="Wednesday">Wednesday</option>
+							<option <% if recurrence[1] == 'Thursday' -%>selected<% end -%> value="Thursday">Thursday</option>
+							<option <% if recurrence[1] == 'Friday' -%>selected<% end -%> value="Friday">Friday</option>
+							<option <% if recurrence[1] == 'Saturday' -%>selected<% end -%> value="Saturday">Saturday</option>
+						</select> of the month.
+						<a href='#' onclick="Element.remove('recurring_week_month'); return false;" />[x]</a>
+						<br/>
+					<% end -%>
+				</div>
+
+				<%= link_to_remote 'Add another recurrence...', :update => 'recurring_week_month', :position => :bottom, :url => { :country => params[:country], :county => params[:county], :place => params[:place], :controller => 'article', :action => 'add_recurring_week_month' } -%>
+
+				<p>
+
+					<input type='radio' name='recurring_period' value='recurring_month_day' <% if @article.local_events[0].event_type == 'recurring_month_day' -%>checked=checked<% end -%> />
+
+					<% days = [] -%>
+					<% if @article.local_events[0].event_type == 'recurring_month_day' -%>
+						<% for event in @article.local_events -%>
+							<% if event.event_type == 'recurring_month_day' -%>
+								<% days << event.recurrence -%>
+							<% end -%>
+						<% end -%>
+					<% end -%>
+
+					Every
+					<input type='checkbox' name='local_event[month_day][]' value='Monday' 
+					<% if days.include?( 'Monday' ) -%>
+						checked=checked
+					<% end -%> /> Mon
+					<input type='checkbox' name='local_event[month_day][]' value='Tuesday'
+					<% if days.include?( 'Tuesday' ) -%>
+						checked=checked
+					<% end -%> /> Tue
+					<input type='checkbox' name='local_event[month_day][]' value='Wednesday' 
+					<% if days.include?( 'Wednesday' ) -%>
+						checked=checked
+					<% end -%> /> Wed
+					<input type='checkbox' name='local_event[month_day][]' value='Thursday' 
+					<% if days.include?( 'Thursday' ) -%>
+						checked=checked
+					<% end -%> /> Thu
+					<input type='checkbox' name='local_event[month_day][]' value='Friday' 
+					<% if days.include?( 'Friday' ) -%>
+						checked=checked
+					<% end -%> /> Fri
+					<input type='checkbox' name='local_event[month_day][]' value='Saturday' 
+					<% if days.include?( 'Saturday' ) -%>
+						checked=checked
+					<% end -%> /> Sat
+					<input type='checkbox' name='local_event[month_day][]' value='Sunday' 
+					<% if days.include?( 'Sunday' ) -%>
+						checked=checked
+					<% end -%> /> Sun.
+
+				</p>
+
+				<p>
+					<input type='radio' name='recurring_period' value='recurring_month_index' <% if @article.local_events[0].event_type == 'recurring_month_index' -%>checked=checked<% end -%> />
+					The <select id="_local_event_month_index" name="local_event[month_index][]">
+						<option <% if @article.local_events[0].recurrence == '1' -%>selected<% end -%> value="1">1st</option>
+						<option <% if @article.local_events[0].recurrence == '2' -%>selected<% end -%> value="2">2nd</option>
+						<option <% if @article.local_events[0].recurrence == '3' -%>selected<% end -%> value="3">3rd</option>
+
+						<option <% if @article.local_events[0].recurrence == '4' -%>selected<% end -%> value="4">4th</option>
+						<option <% if @article.local_events[0].recurrence == '5' -%>selected<% end -%> value="5">5th</option>
+						<option <% if @article.local_events[0].recurrence == '6' -%>selected<% end -%> value="6">6th</option>
+						<option <% if @article.local_events[0].recurrence == '7' -%>selected<% end -%> value="7">7th</option>
+						<option <% if @article.local_events[0].recurrence == '8' -%>selected<% end -%> value="8">8th</option>
+						<option <% if @article.local_events[0].recurrence == '9' -%>selected<% end -%> value="9">9th</option>
+
+						<option <% if @article.local_events[0].recurrence == '10' -%>selected<% end -%> value="10">10th</option>
+						<option <% if @article.local_events[0].recurrence == '11' -%>selected<% end -%> value="11">11th</option>
+						<option <% if @article.local_events[0].recurrence == '12' -%>selected<% end -%> value="12">12th</option>
+						<option <% if @article.local_events[0].recurrence == '13' -%>selected<% end -%> value="13">13th</option>
+						<option <% if @article.local_events[0].recurrence == '14' -%>selected<% end -%> value="14">14th</option>
+						<option <% if @article.local_events[0].recurrence == '15' -%>selected<% end -%> value="15">15th</option>
+
+						<option <% if @article.local_events[0].recurrence == '16' -%>selected<% end -%> value="16">16th</option>
+						<option <% if @article.local_events[0].recurrence == '17' -%>selected<% end -%> value="17">17th</option>
+						<option <% if @article.local_events[0].recurrence == '18' -%>selected<% end -%> value="18">18th</option>
+						<option <% if @article.local_events[0].recurrence == '19' -%>selected<% end -%> value="19">19th</option>
+						<option <% if @article.local_events[0].recurrence == '20' -%>selected<% end -%> value="20">20th</option>
+						<option <% if @article.local_events[0].recurrence == '21' -%>selected<% end -%> value="21">21st</option>
+
+						<option <% if @article.local_events[0].recurrence == '22' -%>selected<% end -%> value="22">22nd</option>
+						<option <% if @article.local_events[0].recurrence == '23' -%>selected<% end -%> value="23">23rd</option>
+						<option <% if @article.local_events[0].recurrence == '24' -%>selected<% end -%> value="24">24th</option>
+						<option <% if @article.local_events[0].recurrence == '25' -%>selected<% end -%> value="25">25th</option>
+						<option <% if @article.local_events[0].recurrence == '26' -%>selected<% end -%> value="26">26th</option>
+						<option <% if @article.local_events[0].recurrence == '27' -%>selected<% end -%> value="27">27th</option>
+
+						<option <% if @article.local_events[0].recurrence == '28' -%>selected<% end -%> value="28">28th</option>
+						<option <% if @article.local_events[0].recurrence == '29' -%>selected<% end -%> value="29">29th</option>
+						<option <% if @article.local_events[0].recurrence == '30' -%>selected<% end -%> value="30">30th</option>
+						<option <% if @article.local_events[0].recurrence == '31' -%>selected<% end -%> value="31">31st</option>
+					</select> of every month.
+				</p>
+			</div>	
+		<% end -%>
+
+                       <p><label for="article_tags">Tags</label><br/>
+                       <%= text_field_tag('tags', @article.tag_names.join(', '), 'size' => 50) %><br/>
+                       <i>e.g. kids, days out, etc</i></p>
+
+		<input type='hidden' name='article_type' value='news' />
+		<p><%= submit_tag "Save" %></p>
+
+	<%= end_form_tag %>
+</div>

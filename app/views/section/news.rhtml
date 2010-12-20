@@ -1,0 +1,38 @@
+<h1>New <%=h @params[:section].capitalize %> article</h1>
+<br/>
+Fields marked with an asterisk* are mandatory. All HTML tags will be escaped. http:// strings in comments will be auto-linked. 
+
+<%= start_form_tag :action => 'create' %>
+
+    <%= error_messages_for 'article' %>
+
+	<!--[form:article]-->
+	<p><label for="article_title">Title</label><br/>
+	<%= text_field 'article', 'title'  %></p>
+
+	<p><label for="article_body">Body</label><br/>
+	<%= text_area 'article', 'body'  %></p>
+
+	<% if @article.errors[ 'tags' ] %>
+	    <div class="fieldWithErrors">
+	    <label for="article_tag">Tags</label>
+	    </div>
+	<% else %>
+	    <div> 
+	    <label for="article_tag">Tags</label>
+	    </div>
+	<% end %>
+
+	<% for tag in @tags %>
+	    <p><%= tag.capitalize %> &raquo; 
+	    <% if @article.tag_names.index( tag ) %>
+	        <%= check_box_tag( 'tags[]', tag, true ) %></p>
+	    <% else %>
+	        <%= check_box_tag( 'tags[]', tag ) %></p>
+	    <% end %>
+	<% end %>
+	<!--[eoform:article]-->
+	<%= submit_tag "Create" %>
+<%= end_form_tag %>
+
+<%= link_to 'Back', :action => 'list' %>

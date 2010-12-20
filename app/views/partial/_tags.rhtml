@@ -1,0 +1,19 @@
+<p>
+	<label for="article_tags"> Tags</label>
+	<br/>
+	<%= text_field_tag('tags', '', 'size' => 50) %><br/>
+
+	<small>
+	<% if controller.action_name == 'local_services' -%>
+		<i>Separate each tag with a comma, e.g. electrician, plumber, skip hire, etc</i>
+	<% elsif controller.action_name == 'bookmarks' -%>
+		<i>Separate each tag with a comma, e.g. shopping, gifts, information, kids. etc</i>
+	<% elsif controller.action_name == 'people_who_help' -%>
+		<i>Separate each tag with a comma, e.g. homeopath, fitness instructor, health food shop, etc</i>
+	<% elsif controller.action_name == 'places_to_go' -%>
+		<i>Separate each tag with a comma, e.g. restaurant, fayre, zoo, activity centre, places of interest, etc</i>
+	<% else -%>
+		<i>Separate each tag with a comma, e.g. kids, days out, local services, places to go, etc</i>
+	<% end -%>
+	</small>
+</p>

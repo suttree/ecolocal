@@ -1,0 +1,110 @@
+Health / Kids / Finance / Property / Education (adult and kids) / Crafts / Food
+
+30-something, new parents, etc
+
+Registration
+Member home page
+News
+Sections
+Links
+Forum
+Marketplace
+
+The whole thing is a wiki - place a layer of abstratcion over the top where new content 
+is fact checked by us. Then is placed onto the site for rating. The sections act
+like tags too.
+
+Look into local government stats to fill the site with data.
+Tie into theyworkforyou and pledgebank for more links, stats and data.
+
+A bit like kelkoo and a bit like moneysupermarket, but for health/finance/etc
+
+Then add in buddy lists, build up a trust network a la ebay, bring in jobs and dating.
+
+FREE CLASSIFIEDS TO BUILD THE COMMUNITY, FREE TRADE TO SELL SKILLS - way to upload images and details about each skill/product
+
+HOSTING FOR YOUR OWN WEBPAGES - to display more images (about you, your skills, your house, your kids) etc
+
+web 2.0 needs data 2.0. data 2.0 needs metadata 2.0 - e.g. guess what type of tags, also how did i get here - save your navigation history along with your tags
+
+Another website idea - joined up travel information. Plug in location and destination and website figures out way between the two.
+So it can find out how to get from airport A to airport B, especially useful when you can't go direct. Gives you all the choices
+and links to find out the prices (or screen scrapes prices too). Can do the same for train/tube combinations, or ferry/train...
+
+HYPER LOCAL DATA
+
+Search engine - tag searches, save searches, provide 'most popular' searches to put the focus back on the community.
+User generated stories - micro content
+
+
+---------------------------------------------------------
+
+== Green Social Website ==
+
+=== Home page ===
+
+  * Option of one bit search box (a la Google or Upmystreet)
+  * Or, choose one of the global categories - Home/Living, Health, Family
+
+=== Section page ===
+
+  * One of either Home/Living, Health, Family.
+
+  * Each main section has many
+
+=== Local section page ===
+
+  * One of either Home/Living, Health, Family
+
+==== Categories ====
+
+  * Categories to fit into each section (local or global):
+
+  * classifieds - etsy/craigslist
+  * local history - photo's of the area
+  * family history - genealogoy
+  * special offers - for partners
+  * out and about - parks, day trips, markets
+  * home - green supplies, how-to's
+  * health - gyms, shops
+  * kids - nurseries, activies, nct
+  * charity - charity shops, recycling depots
+
+  * All categories should have full commenting abilities, tied to the local/global setting.
+  * Comments can have +1/-1 ratings too, all of which adds to your user rating.
+
+  * Each section and cateogry has RSS feeds attached and also mailing list capabilities, 'notify me when this page is updated'.
+
+==== Users ====
+
+  * Users can have blogs, about me and photo pages but only if they want it.
+  * Users have to accept or ask for this, that way there are no empty member home pages.
+
+  * Users will also go through a staggered registration process (although they can sign up fully if they want to), i.e.
+
+__User types__
+
+  * Browser - read only
+  * Commentator - read/write. To post their first comment they have to give us a username and password
+  * Receiver - read/write? Registers to accept email updates from the site, local or global specific.
+  * Creator - write/read. Local business or gossip. Adds content to the site. Need full details.
+
+__Town crier__
+
+  * The site should contain information on a global and local scale, but it should also support groups, based around locations, interests or places/tags.
+
+  * The ums mistake was enforcing strict postcode based separation.
+  * To stop the disjointed groups, we won't separate by location.
+
+  * e.g. Terry and Sheila could create a group for their estate, using the site to distribute news, details, photos and events.
+  * e.g. The Collinsons could create a group for their family, taking in locations from Dartford, Newcastle and wherever else.
+
+  * All groups can be RSS enabled, and also email enabled ('notify me when this page changes').
+
+==== Site infrastructure ====
+
+  * RoR
+  * Site is a wiki, to allow addition of locations and groups
+  * RESTful urls
+
+

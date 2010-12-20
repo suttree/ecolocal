@@ -1,0 +1,43 @@
+# Logfile created on Sun Dec 19 00:00:20 +0000 2010 by /
+
+
+Processing SectionController#events_date (for 66.249.71.171 at 2010-12-19 00:00:20) [GET]
+  Session ID: ef9d49a710e1f9268aa21afe24b0dc55
+  Parameters: {"county"=>"london", "action"=>"events_date", "country"=>"uk", "tag"=>"this_weekend", "controller"=>"section", "section"=>"events"}
+Cookie set: remember_me=; domain=.ecolocal.com; path=/; expires=Sun, 19 Dec 2010 00:00:20 GMT
+Cookie set: remember_me=; domain=.ecolocal.co.uk; path=/; expires=Sun, 19 Dec 2010 00:00:20 GMT
+Fragment read: www.ecolocal.com/uk/london/events/date/this_weekend (0.00000)
+  [4;36;1mCounty Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM counties[0m
+  [4;35;1mCounty Load (0.000000)[0m   [0mSELECT * FROM counties WHERE (counties.`url_name` = 'london' ) LIMIT 1[0m
+  [4;36;1mArticle Load (0.016001)[0m   [0;1mSELECT count(*) as count
+ FROM articles, articles_counties, tags_articles, tags
+ WHERE articles.id = tags_articles.article_id
+ AND tags_articles.tag_id = tags.id
+ AND tags.name = 'events'
+ AND articles.id = articles_counties.article_id
+ AND articles_counties.county_id = 117[0m
+  [4;35;1mArticle Columns (0.004000)[0m   [0mSHOW FIELDS FROM articles[0m
+  [4;36;1mCountry Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM countries[0m
+  [4;35;1mPlace Columns (0.004001)[0m   [0mSHOW FIELDS FROM places[0m
+  [4;36;1mComment Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM comments[0m
+  [4;35;1mUser Columns (0.000000)[0m   [0mSHOW FIELDS FROM users[0m
+  [4;36;1mLocalEvent Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM local_events[0m
+  [4;35;1mArticleNotification Columns (0.004000)[0m   [0mSHOW FIELDS FROM article_notifications[0m
+  [4;36;1mTag Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM tags[0m
+  [4;35;1mArticle Load Including Associations (0.036002)[0m   [0mSELECT articles.`id` AS t0_r0, articles.`user_id` AS t0_r1, articles.`title` AS t0_r2, articles.`normalised_title` AS t0_r3, articles.`body` AS t0_r4, articles.`url` AS t0_r5, articles.`address` AS t0_r6, articles.`postcode` AS t0_r7, articles.`image` AS t0_r8, articles.`audio` AS t0_r9, articles.`updated_on` AS t0_r10, articles.`created_on` AS t0_r11, countries.`id` AS t1_r0, countries.`name` AS t1_r1, countries.`url_name` AS t1_r2, countries.`description` AS t1_r3, counties.`id` AS t2_r0, counties.`country_id` AS t2_r1, counties.`name` AS t2_r2, counties.`url_name` AS t2_r3, counties.`description` AS t2_r4, places.`id` AS t3_r0, places.`county_id` AS t3_r1, places.`name` AS t3_r2, places.`url_name` AS t3_r3, places.`description` AS t3_r4, comments.`id` AS t4_r0, comments.`user_id` AS t4_r1, comments.`article_id` AS t4_r2, comments.`discussion_id` AS t4_r3, comments.`parent_id` AS t4_r4, comments.`title` AS t4_r5, comments.`body` AS t4_r6, comments.`updated_on` AS t4_r7, comments.`created_on` AS t4_r8, users.`id` AS t5_r0, users.`nickname` AS t5_r1, users.`forename` AS t5_r2, users.`surname` AS t5_r3, users.`email` AS t5_r4, users.`password` AS t5_r5, users.`date_of_birth` AS t5_r6, users.`gender` AS t5_r7, users.`country` AS t5_r8, users.`description` AS t5_r9, users.`subscribe` AS t5_r10, users.`activation_code` AS t5_r11, users.`activation_date` AS t5_r12, users.`admin` AS t5_r13, users.`updated_on` AS t5_r14, users.`created_on` AS t5_r15, local_events.`id` AS t6_r0, local_events.`article_id` AS t6_r1, local_events.`start_date` AS t6_r2, local_events.`end_date` AS t6_r3, local_events.`event_type` AS t6_r4, local_events.`recurrence` AS t6_r5, article_notifications.`id` AS t7_r0, article_notifications.`user_id` AS t7_r1, article_notifications.`article_id` AS t7_r2, article_notifications.`created_on` AS t7_r3, tags.`id` AS t8_r0, tags.`name` AS t8_r1 FROM articles LEFT OUTER JOIN articles_countries ON articles_countries.article_id = articles.id LEFT OUTER JOIN countries ON countries.id = articles_countries.country_id LEFT OUTER JOIN articles_counties ON articles_counties.article_id = articles.id LEFT OUTER JOIN counties ON counties.id = articles_counties.county_id LEFT OUTER JOIN articles_places ON articles_places.article_id = articles.id LEFT OUTER JOIN places ON places.id = articles_places.place_id LEFT OUTER JOIN comments ON comments.article_id = articles.id LEFT OUTER JOIN users ON users.id = articles.user_id LEFT OUTER JOIN local_events ON local_events.article_id = articles.id LEFT OUTER JOIN article_notifications ON article_notifications.article_id = articles.id LEFT OUTER JOIN articles_tags ON articles_tags.article_id = articles.id LEFT OUTER JOIN tags ON tags.id = articles_tags.tag_id WHERE (countries.url_name = 'uk' AND counties.url_name = 'london' AND tags.name = 'events') ORDER BY articles.created_on DESC [0m
+  [4;36;1mArticle Load IDs For Limited Eager Loading (0.000000)[0m   [0;1mSELECT id FROM articles WHERE (articles.id IN ( 486,165,159,158,157 )) ORDER BY articles.created_on DESC LIMIT 0, 10[0m
+  [4;35;1mArticle Load Including Associations (0.008001)[0m   [0mSELECT articles.`id` AS t0_r0, articles.`user_id` AS t0_r1, articles.`title` AS t0_r2, articles.`normalised_title` AS t0_r3, articles.`body` AS t0_r4, articles.`url` AS t0_r5, articles.`address` AS t0_r6, articles.`postcode` AS t0_r7, articles.`image` AS t0_r8, articles.`audio` AS t0_r9, articles.`updated_on` AS t0_r10, articles.`created_on` AS t0_r11, countries.`id` AS t1_r0, countries.`name` AS t1_r1, countries.`url_name` AS t1_r2, countries.`description` AS t1_r3, counties.`id` AS t2_r0, counties.`country_id` AS t2_r1, counties.`name` AS t2_r2, counties.`url_name` AS t2_r3, counties.`description` AS t2_r4, places.`id` AS t3_r0, places.`county_id` AS t3_r1, places.`name` AS t3_r2, places.`url_name` AS t3_r3, places.`description` AS t3_r4, comments.`id` AS t4_r0, comments.`user_id` AS t4_r1, comments.`article_id` AS t4_r2, comments.`discussion_id` AS t4_r3, comments.`parent_id` AS t4_r4, comments.`title` AS t4_r5, comments.`body` AS t4_r6, comments.`updated_on` AS t4_r7, comments.`created_on` AS t4_r8, users.`id` AS t5_r0, users.`nickname` AS t5_r1, users.`forename` AS t5_r2, users.`surname` AS t5_r3, users.`email` AS t5_r4, users.`password` AS t5_r5, users.`date_of_birth` AS t5_r6, users.`gender` AS t5_r7, users.`country` AS t5_r8, users.`description` AS t5_r9, users.`subscribe` AS t5_r10, users.`activation_code` AS t5_r11, users.`activation_date` AS t5_r12, users.`admin` AS t5_r13, users.`updated_on` AS t5_r14, users.`created_on` AS t5_r15, local_events.`id` AS t6_r0, local_events.`article_id` AS t6_r1, local_events.`start_date` AS t6_r2, local_events.`end_date` AS t6_r3, local_events.`event_type` AS t6_r4, local_events.`recurrence` AS t6_r5, article_notifications.`id` AS t7_r0, article_notifications.`user_id` AS t7_r1, article_notifications.`article_id` AS t7_r2, article_notifications.`created_on` AS t7_r3, tags.`id` AS t8_r0, tags.`name` AS t8_r1 FROM articles LEFT OUTER JOIN articles_countries ON articles_countries.article_id = articles.id LEFT OUTER JOIN countries ON countries.id = articles_countries.country_id LEFT OUTER JOIN articles_counties ON articles_counties.article_id = articles.id LEFT OUTER JOIN counties ON counties.id = articles_counties.county_id LEFT OUTER JOIN articles_places ON articles_places.article_id = articles.id LEFT OUTER JOIN places ON places.id = articles_places.place_id LEFT OUTER JOIN comments ON comments.article_id = articles.id LEFT OUTER JOIN users ON users.id = articles.user_id LEFT OUTER JOIN local_events ON local_events.article_id = articles.id LEFT OUTER JOIN article_notifications ON article_notifications.article_id = articles.id LEFT OUTER JOIN articles_tags ON articles_tags.article_id = articles.id LEFT OUTER JOIN tags ON tags.id = articles_tags.tag_id WHERE (articles.id IN ( 486,165,159,158,157 )) AND articles.id IN ('486', '165', '159', '158', '157') ORDER BY articles.created_on DESC [0m
+Rendering actionlistlayoutfalse within layouts/main
+Rendering section/list
+Rendered partial/_logo (0.00000)
+Rendered partial/_about (0.00400)
+Rendered partial/_breadcrumb (0.00800)
+Rendered partial/_tabs (0.00400)
+Rendered partial/_events_dates (0.00800)
+Fragment read: www.ecolocal.com/uk/london/events/date/this_weekend (0.00000)
+Rendered partial/_paginator (0.00400)
+Rendered partial/_articles (0.02800)
+Cached fragment: www.ecolocal.com/uk/london/events/date/this_weekend (0.00000)
+Rendered partial/_page_title (0.00800)
+Rendered partial/_page_top (0.00400)
+Completed in 0.72804 (1 reqs/sec) | Rendering: 0.10801 (14%) | DB: 0.07200 (9%) | 200 OK [http://www.ecolocal.com/uk/london/events/date/this_weekend]

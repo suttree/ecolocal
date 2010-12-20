@@ -1,0 +1,16 @@
+<div class='strapline'>
+	<div class='breadcrumb'>
+
+	<%= link_to 'Home', :controller => 'home', :action => 'index' -%> &raquo;
+	<%= link_to 'Discuss', :controller => 'discussion', :action => 'index' -%>
+
+	<% if params[:title] -%>
+		&raquo; <%= de_normalise(params[:title].titleize) -%>
+	<% end -%>
+
+    <% if flash[:notice] != nil -%>
+        &raquo; <i><span style="color: #fff;"><%= flash[:notice] -%></span></i>
+    <% end -%>
+
+	</div>
+</div>

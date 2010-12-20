@@ -1,0 +1,81 @@
+<div class='article_info'>
+	<h1><%= @discussion.title -%></h1>
+	<h2>Posted by <%= link_to @discussion.user.nickname, :controller => 'members', :action => 'index', :nickname => @discussion.user.nickname %>, <%= time_ago_in_words( @discussion.updated_on ) -%> ago
+
+	<% if @discussion.tag_names.size > 0  -%>
+
+	<div class='tags'>
+		Tags: 
+
+		<% for tag in @discussion.tag_names -%>
+
+			<%= link_to tag, { :controller => 'discussion', :action => 'tag', :tag => tag }, :rel => "discussion tag" -%>
+
+		<% end -%>
+
+	</div>
+
+	<% end -%>
+
+	<% if @discussion.url != '' && @discussion.url != nil -%>
+
+		<div class='link'>
+			Link: <%= linkify( @discussion.url ) -%>&nbsp;<img src='/images/offsite.gif' title='External link' class='icons'>
+		</div>
+
+	<% end -%>
+	
+	<div class='article_notification'>
+		<div id='article_notification_status_<%= @discussion.id -%>'>
+			<form>
+				<%= render_partial "partial/discussion_notification", @discussion -%>
+			</form>
+		</div>
+	</div>
+
+</div>
+
+<div class='article_image'>
+	<img src='/images/relax.gif' width='270' height='164' alt'Logo image' title='ecolocal | Find out about healthy living'/>
+</div>
+
+
+<%= render_partial "partial/breadcrumb_discussion" -%>
+
+<%= render_partial "partial/tabs_discussion" -%>
+
+<%= render_partial "partial/contribute" -%>
+
+<div class='article_body'>
+
+	<%= render_partial "partial/whos_talking", @discussion -%>
+
+	<h2>Update discussion</h2>
+
+	<span class='misc'>
+		* Fields marked with an asterisk* are mandatory.
+		<br/>
+		* Some html is allowed.
+	</span>
+
+	<%= start_form_tag :controller => 'discussion', :action => 'update', :section => 'discuss', :title => @discussion.normalised_title -%>
+	    
+		<%= error_messages_for 'article' -%>
+
+		<p><label for="article_title">* Title</label><br/>
+		<%= text_field 'discussion', 'title'  -%></p>
+
+		<p><label for="article_url">* URL</label><br/>
+		<%= text_field 'discussion', 'url'  -%></p>
+
+		<p><label for="article_body">* Body</label><br/>
+		<%= text_area 'discussion', 'body', :rows => 10, :cols => 60 -%></p>
+
+        <p><label for="article_tags">Tags</label><br/>
+        <%= text_field_tag('tags', @discussion.tag_names.join(', '), 'size' => 50) -%><br/>
+        <i>e.g. kids, days out, etc</i></p>
+
+		<p><%= submit_tag "Save" -%></p>
+
+	<%= end_form_tag -%>
+</div>

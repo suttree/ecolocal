@@ -1,0 +1,36 @@
+Hello <%= @user.forename -%>,
+
+A new comment has been posted in reply to your comment ,'<%= @comment.parent.title -%>'.
+Copy and paste the following url into your web browser to view the comment:
+
+<%
+
+if comment.article_id > 0
+	# Make sure that the comment.article link points to a section, if one is applicable
+	#
+	# Note that I'm adding the slashes to the section variable as we're not using 'link_to' here
+	if @comment.article.tagged_with?('events')
+		section = 'events/'
+	elsif @comment.article.tagged_with?('home_life')
+		section = 'home_life/'
+	elsif @comment.article.tagged_with?('health')
+		section = 'health/'
+	elsif @comment.article.tagged_with?('family')
+		section = 'family/'
+	-%>
+
+	<% if @comment.article.places != [] -%>
+http://www.ecolocal.com/<%= @comment.article.countries[0].url_name -%>/<%= @comment.article.counties[0].url_name -%>/<%= @comment.article.places[0].url_name -%>/<%= section -%>show/<%= @comment.article.normalised_title -%>#comment_<%= @comment_id -%>
+	<% elsif @comment.article.counties != [] -%>	
+http://www.ecolocal.com/<%= @comment.article.countries[0].url_name -%>/<%= @comment.article.counties[0].url_name -%>/<%= section -%>show/<%= @comment.article.normalised_title -%>#comment_<%= @comment_id -%>
+	<% elsif @comment.article.countries != [] -%>
+http://www.ecolocal.com/<%= @comment.article.countries[0].url_name -%>/<%= section -%>show/<%= @comment.article.normalised_title -%>#comment_<%= @comment_id -%>
+	<% end -%>
+<% else -%>
+http://www.ecolocal.com/discuss/<%= @comment.discussion.normalised_title -%>/show/<%= @comment.article.normalised_title -%>#comment_<%= @comment_id -%>
+
+<% end -%>
+
+Thanks,
+
+ecolocal

@@ -1,0 +1,20 @@
+<div class='right'>
+	<span class='title'>Groups in this area</span>
+	<div class='content'>
+		<small>
+			<% if @groups %>
+				<% for group in @groups %>
+					<a href='<%=h group.url_name %>'><%=h group.name %>
+				<% end %>
+				<hr/>
+				<a href=''>More groups</a>
+				<% if @session[:user] %>
+					<%= link_to 'Create a new group', :controller => 'groups', :action => 'create' %>
+				<% end %>
+			<% else %>
+				<i>There are no active groups in this area.</i>
+				<a href=''>Why not start one today?</a>
+			<% end %>
+		</small>
+	</div>
+</div>

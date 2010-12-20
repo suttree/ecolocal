@@ -1,0 +1,56 @@
+<%= render_partial "partial/about" -%>
+
+<div class='discussions'>
+	<h2>Discussions</h2>
+	<% for discussion in @latest_discussions -%>
+		<li><%= link_to truncate( discussion.title.capitalize, 45 ), { :controller => 'discussion', :section => 'discuss', :action => 'show', :title => discussion.normalised_title}, :title => discussion.title.capitalize, :alt => discussion.title.capitalize %></li>
+	<% end -%>
+	<span class='more'>
+		<a href='/discuss/'>And many more &raquo;</a>
+	</span>
+</div>
+
+<div class='local_news'>
+	<h2>Local news</h2>
+	Tell us where you live...
+	<form action='/search/'>
+		<input type='text' name='q'/>
+		<input type='submit' value='Search' />
+	</form>	
+	<span class='eg'>E.g. Cornwall, Sidcup or WC1A 1UP</span>
+	
+	<p>
+	    <a href='/locale/au'><img src='/images/flags_png/australia_small.png' class='flag_icon' alt='flag icon' title='ecolocal - Australia'/></a>
+	    <a href='/locale/de'><img src='/images/flags_png/germany_small.png' class='flag_icon' alt='flag icon' title='ecolocal - Germany'/></a>
+	    <a href='/locale/fr'><img src='/images/flags_png/france_small.png' class='flag_icon' alt='flag icon' title='ecolocal - France' /></a>
+	    <a href='/locale/gb'><img src='/images/flags_png/uk_small.png' class='flag_icon' alt='flag icon' title='ecolocal - United Kingdom' /></a>
+	    <a href='/locale/nl'><img src='/images/flags_png/netherlands_small.png' class='flag_icon' alt='flag icon' title='ecolocal - Netherlands' /></a>
+	    <a href='/locale/us'><img src='/images/flags_png/usa_small.png' class='flag_icon' alt='flag icon' title='ecolocal - United States' /></a>
+	</p>
+
+</div>
+
+<div class='events'>
+	<h2>Events</h2>
+	<% for article in @latest_events -%>
+
+		<% if article.places.size > 0 -%>
+
+			<li><%= link_to truncate(article.title.capitalize, 45), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :place => article.places[ 0 ].url_name, :section => 'events', :action => 'show', :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize %></li>
+
+		<% elsif article.counties.size > 0 -%>
+
+			<li><%= link_to truncate(article.title.capitalize, 45), { :controller => 'article', :country => article.countries[0].url_name, :county => article.counties[ 0 ].url_name, :section => 'events', :action => 'show', :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize %></li>
+
+		<% else -%>
+
+			<li><%= link_to truncate(article.title.capitalize, 45), { :controller => 'article', :country => article.countries[0].url_name, :section => 'events', :action => 'show', :title => article.normalised_title }, :title => article.title.capitalize, :alt => article.title.capitalize %></li>
+
+		<% end -%>
+
+	<% end -%>
+
+	<span class='more'>
+		<a href='/uk/events/'>And many more &raquo;</a>
+	</span>
+</div>

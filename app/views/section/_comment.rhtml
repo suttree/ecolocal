@@ -1,0 +1,20 @@
+<b><%=h comment.title %></b> by <%=h comment.user.nickname %> on <%=h comment.updated_on %>
+<br/>
+<%= linkify(comment.body) %>
+<% if @session[:user] %>
+    <br/>
+    <br/>
+    <small>
+        <b>Was this comment useful?</b> <%= link_to 'Yes', :action => 'good_comment', :id => comment %> / <%= link_to 'No', :action => 'bad_comment', :id => comment %>
+        <br/>
+        <%= link_to 'Reply to this comment', :action => 'reply_to_comment', :id => comment %> |
+        <%= link_to 'Report this comment', :action => 'report_comment', :id => comment %>
+    </small>
+<% end %>
+<br/>
+<br/>
+<% if comment.children.size > 0 %>
+    <ol id="commentsub-<%= comment.id %>" class="comment-sublist">
+        <%= render_collection_of_partials "commentset", comment.children.sort_by {|c| c.id} %>   
+    </ol>
+<% end %>

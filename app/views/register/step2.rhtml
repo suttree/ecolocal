@@ -1,0 +1,18 @@
+<%= error_messages_for("register") %>
+<p><b>Fields marked * are mandatory.</b></p>
+<%= start_form_tag :action => 'validate_step2' %> 
+    * Date of birth:
+    <div><%= date_select( :register, :date_of_birth, :start_year => 1930, :order => [:day, :month, :year], :include_blank => true ) %></div>
+    <br/>
+    * Gender:
+    <div><%= select("register", "gender", %w{ Male Female } ) %></div>
+    <br/>
+    * Country:
+    <div><%= country_select( :register, :country, [ "United Kingdom", ] ) %></div>
+    <br/>
+    Opt in to emails:
+    <div><%= check_box("register", "subscribe" ) %></div>
+
+    <br/>
+    <%= submit_tag( "Next step" ) %>
+<%= end_form_tag %>

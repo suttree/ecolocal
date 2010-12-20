@@ -1,0 +1,100 @@
+URLs
+----
+
+/
+
+/home/
+/health/
+/family/
+
+/kent/
+/kent/dartford/
+
+/kent/dartford/home/
+/kent/dartford/health/
+/kent/dartford/family/
+
+/kent/dartford/home/1/
+/kent/dartford/health/2/
+/kent/dartford/family/3/
+
+Databases
+---------
+
+users			id, nickname, forename, surname, email, password, activation_code, activation_date, updated_on, created_on
+
+counties		id, etc
+places			id, etc
+
+articles		id, places_id, title, text, updated_on, created_on
+comments		id, articles_id, title, text, updated_on, created_on
+tags			id, blah
+articles_tags	id, blah
+
+Routes
+------
+# County home page
+uk/:county
+controller => county
+action => index
+
+# County home/health/family page
+uk/:county/:section
+controller => county
+action => section
+section_name => :section
+:requirements => { :section => /home|health|family/ }
+
+# Place home page
+uk/:county/:place/
+controller => place
+action => index
+
+# Place home/health/family page
+uk/:county/:place/:section
+controller => place
+action => section
+section_name => :section
+:requirements => { :section => /home|health|family/ }
+
+# Place c/r/u/d page
+uk/:county/:place/:action/:id
+controller => place
+
+
+# Rules for eco-local in here
+map.connect  "uk/search",
+             :controller => 'search',
+             :action => 'index'
+
+map.connect  "uk/search/results",
+             :controller => 'search',
+             :action => 'results'
+
+# County home page
+map.connect	"uk/:county",
+			:controller => county,
+			:action => index
+
+# County home/health/family page
+map.connect	"uk/:county/:section",
+			:controller => county,
+			:action => section,
+			:section_name => :section,
+			:requirements => { :section => /home|health|family/ }
+
+# Place home page
+map.connect	"uk/:county/:place/",
+			:controller => place,
+			:action => index
+
+# Place home/health/family page
+map.connect	"uk/:county/:place/:section",
+			:controller => place,
+			:action => section,
+			:section_name => :section,
+			:requirements => { :section => /home|health|family/ }
+
+# Place c/r/u/d page
+map.connect	"uk/:county/:place/:action/:id",
+			:controller => place

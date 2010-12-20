@@ -1,0 +1,10 @@
+<div class="counter">
+    Displaying <%= paginator.current.first_item %> - <%= paginator.current.last_item %> of <%= paginator.item_count %>    
+    <br/>
+    <%= link_to(h('< Previous'), {:page => paginator.current.previous, :order => params[:order] })  + " | " if paginator.current.previous %>
+    <%= pagination_links_each(paginator, :window_size => 4) do |n|
+            link_to( n.to_s, :country => params[:country], :county => params[:county], :place => params[:place], :section => params[:section], :title => params[:title], :tag => params[:tag], :order => params[:order], :page => n.to_s )
+        end
+    -%>
+    <%= " | " + link_to(h('Next >'), {:page => paginator.current.next, :order => params[:order] }) if paginator.current.next %>
+</div>

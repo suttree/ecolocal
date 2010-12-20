@@ -1,0 +1,34 @@
+About the website
+-----------------
+
+ecolocal is a local information website that aims to encourage users to share and discuss information, primarily eco-friendly and green topics. The website is split into areas based on location and also by section. We have created three main sections that exist across the site, namely Home, Health and Family.
+
+The Home section contains information about your home and how to practice green ideas.
+The Health section contains information about how to live a healthy life.
+The Family section contains information about looking after your family.
+
+The design
+----------
+
+We would like to see a simple, clearly laid out design that has a good degree of fun. Ideally the site will use a liquid layout with only one column and a header and footer for navigation. The font used should be large, well spaced out and easy to read. The html should be semantic, valid and make use of CSS.
+
+We'd like to see designs for the following four pages:
+
+  * Home page - this is meant to be as clear and uncluttered as possible. Like the Google homepage, it directs users to search in order to find the relevant content. Rollyo.com is a good example of this sort of home page - login and the home page features a big search box with large, clear text as well as clear headers and footers with all the relevant navigational links.
+
+  * Listing page - this is a simple list of all the relevant articles in a location.
+
+  * Article page - like viewing a blog entry, the focus of this page is purely the content and the threaded comments below. We're using a simple 'Did you find this article useful?' link to allow users to rate articles and comments. There ratings are then used to promote the most popular local stories to the parent pages, much like digg.com
+
+  * Create page - users can create four different types of content on ecolocal. They are:
+		1. A web link
+		2. A news article
+		3. A picture with some accompanying text
+		4. An audio file, also with accompanying text
+		
+		When a user submits content to ecolocal, they also must choose which section it applies to. Each section (Home, Health, Family) has a set of associated keywords that work just like tags, but with checkboxes rather than a free-form text input box.
+
+We also require a few icons to be designed for each of the three main sections (Home, Health, Family) as well as for each of the relevant tags.
+
+
+http://guidestar.org.uk/

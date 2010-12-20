@@ -1,0 +1,27 @@
+<%= render_partial "partial/about" -%>
+
+<%= render_partial "partial/breadcrumb" -%>
+
+<%= render_partial "partial/tabs" -%>
+
+<div class='list_full'>
+	<span class='misc'><big><b>Login to ecolocal</b></big></span>
+
+	<br/>
+
+	<%= start_form_tag :action => 'validate' %> 
+	        <p><label for="member_username">Username</label><br/>
+		<%= text_field("login", "nickname", :class => 'headerlogininput' ) -%></p>
+	        
+		<p><label for="member_password">Password</label><br/>
+		<%= password_field("login", "password", :class => 'headerlogininput') -%></p>
+
+		<%= submit_tag( "Login now", :class => 'headerloginbutton' ) -%>
+	<%= end_form_tag %>
+  <p>
+    <a href='/members/login/forgotten_password'>Forgotten your password?</a>
+  </p>
+	<p>
+    <i>Login to ecolocal and you can submit news, post comments and keep track on anything you find interesting. <a href='/register/'>Register now if you're not already a member</a>.</i>
+  </p>
+</div>
